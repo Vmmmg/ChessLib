@@ -26,4 +26,8 @@ public class King extends Chess {
 
     }
 
+    @Override
+    public String toString() {
+        return "Ki";
+    }
 }
