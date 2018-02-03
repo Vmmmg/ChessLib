@@ -1,5 +1,8 @@
 package chess;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Position {
     private int x;
     private int y;
@@ -7,6 +10,10 @@ public class Position {
     public Position(String position){
         this.x = position.substring(0, 1).toUpperCase().charAt(0) - 'A';
         this.y = Integer.parseInt(position.substring(1, 2)) - 1;
+    }
+    public Position(int x, int y){
+        this.x = x;
+        this.y = y;
     }
 
     public int getX(){
@@ -80,5 +87,19 @@ public class Position {
         }
 
         return false;
+    }
+
+    public List aroundPos(){
+        List aroundPos = new ArrayList();
+        aroundPos.add(new Position(x-1, y-1));
+        aroundPos.add(new Position(x, y-1));
+        aroundPos.add(new Position(x+1, y-1));
+        aroundPos.add(new Position(x-1, y));
+        aroundPos.add(new Position(x+1, y));
+        aroundPos.add(new Position(x-1, y+1));
+        aroundPos.add(new Position(x, y+1));
+        aroundPos.add(new Position(x+1, y+1));
+
+        return aroundPos;
     }
 }
