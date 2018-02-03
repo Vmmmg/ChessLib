@@ -11,7 +11,7 @@ public class Board {
     private int HEIGHT = 8;
     private int WIDTH = 8;
     private Chess[][] board = new Chess[WIDTH][HEIGHT];
-    private Position whiteKingPos = new Position("E8");
+    private Position whiteKingPos = new Position("D8");
     private Position blackKingPos = new Position("E1");
     private Player curPlayer = Player.White;
 
@@ -39,8 +39,8 @@ public class Board {
         board[7][0] = new Rook(Player.White, new Position("A8"));
         board[7][1] = new Knight(Player.White, new Position("B8"));
         board[7][2] = new Bishop(Player.White, new Position("C8"));
-        board[7][3] = new Queen(Player.White, new Position("D8"));
-        board[7][4] = new King(Player.White, whiteKingPos);
+        board[7][3] = new King(Player.White, whiteKingPos);
+        board[7][4] = new Queen(Player.White, new Position("E8"));
         board[7][5] = new Bishop(Player.White, new Position("F8"));
         board[7][6] = new Knight(Player.White, new Position("G8"));
         board[7][7] = new Rook(Player.White, new Position("H8"));
@@ -59,10 +59,10 @@ public class Board {
         //check if the new position off the board
         int x = pos.getX();
         int y = pos.getY();
-        if(x > this.HEIGHT || x < 0){
+        if(x >= this.HEIGHT || x < 0){
             return MoveResult.OffTheBoard;
         }
-        else if(y > this.WIDTH || y < 0){
+        else if(y >= this.WIDTH || y < 0){
             return MoveResult.OffTheBoard;
         }
 
@@ -149,7 +149,7 @@ public class Board {
             }
         }
         else if(chessPos.isDiagonal(pos)){
-            int startX, endX, startY, endY, checkX, checkY;
+            int startX, endX, checkY;
 
             if(chessPos.getX() < pos.getX()){
                 startX = chessPos.getX() + 1;
@@ -236,10 +236,10 @@ public class Board {
     }
 
     public GameResult judge(){
-        if(whiteKingPos == null){
+        if(curPlayer == Player.Black && whiteKingPos == null){
             return GameResult.BlackWin;
         }
-        else if(blackKingPos == null){
+        else if(curPlayer == Player.White && blackKingPos == null){
             return GameResult.WhiteWin;
         }
 
@@ -255,15 +255,14 @@ public class Board {
             captureKing = board[blackKingPos.getY()][blackKingPos.getX()];
         }
 
-        //平局,先看当前棋手棋子能否走到对面的王，若能，看对面的王能否躲,不能躲则平局
         for(int i = 0; i < HEIGHT; i++){
             for(int j = 0; j < WIDTH; j++){
                 if(board[i][j] != null && board[i][j].getPlayer() == curPlayer){
-                    MoveResult moveRes = this.isLegalMove(board[i][j], captureKingPos);
-                    if(moveRes == MoveResult.LegalMove){
-                        canCaptureKing = true;
-                        break;
-                    }
+                        MoveResult moveRes = this.isLegalMove(board[i][j], captureKingPos);
+                        if (moveRes == MoveResult.LegalMove || moveRes == MoveResult.Capture) {
+                            canCaptureKing = true;
+                            break;
+                        }
                 }
             }
         }

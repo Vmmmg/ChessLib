@@ -26,6 +26,7 @@ public class Pawn extends Chess{
             if(this.isForward(pos)){
                 int distance = this.getPosition().distance(pos);
                 if(isFirstStep){
+                    isFirstStep = false;
                     if(distance == 1 || distance == 2){
                         return MoveResult.LegalMove;
                     }
