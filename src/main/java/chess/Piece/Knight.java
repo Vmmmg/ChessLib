@@ -25,4 +25,9 @@ public class Knight extends Chess {
 
         return MoveResult.IllegalMove;
     }
+
+    @Override
+    public String toString() {
+        return "K";
+    }
 }

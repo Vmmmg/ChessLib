@@ -27,4 +27,9 @@ public class Rook extends Chess {
 
         return MoveResult.IllegalMove;
     }
+
+    @Override
+    public String toString() {
+        return "R";
+    }
 }

@@ -29,4 +29,9 @@ public class King extends Chess {
     public Position[] genNextStep(){
 
     }
+
+    @Override
+    public String toString() {
+        return "Ki";
+    }
 }

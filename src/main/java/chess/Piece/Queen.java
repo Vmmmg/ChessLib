@@ -31,4 +31,9 @@ public class Queen extends Chess {
 
         return MoveResult.IllegalMove;
     }
+
+    @Override
+    public String toString() {
+        return "Q";
+    }
 }

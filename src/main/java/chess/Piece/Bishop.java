@@ -25,4 +25,9 @@ public class Bishop extends Chess {
 
         return MoveResult.IllegalMove;
     }
+
+    @Override
+    public String toString() {
+        return "B";
+    }
 }
