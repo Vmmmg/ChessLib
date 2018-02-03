@@ -21,7 +21,7 @@ public class Board {
         board[0][1] = new Knight(Player.Black, new Position("B1"));
         board[0][2] = new Bishop(Player.Black, new Position("C1"));
         board[0][3] = new Queen(Player.Black, new Position("D1"));
-        board[0][4] = new King(Player.Black, new Position("E1"));
+        board[0][4] = new King(Player.Black, blackKingPos);
         board[0][5] = new Bishop(Player.Black, new Position("F1"));
         board[0][6] = new Knight(Player.Black, new Position("G1"));
         board[0][7] = new Rook(Player.Black, new Position("H1"));
@@ -37,7 +37,7 @@ public class Board {
         board[7][1] = new Knight(Player.White, new Position("B8"));
         board[7][2] = new Bishop(Player.White, new Position("C8"));
         board[7][3] = new Queen(Player.White, new Position("D8"));
-        board[7][4] = new King(Player.White, new Position("E8"));
+        board[7][4] = new King(Player.White, whiteKingPos);
         board[7][5] = new Bishop(Player.White, new Position("F8"));
         board[7][6] = new Knight(Player.White, new Position("G8"));
         board[7][7] = new Rook(Player.White, new Position("H8"));
