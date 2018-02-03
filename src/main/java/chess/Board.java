@@ -1,25 +1,29 @@
 package chess;
 
-import chess.piece.*;
 import chess.enums.GameResult;
 import chess.enums.MoveResult;
 import chess.enums.Player;
+import chess.pieces.*;
 
 import java.util.List;
 
+/**
+ * Board, contains the shape and size of chess board, all chess pieces and the judgement of game ending
+ */
 public class Board {
+
     private int HEIGHT = 8;
     private int WIDTH = 8;
-    private Chess[][] board = new Chess[WIDTH][HEIGHT];
+    private ChessPiece[][] board = new ChessPiece[WIDTH][HEIGHT];
     private Position whiteKingPos = new Position("D8");
     private Position blackKingPos = new Position("E1");
     private Player curPlayer = Player.White;
 
-    public Board(){
+    public Board() {
         init();
     }
 
-    public void init(){
+    private void init() {
         board[0][0] = new Rook(Player.Black, new Position("A1"));
         board[0][1] = new Knight(Player.Black, new Position("B1"));
         board[0][2] = new Bishop(Player.Black, new Position("C1"));
@@ -55,140 +59,127 @@ public class Board {
 
     }
 
-    public MoveResult isLegalMove(Chess chess, Position pos){
-        //check if the new position off the board
+    public MoveResult isLegalMove(ChessPiece chessPiece, Position pos) {
+        // check if the new position off the board
         int x = pos.getX();
         int y = pos.getY();
-        if(x >= this.HEIGHT || x < 0){
+        if (x >= this.HEIGHT || x < 0) {
             return MoveResult.OffTheBoard;
-        }
-        else if(y >= this.WIDTH || y < 0){
+        } else if (y >= this.WIDTH || y < 0) {
             return MoveResult.OffTheBoard;
         }
 
-        //check if the new position is occupied by the same player's pieces
-        if(board[y][x] != null){
-            if(board[y][x].getPlayer() == chess.getPlayer()){
+        // check if the new position is occupied by the same player's pieces
+        if (board[y][x] != null) {
+            if (board[y][x].getPlayer() == chessPiece.getPlayer()) {
                 return MoveResult.IllegalMove;
             }
         }
 
-        //check if the movement is legal
-        MoveResult chessMoveRes = chess.isLegalMove(pos);
-        MoveResult moveResult = null;
-        if(chessMoveRes == MoveResult.LegalMove){
-            if(chess instanceof Knight){
+        // check if the movement is legal
+        MoveResult chessMoveRes = chessPiece.isLegalMove(pos);
+        MoveResult moveResult;
+        if (chessMoveRes == MoveResult.LegalMove) {
+            if (chessPiece instanceof Knight) {
                 return MoveResult.LegalMove;
-            }
-            else{
-                //check if the piece leap over other pieces
-                if(isOverPiece(chess, pos)){
+            } else {
+                // check if the pieces leap over other pieces
+                if (isOverPiece(chessPiece, pos)) {
                     return MoveResult.OverOtherPieces;
-                }
-                else{
+                } else {
                     return MoveResult.LegalMove;
                 }
             }
-        }
-        else if(chessMoveRes == MoveResult.PawnDiagonally){
-            if(board[y][x] != null){
+        } else if (chessMoveRes == MoveResult.PawnDiagonally) {
+            if (board[y][x] != null) {
                 return MoveResult.LegalMove;
-            }
-            else{
+            } else {
                 moveResult = MoveResult.IllegalMove;
             }
-        }
-        else{
+        } else {
             moveResult = chessMoveRes;
         }
 
         return moveResult;
     }
 
-    public boolean isOverPiece(Chess chess, Position pos){
-        if(chess instanceof King){
+    public boolean isOverPiece(ChessPiece chessPiece, Position pos) {
+        if (chessPiece instanceof King) {
             return false;
         }
 
-        Position chessPos = chess.getPosition();
+        Position chessPos = chessPiece.getPosition();
         int startPoint;
         int endPoint;
 
-        if(chessPos.isHorizontal(pos)){
+        if (chessPos.isHorizontal(pos)) {
             int chessY = chessPos.getY();
-            if(chessPos.getX() < pos.getX()){
+            if (chessPos.getX() < pos.getX()) {
                 startPoint = chessPos.getX() + 1;
                 endPoint = pos.getX();
-            }
-            else{
+            } else {
                 startPoint = pos.getX() + 1;
                 endPoint = chessPos.getX();
             }
 
-            for(int i = startPoint; i < endPoint; i++){
-                if(board[chessY][i] != null){
+            for (int i = startPoint; i < endPoint; i++) {
+                if (board[chessY][i] != null) {
                     return true;
                 }
             }
-        }
-        else if(chessPos.isVertical(pos)){
+        } else if (chessPos.isVertical(pos)) {
             int chessX = chessPos.getX();
-            if(chessPos.getY() < pos.getY()){
+            if (chessPos.getY() < pos.getY()) {
                 startPoint = chessPos.getY() + 1;
                 endPoint = pos.getY();
-            }
-            else{
+            } else {
                 startPoint = pos.getY() + 1;
                 endPoint = chessPos.getY();
             }
 
-            for(int i = startPoint; i < endPoint; i++){
-                if(board[i][chessX] != null){
+            for (int i = startPoint; i < endPoint; i++) {
+                if (board[i][chessX] != null) {
                     return true;
                 }
             }
-        }
-        else if(chessPos.isDiagonal(pos)){
+        } else if (chessPos.isDiagonal(pos)) {
             int startX, endX, checkY;
 
-            if(chessPos.getX() < pos.getX()){
+            if (chessPos.getX() < pos.getX()) {
                 startX = chessPos.getX() + 1;
                 endX = pos.getX();
-                if(chessPos.getY() < pos.getY()){
+                if (chessPos.getY() < pos.getY()) {
                     checkY = chessPos.getY() + 1;
-                    for(int i = startX; i < endX; i++){
-                        if(board[checkY][i] != null){
+                    for (int i = startX; i < endX; i++) {
+                        if (board[checkY][i] != null) {
                             return true;
                         }
                         checkY++;
                     }
-                }
-                else{
+                } else {
                     checkY = chessPos.getY() - 1;
-                    for(int i = startX; i < endX; i++){
-                        if(board[checkY][i] != null){
+                    for (int i = startX; i < endX; i++) {
+                        if (board[checkY][i] != null) {
                             return true;
                         }
                         checkY--;
                     }
                 }
-            }
-            else{
+            } else {
                 startX = pos.getX() + 1;
                 endX = chessPos.getX();
-                if(pos.getY() < chessPos.getY()){
+                if (pos.getY() < chessPos.getY()) {
                     checkY = pos.getY() + 1;
-                    for(int i = startX; i < endX; i++){
-                        if(board[checkY][i] != null){
+                    for (int i = startX; i < endX; i++) {
+                        if (board[checkY][i] != null) {
                             return true;
                         }
                         checkY++;
                     }
-                }
-                else{
+                } else {
                     checkY = pos.getY() - 1;
-                    for(int i = startX; i < endX; i++){
-                        if(board[checkY][i] != null){
+                    for (int i = startX; i < endX; i++) {
+                        if (board[checkY][i] != null) {
                             return true;
                         }
                         checkY--;
@@ -200,75 +191,71 @@ public class Board {
         return false;
     }
 
-    public MoveResult chessMove(Chess chess, Position pos){
-        Position prePos = chess.getPosition();
-        curPlayer = chess.getPlayer();
+    public MoveResult chessMove(ChessPiece chessPiece, Position pos) {
+        Position prePos = chessPiece.getPosition();
+        curPlayer = chessPiece.getPlayer();
         int preX = prePos.getX();
         int preY = prePos.getY();
         int x = pos.getX();
         int y = pos.getY();
 
-        chess.move(pos);
-        if (chess instanceof King){
-            if(chess.getPlayer() == Player.Black){
+        chessPiece.move(pos);
+        if (chessPiece instanceof King) {
+            if (chessPiece.getPlayer() == Player.Black) {
                 blackKingPos = pos;
-            }
-            else{
+            } else {
                 whiteKingPos = pos;
             }
         }
         board[preY][preX] = null;
-        if(board[y][x] != null){
-            Chess capturedChess = board[y][x];
-            if(capturedChess instanceof King){
-                if(capturedChess.getPlayer() == Player.Black){
+        if (board[y][x] != null) {
+            ChessPiece capturedChessPiece = board[y][x];
+            if (capturedChessPiece instanceof King) {
+                if (capturedChessPiece.getPlayer() == Player.Black) {
                     blackKingPos = null;
-                }
-                else{
+                } else {
                     whiteKingPos = null;
                 }
             }
-            board[y][x] = chess;
+            board[y][x] = chessPiece;
             return MoveResult.Capture;
         }
-        board[y][x] = chess;
+        board[y][x] = chessPiece;
         return MoveResult.LegalMove;
     }
 
-    public GameResult judge(){
-        if(curPlayer == Player.Black && whiteKingPos == null){
+    public GameResult judge() {
+        if (curPlayer == Player.Black && whiteKingPos == null) {
             return GameResult.BlackWin;
-        }
-        else if(curPlayer == Player.White && blackKingPos == null){
+        } else if (curPlayer == Player.White && blackKingPos == null) {
             return GameResult.WhiteWin;
         }
 
         boolean canCaptureKing = false;
-        Position captureKingPos = null;
-        Chess captureKing = null;
-        if(curPlayer == Player.Black){
+        Position captureKingPos;
+        ChessPiece captureKing;
+        if (curPlayer == Player.Black) {
             captureKingPos = whiteKingPos;
             captureKing = board[whiteKingPos.getY()][whiteKingPos.getX()];
-        }
-        else{
+        } else {
             captureKingPos = blackKingPos;
             captureKing = board[blackKingPos.getY()][blackKingPos.getX()];
         }
 
-        for(int i = 0; i < HEIGHT; i++){
-            for(int j = 0; j < WIDTH; j++){
-                if(board[i][j] != null && board[i][j].getPlayer() == curPlayer){
-                        MoveResult moveRes = this.isLegalMove(board[i][j], captureKingPos);
-                        if (moveRes == MoveResult.LegalMove || moveRes == MoveResult.Capture) {
-                            canCaptureKing = true;
-                            break;
-                        }
+        for (int i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < WIDTH; j++) {
+                if (board[i][j] != null && board[i][j].getPlayer() == curPlayer) {
+                    MoveResult moveRes = this.isLegalMove(board[i][j], captureKingPos);
+                    if (moveRes == MoveResult.LegalMove || moveRes == MoveResult.Capture) {
+                        canCaptureKing = true;
+                        break;
+                    }
                 }
             }
         }
 
-        if(canCaptureKing == true){
-            if(!canKingMove(captureKing)){
+        if (canCaptureKing) {
+            if (!canKingMove(captureKing)) {
                 return GameResult.Draw;
             }
         }
@@ -276,13 +263,13 @@ public class Board {
         return GameResult.Gaming;
     }
 
-    public boolean canKingMove(Chess king){
+    public boolean canKingMove(ChessPiece king) {
         Position kingPos = king.getPosition();
 
         List possibleMovePos = kingPos.aroundPos();
-        for(int i = 0; i < possibleMovePos.size(); i++){
+        for (int i = 0; i < possibleMovePos.size(); i++) {
             MoveResult moveRes = this.isLegalMove(king, (Position) possibleMovePos.get(i));
-            if(moveRes == MoveResult.LegalMove){
+            if (moveRes == MoveResult.LegalMove) {
                 return true;
             }
         }
@@ -291,15 +278,15 @@ public class Board {
 
     }
 
-    public Chess getSpecificPositionChess(Position position) {
+    public ChessPiece getSpecificPositionChess(Position position) {
         return board[position.getY()][position.getX()];
     }
 
     public void print() {
         System.out.println("\tA\tB\tC\tD\tE\tF\tG\tH");
-        for (int i=0; i<HEIGHT; i++) {
-            System.out.print((i+1) + "\t");
-            for (int j=0; j<WIDTH; j++) {
+        for (int i = 0; i < HEIGHT; i++) {
+            System.out.print((i + 1) + "\t");
+            for (int j = 0; j < WIDTH; j++) {
                 if (board[i][j] != null) {
                     System.out.print(board[i][j] + "\t");
                 } else {

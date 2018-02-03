@@ -1,11 +1,11 @@
-package chess.piece;
+package chess.pieces;
 
 import chess.Position;
 import chess.enums.MoveResult;
 import chess.enums.Player;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class QueenTest {
 

@@ -1,25 +1,29 @@
-package chess.piece;
+package chess.pieces;
 
-import chess.Chess;
+import chess.ChessPiece;
 import chess.Position;
 import chess.enums.MoveResult;
 import chess.enums.Player;
 
-public class Knight extends Chess {
+/**
+ * ChessPiece piece: Knight
+ */
+public class Knight extends ChessPiece {
+
     public Knight(Player player, Position position) {
         super(player, position);
     }
 
     //The knight moves to any of the closest squares that are not on the same rank, file, or diagonal,
     //thus the move forms an "L"-shape: two squares vertically and one square horizontally, or two squares horizontally and one square vertically.
-    //The knight is the only piece that can leap over other pieces.
+    //The knight is the only pieces that can leap over other pieces.
     @Override
-    public MoveResult isLegalMove(Position pos){
-        if(this.getPosition().equals(pos)){
+    public MoveResult isLegalMove(Position pos) {
+        if (this.getPosition().equals(pos)) {
             return MoveResult.SamePosition;
         }
 
-        if(this.getPosition().isLShape(pos)){
+        if (this.getPosition().isLShape(pos)) {
             return MoveResult.LegalMove;
         }
 

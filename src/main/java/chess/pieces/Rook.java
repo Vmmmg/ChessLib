@@ -1,11 +1,15 @@
-package chess.piece;
+package chess.pieces;
 
-import chess.Chess;
+import chess.ChessPiece;
 import chess.Position;
 import chess.enums.MoveResult;
 import chess.enums.Player;
 
-public class Rook extends Chess {
+/**
+ * ChessPiece piece: Rook
+ */
+public class Rook extends ChessPiece {
+
     public Rook(Player player, Position position) {
         super(player, position);
     }
@@ -13,15 +17,14 @@ public class Rook extends Chess {
     //The rook can move any number of squares along any rank or file
     //but may not leap over other pieces.
     @Override
-    public MoveResult isLegalMove(Position pos){
-        if(this.getPosition().equals(pos)){
+    public MoveResult isLegalMove(Position pos) {
+        if (this.getPosition().equals(pos)) {
             return MoveResult.SamePosition;
         }
 
-        if(this.getPosition().isHorizontal(pos)){
+        if (this.getPosition().isHorizontal(pos)) {
             return MoveResult.LegalMove;
-        }
-        else if(this.getPosition().isVertical(pos)){
+        } else if (this.getPosition().isVertical(pos)) {
             return MoveResult.LegalMove;
         }
 

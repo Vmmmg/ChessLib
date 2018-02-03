@@ -1,11 +1,15 @@
-package chess.piece;
+package chess.pieces;
 
-import chess.Chess;
+import chess.ChessPiece;
 import chess.Position;
 import chess.enums.MoveResult;
 import chess.enums.Player;
 
-public class Queen extends Chess {
+/**
+ * ChessPiece piece: Queen
+ */
+public class Queen extends ChessPiece {
+
     public Queen(Player player, Position position) {
         super(player, position);
     }
@@ -14,18 +18,16 @@ public class Queen extends Chess {
     //and can move any number of squares along rank, file, or diagonal,
     //but it may not leap over other pieces.
     @Override
-    public MoveResult isLegalMove(Position pos){
-        if(this.getPosition().equals(pos)){
+    public MoveResult isLegalMove(Position pos) {
+        if (this.getPosition().equals(pos)) {
             return MoveResult.SamePosition;
         }
 
-        if(this.getPosition().isHorizontal(pos)){
+        if (this.getPosition().isHorizontal(pos)) {
             return MoveResult.LegalMove;
-        }
-        else if(this.getPosition().isVertical(pos)){
+        } else if (this.getPosition().isVertical(pos)) {
             return MoveResult.LegalMove;
-        }
-        else if(this.getPosition().isDiagonal(pos)){
+        } else if (this.getPosition().isDiagonal(pos)) {
             return MoveResult.LegalMove;
         }
 
