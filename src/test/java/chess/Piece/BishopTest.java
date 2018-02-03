@@ -13,6 +13,7 @@ public class BishopTest {
     public void isLegalMove() {
         Bishop bishop = new Bishop(Player.Black, new Position("F1"));
         assertEquals(bishop.isLegalMove(new Position("F1")), MoveResult.SamePosition);
+
         assertEquals(bishop.isLegalMove(new Position("E2")), MoveResult.LegalMove);
         assertEquals(bishop.isLegalMove(new Position("D3")), MoveResult.LegalMove);
         assertEquals(bishop.isLegalMove(new Position("C4")), MoveResult.LegalMove);
@@ -20,6 +21,7 @@ public class BishopTest {
         assertEquals(bishop.isLegalMove(new Position("A6")), MoveResult.LegalMove);
         assertEquals(bishop.isLegalMove(new Position("G2")), MoveResult.LegalMove);
         assertEquals(bishop.isLegalMove(new Position("H3")), MoveResult.LegalMove);
+
         assertEquals(bishop.isLegalMove(new Position("F2")), MoveResult.IllegalMove);
         assertEquals(bishop.isLegalMove(new Position("F3")), MoveResult.IllegalMove);
         assertEquals(bishop.isLegalMove(new Position("F4")), MoveResult.IllegalMove);
