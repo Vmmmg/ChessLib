@@ -26,7 +26,4 @@ public class King extends Chess {
 
     }
 
-    public Position[] genNextStep(){
-
-    }
 }

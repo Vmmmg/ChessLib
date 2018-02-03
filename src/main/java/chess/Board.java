@@ -5,12 +5,16 @@ import chess.enums.GameResult;
 import chess.enums.MoveResult;
 import chess.enums.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Board {
     private int HEIGHT = 8;
     private int WIDTH = 8;
     private Chess[][] board = new Chess[WIDTH][HEIGHT];
     private Position whiteKingPos = new Position("E8");
     private Position blackKingPos = new Position("E1");
+    private Player curPlayer = Player.White;
 
     public Board(){
         init();
@@ -56,10 +60,10 @@ public class Board {
         //check if the new position off the board
         int x = pos.getX();
         int y = pos.getY();
-        if(x > this.WIDTH){
+        if(x > this.HEIGHT || x < 0){
             return MoveResult.OffTheBoard;
         }
-        else if(y > this.HEIGHT){
+        else if(y > this.WIDTH || y < 0){
             return MoveResult.OffTheBoard;
         }
 
@@ -75,7 +79,7 @@ public class Board {
         MoveResult moveResult = null;
         if(chessMoveRes == MoveResult.LegalMove){
             if(chess instanceof Knight){
-                this.chessMove(chess, pos);
+                return MoveResult.LegalMove;
             }
             else{
                 //check if the piece leap over other pieces
@@ -83,13 +87,13 @@ public class Board {
                     return MoveResult.OverOtherPieces;
                 }
                 else{
-                    this.chessMove(chess, pos);
+                    return MoveResult.LegalMove;
                 }
             }
         }
         else if(chessMoveRes == MoveResult.PawnDiagonally){
             if(board[y][x] != null){
-                this.chessMove(chess, pos);
+                return MoveResult.LegalMove;
             }
             else{
                 moveResult = MoveResult.IllegalMove;
@@ -199,6 +203,7 @@ public class Board {
 
     public MoveResult chessMove(Chess chess, Position pos){
         Position prePos = chess.getPosition();
+        curPlayer = chess.getPlayer();
         int preX = prePos.getX();
         int preY = prePos.getY();
         int x = pos.getX();
@@ -232,8 +237,6 @@ public class Board {
     }
 
     public GameResult judge(){
-        GameResult res = GameResult.Gaming;
-
         if(whiteKingPos == null){
             return GameResult.BlackWin;
         }
@@ -241,8 +244,52 @@ public class Board {
             return GameResult.WhiteWin;
         }
 
-        //平局
+        boolean canCaptureKing = false;
+        Position captureKingPos = null;
+        Chess captureKing = null;
+        if(curPlayer == Player.Black){
+            captureKingPos = whiteKingPos;
+            captureKing = board[whiteKingPos.getY()][whiteKingPos.getX()];
+        }
+        else{
+            captureKingPos = blackKingPos;
+            captureKing = board[blackKingPos.getY()][blackKingPos.getX()];
+        }
 
-        return res;
+        //平局,先看当前棋手棋子能否走到对面的王，若能，看对面的王能否躲,不能躲则平局
+        for(int i = 0; i < HEIGHT; i++){
+            for(int j = 0; j < WIDTH; j++){
+                if(board[i][j] != null && board[i][j].getPlayer() == curPlayer){
+                    MoveResult moveRes = this.isLegalMove(board[i][j], captureKingPos);
+                    if(moveRes == MoveResult.LegalMove){
+                        canCaptureKing = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if(canCaptureKing == true){
+            if(!canKingMove(captureKing)){
+                return GameResult.Draw;
+            }
+        }
+
+        return GameResult.Gaming;
+    }
+
+    public boolean canKingMove(Chess king){
+        Position kingPos = king.getPosition();
+
+        List possibleMovePos = kingPos.aroundPos();
+        for(int i = 0; i < possibleMovePos.size(); i++){
+            MoveResult moveRes = this.isLegalMove(king, (Position) possibleMovePos.get(i));
+            if(moveRes == MoveResult.LegalMove){
+                return true;
+            }
+        }
+
+        return false;
+
     }
 }
