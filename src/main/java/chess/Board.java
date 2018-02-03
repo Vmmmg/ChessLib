@@ -245,4 +245,24 @@ public class Board {
 
         return res;
     }
+
+    public Chess getSpecificPositionChess(Position position) {
+        return board[position.getY()][position.getX()];
+    }
+
+    public void print() {
+        System.out.println("\tA\tB\tC\tD\tE\tF\tG\tH");
+        for (int i=0; i<HEIGHT; i++) {
+            System.out.print((i+1) + "\t");
+            for (int j=0; j<WIDTH; j++) {
+                if (board[i][j] != null) {
+                    System.out.print(board[i][j] + "\t");
+                } else {
+                    System.out.print("\t");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("==================================");
+    }
 }
