@@ -1,4 +1,4 @@
-package chess.Piece;
+package chess.piece;
 
 import chess.enums.MoveResult;
 import chess.enums.Player;

@@ -1,11 +1,10 @@
 package chess;
 
-import chess.Piece.*;
+import chess.piece.*;
 import chess.enums.GameResult;
 import chess.enums.MoveResult;
 import chess.enums.Player;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Board {

@@ -1,16 +1,17 @@
-package chess.Piece;
+package chess.piece;
 
 import chess.Chess;
 import chess.Position;
 import chess.enums.MoveResult;
 import chess.enums.Player;
 
-public class Rook extends Chess {
-    public Rook(Player player, Position position) {
+public class Bishop extends Chess {
+
+    public Bishop(Player player, Position position) {
         super(player, position);
     }
 
-    //The rook can move any number of squares along any rank or file
+    //The bishop can move any number of squares diagonally
     //but may not leap over other pieces.
     @Override
     public MoveResult isLegalMove(Position pos){
@@ -18,10 +19,7 @@ public class Rook extends Chess {
             return MoveResult.SamePosition;
         }
 
-        if(this.getPosition().isHorizontal(pos)){
-            return MoveResult.LegalMove;
-        }
-        else if(this.getPosition().isVertical(pos)){
+        if(this.getPosition().isDiagonal(pos)){
             return MoveResult.LegalMove;
         }
 
@@ -30,6 +28,6 @@ public class Rook extends Chess {
 
     @Override
     public String toString() {
-        return "R";
+        return "B";
     }
 }
