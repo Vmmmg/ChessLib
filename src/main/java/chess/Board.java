@@ -146,15 +146,51 @@ public class Board {
             }
         }
         else if(chessPos.isDiagonal(pos)){
-            int startX, endX, startY, endY;
+            int startX, endX, startY, endY, checkX, checkY;
 
-            if(chessPos.getX() < pos.getY()){
-                startPoint = chessPos.getY() + 1;
-                endPoint = pos.getY();
+            if(chessPos.getX() < pos.getX()){
+                startX = chessPos.getX() + 1;
+                endX = pos.getX();
+                if(chessPos.getY() < pos.getY()){
+                    checkY = chessPos.getY() + 1;
+                    for(int i = startX; i < endX; i++){
+                        if(board[checkY][i] != null){
+                            return true;
+                        }
+                        checkY++;
+                    }
+                }
+                else{
+                    checkY = chessPos.getY() - 1;
+                    for(int i = startX; i < endX; i++){
+                        if(board[checkY][i] != null){
+                            return true;
+                        }
+                        checkY--;
+                    }
+                }
             }
             else{
-                startPoint = pos.getY() + 1;
-                endPoint = chessPos.getY();
+                startX = pos.getX() + 1;
+                endX = chessPos.getX();
+                if(pos.getY() < chessPos.getY()){
+                    checkY = pos.getY() + 1;
+                    for(int i = startX; i < endX; i++){
+                        if(board[checkY][i] != null){
+                            return true;
+                        }
+                        checkY++;
+                    }
+                }
+                else{
+                    checkY = pos.getY() - 1;
+                    for(int i = startX; i < endX; i++){
+                        if(board[checkY][i] != null){
+                            return true;
+                        }
+                        checkY--;
+                    }
+                }
             }
         }
 
