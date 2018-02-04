@@ -328,7 +328,6 @@ public class Board {
             }
         }
 
-        //4看本方棋子能否去到那条路上
         if (canCaptureCurrentKing) {
             if(ifKingCanNotMove(king)){
                 if(checkmateChessPieceSet.size() > 1){
@@ -340,6 +339,7 @@ public class Board {
                         checkmatePiece = piece;
                     }
                     if(!ifCheckmatePieceCanBeCaptured(checkmatePiece, capturedChessPieceSet)){
+
                         if(!ifCheckmatePieceCanBeBlocked(checkmatePiece, king, capturedChessPieceSet)){
                             return true;
                         }
@@ -376,8 +376,10 @@ public class Board {
 
         for(ChessPiece capturedPiece: capturedPieceSet){
             for(Position checkmatePathPosition: checkmatePathPositions){
-                if(isLegalMove(capturedPiece, checkmatePathPosition) == MoveResult.LegalMove){
-                    return true;
+                if(!(capturedPiece instanceof King)) {
+                    if (isLegalMove(capturedPiece, checkmatePathPosition) == MoveResult.LegalMove) {
+                        return true;
+                    }
                 }
             }
         }
@@ -408,17 +410,19 @@ public class Board {
                 board[position.getY()][position.getX()] = king;
 
                 boolean canOtherChessPieceCaptureKing = false;
-                for (ChessPiece theOtherChess : theOtherChessPieceSet) {
+                for (ChessPiece theOtherChess : theOtherChessPieceSet) { ;
                     if (isLegalMove(theOtherChess, position) == MoveResult.LegalMove) {
                         canOtherChessPieceCaptureKing = true;
                         break;
                     }
                 }
-
                 // backup
                 board[kingPos.getY()][kingPos.getX()] = king;
                 if (targetPieceBackup != null) {
                     board[position.getY()][position.getX()] = targetPieceBackup;
+                }
+                else{
+                    board[position.getY()][position.getX()] = null;
                 }
 
                 if (!canOtherChessPieceCaptureKing) {
