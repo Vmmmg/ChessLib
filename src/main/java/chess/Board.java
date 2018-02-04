@@ -360,6 +360,13 @@ public class Board {
         return false;
     }
 
+    /**
+     * Check if the checking piece can be captured
+     *
+     * @param checkmatePiece the checking piece
+     * @param capturedPieceSet the checked side's chess pieces set
+     * @return if the checking piece can be captured
+     */
     public boolean ifCheckmatePieceCanBeCaptured(ChessPiece checkmatePiece, Set<ChessPiece> capturedPieceSet){
         for(ChessPiece capturedPiece: capturedPieceSet){
             if(isLegalMove(capturedPiece, checkmatePiece.getPosition()) == MoveResult.LegalMove){
@@ -370,6 +377,14 @@ public class Board {
         return false;
     }
 
+    /**
+     * Check if the checking piece can be blocked
+     *
+     * @param checkmatePiece the checking piece
+     * @param king the king that is in check
+     * @param capturedPieceSet the checked side;s chess pirces set
+     * @return if the checking piece can be blocked
+     */
     public boolean ifCheckmatePieceCanBeBlocked(ChessPiece checkmatePiece, ChessPiece king, Set<ChessPiece> capturedPieceSet){
         if(checkmatePiece instanceof Knight){
             return false;
@@ -443,6 +458,11 @@ public class Board {
         return true;
     }
 
+    /**
+     * Check if it is stalemate
+     *
+     * @return if it is stalemate
+     */
     public boolean stalemate(){
         Set<ChessPiece> opponentPlayerChessSet;
 
@@ -516,10 +536,20 @@ public class Board {
         System.out.println("==================================");
     }
 
+    /**
+     * Get the board's width
+     *
+     * @return the board's width
+     */
     public int getWIDTH(){
         return WIDTH;
     }
 
+    /**
+     * Get the board's height
+     *
+     * @return the board's height
+     */
     public int getHEIGHT(){
         return HEIGHT;
     }

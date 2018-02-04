@@ -43,6 +43,10 @@ public abstract class ChessPiece {
         return player;
     }
 
+    /**
+     * Set chess piece position
+     * @param position specific position
+     */
     public void setPosition(Position position){
         this.position = position;
     }
@@ -62,7 +66,12 @@ public abstract class ChessPiece {
      */
     public abstract MoveResult isLegalMove(Position pos);
 
-
+    /**
+     * Generate all possible next steps of the chess
+     *
+     * @param board the chess board
+     * @return all possible next steps of the chess
+     */
     public Set<Position> genNextStep(Board board){
         Set<Position> nextStep = new HashSet<Position>();
 

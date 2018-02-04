@@ -3,13 +3,18 @@ package chess;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Path between two positions.
+ */
 public class Path {
     private Set<Position> positions;
 
-    public Path(Set<Position> positions){
-        this.positions = positions;
-    }
-
+    /**
+     * Constructor of Path
+     *
+     * @param pos1 One of the end points of the path
+     * @param pos2 the ohter end point of the path
+     */
     public Path(Position pos1, Position pos2){
         positions = new HashSet<>();
         int startPoint, endPoint;
@@ -81,6 +86,10 @@ public class Path {
         }
     }
 
+    /**
+     * Get all positions on the path
+     * @return all positions on the path
+     */
     public Set<Position> getPositions() {
         return positions;
     }
