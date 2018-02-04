@@ -33,8 +33,8 @@ public class PawnTest {
         Pawn pawn = new Pawn(Player.Black, new Position("B2"));
         assertEquals(pawn.isLegalMove(new Position("B2")), MoveResult.SamePosition);
 
-        assertEquals(pawn.isLegalMove(new Position("B4")), MoveResult.LegalMove);
-        assertEquals(pawn.isLegalMove(new Position("B3")), MoveResult.LegalMove);
+        assertEquals(pawn.isLegalMove(new Position("B3")), MoveResult.PawnForward);
+        assertEquals(pawn.isLegalMove(new Position("B4")), MoveResult.PawnForward);
         assertEquals(pawn.isLegalMove(new Position("A3")), MoveResult.PawnDiagonally);
         assertEquals(pawn.isLegalMove(new Position("C3")), MoveResult.PawnDiagonally);
 
@@ -52,7 +52,7 @@ public class PawnTest {
 
         assertEquals(pawn.isLegalMove(new Position("B4")), MoveResult.SamePosition);
 
-        assertEquals(pawn.isLegalMove(new Position("B5")), MoveResult.LegalMove);
+        assertEquals(pawn.isLegalMove(new Position("B5")), MoveResult.PawnForward);
         assertEquals(pawn.isLegalMove(new Position("A5")), MoveResult.PawnDiagonally);
         assertEquals(pawn.isLegalMove(new Position("C5")), MoveResult.PawnDiagonally);
 
