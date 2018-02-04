@@ -43,12 +43,16 @@ public abstract class ChessPiece {
         return player;
     }
 
+    public void setPosition(Position position){
+        this.position = position;
+    }
+
     /**
      * Move to specific position
      * @param position specific position
      */
     public void move(Position position) {
-        this.position = position;
+        this.setPosition(position);
     }
 
     /**
