@@ -118,9 +118,18 @@ public class Board {
             if (board[y][x] != null) {
                 return MoveResult.LegalMove;
             } else {
-                moveResult = MoveResult.IllegalMove;
+                return MoveResult.IllegalMove;
             }
-        } else {
+        }
+        else if(chessMoveRes == MoveResult.PawnForward){
+            if(board[y][x] != null){
+                return MoveResult.IllegalMove;
+            }
+            else{
+                return MoveResult.LegalMove;
+            }
+        }
+        else {
             moveResult = chessMoveRes;
         }
 
@@ -435,18 +444,25 @@ public class Board {
     }
 
     public boolean stalemate(){
-        Set<ChessPiece> curPlayerChessSet;
+        Set<ChessPiece> opponentPlayerChessSet;
 
         if(curPlayer == Player.White){
-            curPlayerChessSet = whiteChessSet;
+            opponentPlayerChessSet = blackChessSet;
         }
         else{
-            curPlayerChessSet = blackChessSet;
+            opponentPlayerChessSet = whiteChessSet;
         }
 
-        for(ChessPiece curPlayerChess: curPlayerChessSet){
-            if(curPlayerChess.genNextStep(this).size() != 0){
-                return false;
+        for(ChessPiece opponentPlayerChess: opponentPlayerChessSet){
+            if(opponentPlayerChess.genNextStep(this).size() != 0){
+                if(opponentPlayerChess instanceof King){
+                    if(!ifKingCanNotMove(opponentPlayerChess)){
+                        return false;
+                    }
+                }
+                else{
+                    return false;
+                }
             }
         }
 
@@ -507,4 +523,5 @@ public class Board {
     public int getHEIGHT(){
         return HEIGHT;
     }
+
 }

@@ -7,5 +7,6 @@ public enum MoveResult {
     IllegalMove, // Movement is illegal.
     OverOtherPieces, // Movement needs to get over other pieces.
     PawnDiagonally, // Pawn captures diagonally.
+    PawnForward, // Pawn move forward.
     Capture // Movement with capture.
 }

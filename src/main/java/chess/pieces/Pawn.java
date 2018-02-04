@@ -42,11 +42,11 @@ public class Pawn extends ChessPiece {
                 int distance = this.getPosition().distance(pos);
                 if (isFirstStep) {
                     if (distance == 1 || distance == 2) {
-                        return MoveResult.LegalMove;
+                        return MoveResult.PawnForward;
                     }
                 } else {
                     if (distance == 1) {
-                        return MoveResult.LegalMove;
+                        return MoveResult.PawnForward;
                     }
                 }
             }
