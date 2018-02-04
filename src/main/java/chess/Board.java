@@ -274,7 +274,7 @@ public class Board {
      * @return GameResult
      */
     public GameResult judge() {
-        // check if one side is in checkmate
+        // check if in checkmate
         ChessPiece capturedKing = null;
         if(curPlayer == Player.White){
             capturedKing = getSpecificPositionChess(blackKingPos);
@@ -291,7 +291,11 @@ public class Board {
                 return GameResult.BlackWin;
             }
         }
-        //平局 stalemate
+
+        if(stalemate()){
+            return GameResult.Draw;
+        }
+
 
         return GameResult.Gaming;
     }
@@ -420,6 +424,25 @@ public class Board {
                 if (!canOtherChessPieceCaptureKing) {
                     return false;
                 }
+            }
+        }
+
+        return true;
+    }
+
+    public boolean stalemate(){
+        Set<ChessPiece> curPlayerChessSet;
+
+        if(curPlayer == Player.White){
+            curPlayerChessSet = whiteChessSet;
+        }
+        else{
+            curPlayerChessSet = blackChessSet;
+        }
+
+        for(ChessPiece curPlayerChess: curPlayerChessSet){
+            if(curPlayerChess.genNextStep(this).size() != 0){
+                return false;
             }
         }
 

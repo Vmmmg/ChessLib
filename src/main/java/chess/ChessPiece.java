@@ -4,7 +4,9 @@ import chess.enums.MoveResult;
 import chess.enums.Player;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * All kinds of chess pieces
@@ -57,8 +59,8 @@ public abstract class ChessPiece {
     public abstract MoveResult isLegalMove(Position pos);
 
 
-    public List genNextStep(Board board){
-        List nextStep = new ArrayList();
+    public Set<Position> genNextStep(Board board){
+        Set<Position> nextStep = new HashSet<Position>();
 
         for(int i = 0; i < board.getWIDTH(); i++){
             for(int j = 0; j < board.getHEIGHT(); j++){
