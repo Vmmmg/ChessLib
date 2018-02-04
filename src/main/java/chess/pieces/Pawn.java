@@ -12,20 +12,31 @@ public class Pawn extends ChessPiece {
 
     private boolean isFirstStep;
 
+    /**
+     * Constructor of Pawn
+     *
+     * @param player   Belongs to which player
+     * @param position Initial position
+     */
     public Pawn(Player player, Position position) {
         super(player, position);
         isFirstStep = true;
     }
 
-    //The pawn may move forward to the unoccupied square immediately in front of it on the same file;
-    //or on its first move it may advance two squares along the same file provided both squares are unoccupied;
-    //or it may move to a square occupied by an opponent's pieces which is diagonally in front of it on an adjacent file, capturing that pieces.
+    /**
+     * Check if the movement is legal
+     * @param pos Destination position
+     * @return MoveResult
+     */
     @Override
     public MoveResult isLegalMove(Position pos) {
         if (this.getPosition().equals(pos)) {
             return MoveResult.SamePosition;
         }
 
+        // The pawn may move forward to the unoccupied square immediately in front of it on the same file;
+        // or on its first move it may advance two squares along the same file provided both squares are unoccupied;
+        // or it may move to a square occupied by an opponent's pieces which is diagonally in front of it on an adjacent file, capturing that pieces.
         if (this.getPosition().isVertical(pos)) {
             if (this.isForward(pos)) {
                 int distance = this.getPosition().distance(pos);
@@ -51,6 +62,11 @@ public class Pawn extends ChessPiece {
         return MoveResult.IllegalMove;
     }
 
+    /**
+     * Check if the pawn is moving forward
+     * @param pos Destination position
+     * @return true is that the pawn is moving forward
+     */
     public boolean isForward(Position pos) {
         if (this.getPlayer() == Player.White) {
             return this.getPosition().getY() > pos.getY();

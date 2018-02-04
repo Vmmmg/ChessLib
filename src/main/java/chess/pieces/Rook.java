@@ -10,18 +10,29 @@ import chess.enums.Player;
  */
 public class Rook extends ChessPiece {
 
+    /**
+     * Constructor of Rook
+     *
+     * @param player   Belongs to which player
+     * @param position Initial position
+     */
     public Rook(Player player, Position position) {
         super(player, position);
     }
 
-    //The rook can move any number of squares along any rank or file
-    //but may not leap over other pieces.
+    /**
+     * Check if the movement is legal
+     * @param pos Destination position
+     * @return MoveResult
+     */
     @Override
     public MoveResult isLegalMove(Position pos) {
         if (this.getPosition().equals(pos)) {
             return MoveResult.SamePosition;
         }
 
+        // The rook can move any number of squares along any rank or file
+        // but may not leap over other pieces.
         if (this.getPosition().isHorizontal(pos)) {
             return MoveResult.LegalMove;
         } else if (this.getPosition().isVertical(pos)) {

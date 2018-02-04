@@ -5,7 +5,10 @@ import chess.enums.MoveResult;
 import chess.enums.Player;
 import chess.pieces.*;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Board, contains the shape and size of chess board, all chess pieces and the judgement of game ending
@@ -15,14 +18,22 @@ public class Board {
     private int HEIGHT = 8;
     private int WIDTH = 8;
     private ChessPiece[][] board = new ChessPiece[WIDTH][HEIGHT];
-    private Position whiteKingPos = new Position("D8");
     private Position blackKingPos = new Position("E1");
+    private Position whiteKingPos = new Position("E8");
     private Player curPlayer = Player.White;
+    private Set<ChessPiece> blackChessSet = new HashSet<>();
+    private Set<ChessPiece> whiteChessSet = new HashSet<>();
 
+    /**
+     * Constructor of Board
+     */
     public Board() {
         init();
     }
 
+    /**
+     * Create Initial state of chess board
+     */
     private void init() {
         board[0][0] = new Rook(Player.Black, new Position("A1"));
         board[0][1] = new Knight(Player.Black, new Position("B1"));
@@ -43,8 +54,8 @@ public class Board {
         board[7][0] = new Rook(Player.White, new Position("A8"));
         board[7][1] = new Knight(Player.White, new Position("B8"));
         board[7][2] = new Bishop(Player.White, new Position("C8"));
-        board[7][3] = new King(Player.White, whiteKingPos);
-        board[7][4] = new Queen(Player.White, new Position("E8"));
+        board[7][3] = new Queen(Player.White, new Position("D8"));
+        board[7][4] = new King(Player.White, whiteKingPos);
         board[7][5] = new Bishop(Player.White, new Position("F8"));
         board[7][6] = new Knight(Player.White, new Position("G8"));
         board[7][7] = new Rook(Player.White, new Position("H8"));
@@ -57,8 +68,21 @@ public class Board {
         board[6][6] = new Pawn(Player.White, new Position("G7"));
         board[6][7] = new Pawn(Player.White, new Position("H7"));
 
+        for (int i = 0; i < 2; i++) {
+            blackChessSet.addAll(Arrays.asList(board[i]).subList(0, WIDTH));
+        }
+        for (int i = 6; i < 8; i++) {
+            whiteChessSet.addAll(Arrays.asList(board[i]).subList(0, WIDTH));
+        }
     }
 
+    /**
+     * Check if the movement is legal
+     *
+     * @param chessPiece Piece that needs to move
+     * @param pos        Destination position
+     * @return MoveResult
+     */
     public MoveResult isLegalMove(ChessPiece chessPiece, Position pos) {
         // check if the new position off the board
         int x = pos.getX();
@@ -103,6 +127,13 @@ public class Board {
         return moveResult;
     }
 
+    /**
+     * Check if the piece leaps over other pieces
+     *
+     * @param chessPiece Piece that needs to move
+     * @param pos        Destination position
+     * @return true is that the piece leaps over other pieces
+     */
     public boolean isOverPiece(ChessPiece chessPiece, Position pos) {
         if (chessPiece instanceof King) {
             return false;
@@ -191,6 +222,13 @@ public class Board {
         return false;
     }
 
+    /**
+     * Move a piece to specific position
+     *
+     * @param chessPiece Piece that needs to move
+     * @param pos        Destination position
+     * @return MoveResult
+     */
     public MoveResult chessMove(ChessPiece chessPiece, Position pos) {
         Position prePos = chessPiece.getPosition();
         curPlayer = chessPiece.getPlayer();
@@ -210,6 +248,12 @@ public class Board {
         board[preY][preX] = null;
         if (board[y][x] != null) {
             ChessPiece capturedChessPiece = board[y][x];
+            if (capturedChessPiece.getPlayer() == Player.Black) {
+                blackChessSet.remove(capturedChessPiece);
+            } else {
+                whiteChessSet.remove(capturedChessPiece);
+            }
+
             if (capturedChessPiece instanceof King) {
                 if (capturedChessPiece.getPlayer() == Player.Black) {
                     blackKingPos = null;
@@ -224,64 +268,141 @@ public class Board {
         return MoveResult.LegalMove;
     }
 
+    /**
+     * Judge if the game is ended
+     *
+     * @return GameResult
+     */
     public GameResult judge() {
-        if (curPlayer == Player.Black && whiteKingPos == null) {
-            return GameResult.BlackWin;
-        } else if (curPlayer == Player.White && blackKingPos == null) {
+        // check if one side is in checkmate
+        ChessPiece blackKing = getSpecificPositionChess(blackKingPos);
+        ChessPiece whiteKing = getSpecificPositionChess(whiteKingPos);
+        boolean blackCheckmate = checkmate(blackKing);
+        boolean whiteCheckmate = checkmate(whiteKing);
+        if (blackCheckmate && whiteCheckmate) {
+            // stalemate
+            return GameResult.Draw;
+        } else if (blackCheckmate) {
             return GameResult.WhiteWin;
-        }
-
-        boolean canCaptureKing = false;
-        Position captureKingPos;
-        ChessPiece captureKing;
-        if (curPlayer == Player.Black) {
-            captureKingPos = whiteKingPos;
-            captureKing = board[whiteKingPos.getY()][whiteKingPos.getX()];
-        } else {
-            captureKingPos = blackKingPos;
-            captureKing = board[blackKingPos.getY()][blackKingPos.getX()];
-        }
-
-        for (int i = 0; i < HEIGHT; i++) {
-            for (int j = 0; j < WIDTH; j++) {
-                if (board[i][j] != null && board[i][j].getPlayer() == curPlayer) {
-                    MoveResult moveRes = this.isLegalMove(board[i][j], captureKingPos);
-                    if (moveRes == MoveResult.LegalMove || moveRes == MoveResult.Capture) {
-                        canCaptureKing = true;
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (canCaptureKing) {
-            if (!canKingMove(captureKing)) {
-                return GameResult.Draw;
-            }
+        } else if (whiteCheckmate) {
+            return GameResult.BlackWin;
         }
 
         return GameResult.Gaming;
     }
 
-    public boolean canKingMove(ChessPiece king) {
-        Position kingPos = king.getPosition();
-
-        List possibleMovePos = kingPos.aroundPos();
-        for (int i = 0; i < possibleMovePos.size(); i++) {
-            MoveResult moveRes = this.isLegalMove(king, (Position) possibleMovePos.get(i));
-            if (moveRes == MoveResult.LegalMove) {
-                return true;
+    /**
+     * Check if the king is in checkmate
+     *
+     * @param king Selected king
+     * @return true is that the king is in checkmate
+     */
+    public boolean checkmate(ChessPiece king) {
+        Set<ChessPiece> theOtherChessPieceSet;
+        if (king.getPlayer() == Player.Black) {
+            theOtherChessPieceSet = whiteChessSet;
+        } else {
+            theOtherChessPieceSet = blackChessSet;
+        }
+        boolean canCaptureCurrentKing = false;
+        for (ChessPiece theOtherChess : theOtherChessPieceSet) {
+            if (isLegalMove(theOtherChess, king.getPosition()) == MoveResult.LegalMove) {
+                canCaptureCurrentKing = true;
+                break;
             }
         }
 
-        return false;
-
+        if (canCaptureCurrentKing) {
+            if (king.getPlayer() == Player.Black) {
+                return curPlayer == Player.White && ifKingCanNotMove(getSpecificPositionChess(blackKingPos));
+            } else {
+                return curPlayer == Player.Black && ifKingCanNotMove(getSpecificPositionChess(whiteKingPos));
+            }
+        } else {
+            return false;
+        }
     }
 
+    /**
+     * Check if the king can move to other position
+     *
+     * @param king selected King
+     * @return true is that the king can move to other position
+     */
+    private boolean ifKingCanNotMove(ChessPiece king) {
+        Set<ChessPiece> theOtherChessPieceSet;
+        if (king.getPlayer() == Player.Black) {
+            theOtherChessPieceSet = getWhiteChessSet();
+        } else {
+            theOtherChessPieceSet = getBlackChessSet();
+        }
+
+        Position kingPos = king.getPosition();
+        List<Position> possibleMovePos = kingPos.aroundPos();
+        for (Position position : possibleMovePos) {
+            if (isLegalMove(king, position) == MoveResult.LegalMove) {
+                ChessPiece targetPieceBackup = getSpecificPositionChess(position);
+                chessMove(king, position);
+
+                boolean canOtherChessPieceCaptureKing = false;
+                for (ChessPiece theOtherChess : theOtherChessPieceSet) {
+                    if (isLegalMove(theOtherChess, position) == MoveResult.LegalMove) {
+                        canOtherChessPieceCaptureKing = true;
+                        break;
+                    }
+                }
+
+                // backup
+                chessMove(king, kingPos);
+                if (targetPieceBackup != null) {
+                    chessMove(targetPieceBackup, position);
+                    if (targetPieceBackup.getPlayer() == Player.Black) {
+                        blackChessSet.add(targetPieceBackup);
+                    } else {
+                        whiteChessSet.add(targetPieceBackup);
+                    }
+                }
+
+                if (!canOtherChessPieceCaptureKing) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Get the chess piece in specific position
+     *
+     * @param position Specific position
+     * @return The chess piece in specific position
+     */
     public ChessPiece getSpecificPositionChess(Position position) {
         return board[position.getY()][position.getX()];
     }
 
+    /**
+     * Get the set of black chess
+     *
+     * @return The set of black chess
+     */
+    public Set<ChessPiece> getBlackChessSet() {
+        return blackChessSet;
+    }
+
+    /**
+     * Get the set of white chess
+     *
+     * @return The set of white chess
+     */
+    public Set<ChessPiece> getWhiteChessSet() {
+        return whiteChessSet;
+    }
+
+    /**
+     * Print the board to console for testing
+     */
     public void print() {
         System.out.println("\tA\tB\tC\tD\tE\tF\tG\tH");
         for (int i = 0; i < HEIGHT; i++) {
