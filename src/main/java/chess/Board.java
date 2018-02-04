@@ -275,18 +275,23 @@ public class Board {
      */
     public GameResult judge() {
         // check if one side is in checkmate
-        ChessPiece blackKing = getSpecificPositionChess(blackKingPos);
-        ChessPiece whiteKing = getSpecificPositionChess(whiteKingPos);
-        boolean blackCheckmate = checkmate(blackKing);
-        boolean whiteCheckmate = checkmate(whiteKing);
-        if (blackCheckmate && whiteCheckmate) {
-            // stalemate
-            return GameResult.Draw;
-        } else if (blackCheckmate) {
-            return GameResult.WhiteWin;
-        } else if (whiteCheckmate) {
-            return GameResult.BlackWin;
+        ChessPiece capturedKing = null;
+        if(curPlayer == Player.White){
+            capturedKing = getSpecificPositionChess(blackKingPos);
         }
+        else{
+            capturedKing = getSpecificPositionChess(whiteKingPos);
+        }
+        boolean isCheckmate = checkmate(capturedKing);
+        if(isCheckmate){
+            if(curPlayer == Player.White){
+                return GameResult.WhiteWin;
+            }
+            else{
+                return GameResult.BlackWin;
+            }
+        }
+        //平局 stalemate
 
         return GameResult.Gaming;
     }
@@ -298,29 +303,82 @@ public class Board {
      * @return true is that the king is in checkmate
      */
     public boolean checkmate(ChessPiece king) {
-        Set<ChessPiece> theOtherChessPieceSet;
+        Set<ChessPiece> opponentChessPieceSet, capturedChessPieceSet;
+        Set<ChessPiece> checkmateChessPieceSet = new HashSet<>();
+
         if (king.getPlayer() == Player.Black) {
-            theOtherChessPieceSet = whiteChessSet;
+            capturedChessPieceSet = blackChessSet;
+            opponentChessPieceSet = whiteChessSet;
         } else {
-            theOtherChessPieceSet = blackChessSet;
+            capturedChessPieceSet = whiteChessSet;
+            opponentChessPieceSet = blackChessSet;
         }
+
+        // check if the opponent chess pieces can capture the king
+        // if they can, record them
         boolean canCaptureCurrentKing = false;
-        for (ChessPiece theOtherChess : theOtherChessPieceSet) {
-            if (isLegalMove(theOtherChess, king.getPosition()) == MoveResult.LegalMove) {
+        for (ChessPiece opponentChess : opponentChessPieceSet) {
+            if (isLegalMove(opponentChess, king.getPosition()) == MoveResult.LegalMove) {
                 canCaptureCurrentKing = true;
-                break;
+                checkmateChessPieceSet.add(opponentChess);
             }
         }
 
+        //4看本方棋子能否去到那条路上
         if (canCaptureCurrentKing) {
-            if (king.getPlayer() == Player.Black) {
-                return curPlayer == Player.White && ifKingCanNotMove(getSpecificPositionChess(blackKingPos));
-            } else {
-                return curPlayer == Player.Black && ifKingCanNotMove(getSpecificPositionChess(whiteKingPos));
+            if(ifKingCanNotMove(king)){
+                if(checkmateChessPieceSet.size() > 1){
+                    return true;
+                }
+                else{
+                    ChessPiece checkmatePiece = null;
+                    for(ChessPiece piece: checkmateChessPieceSet){
+                        checkmatePiece = piece;
+                    }
+                    if(!ifCheckmatePieceCanBeCaptured(checkmatePiece, capturedChessPieceSet)){
+                        if(!ifCheckmatePieceCanBeBlocked(checkmatePiece, king, capturedChessPieceSet)){
+                            return true;
+                        }
+                    }
+                }
             }
-        } else {
+        }
+
+        return false;
+    }
+
+    public boolean ifCheckmatePieceCanBeCaptured(ChessPiece checkmatePiece, Set<ChessPiece> capturedPieceSet){
+        for(ChessPiece capturedPiece: capturedPieceSet){
+            if(isLegalMove(capturedPiece, checkmatePiece.getPosition()) == MoveResult.LegalMove){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean ifCheckmatePieceCanBeBlocked(ChessPiece checkmatePiece, ChessPiece king, Set<ChessPiece> capturedPieceSet){
+        if(checkmatePiece instanceof Knight){
             return false;
         }
+
+        Path checkmatePath = new Path(checkmatePiece.getPosition(), king.getPosition());
+        Set<Position> checkmatePathPositions = checkmatePath.getPositions();
+        checkmatePathPositions.remove(checkmatePiece.getPosition());
+        checkmatePathPositions.remove(king.getPosition());
+        if(checkmatePathPositions.size() == 0){
+            return false;
+        }
+
+        for(ChessPiece capturedPiece: capturedPieceSet){
+            for(Position checkmatePathPosition: checkmatePathPositions){
+                if(isLegalMove(capturedPiece, checkmatePathPosition) == MoveResult.LegalMove){
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -342,7 +400,8 @@ public class Board {
         for (Position position : possibleMovePos) {
             if (isLegalMove(king, position) == MoveResult.LegalMove) {
                 ChessPiece targetPieceBackup = getSpecificPositionChess(position);
-                chessMove(king, position);
+                board[kingPos.getY()][kingPos.getX()] = null;
+                board[position.getY()][position.getX()] = king;
 
                 boolean canOtherChessPieceCaptureKing = false;
                 for (ChessPiece theOtherChess : theOtherChessPieceSet) {
@@ -353,14 +412,9 @@ public class Board {
                 }
 
                 // backup
-                chessMove(king, kingPos);
+                board[kingPos.getY()][kingPos.getX()] = king;
                 if (targetPieceBackup != null) {
-                    chessMove(targetPieceBackup, position);
-                    if (targetPieceBackup.getPlayer() == Player.Black) {
-                        blackChessSet.add(targetPieceBackup);
-                    } else {
-                        whiteChessSet.add(targetPieceBackup);
-                    }
+                    board[position.getY()][position.getX()] = targetPieceBackup;
                 }
 
                 if (!canOtherChessPieceCaptureKing) {
@@ -417,5 +471,13 @@ public class Board {
             System.out.println();
         }
         System.out.println("==================================");
+    }
+
+    public int getWIDTH(){
+        return WIDTH;
+    }
+
+    public int getHEIGHT(){
+        return HEIGHT;
     }
 }

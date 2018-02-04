@@ -3,6 +3,9 @@ package chess;
 import chess.enums.MoveResult;
 import chess.enums.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * All kinds of chess pieces
  */
@@ -52,4 +55,21 @@ public abstract class ChessPiece {
      * @return MoveResult
      */
     public abstract MoveResult isLegalMove(Position pos);
+
+
+    public List genNextStep(Board board){
+        List nextStep = new ArrayList();
+
+        for(int i = 0; i < board.getWIDTH(); i++){
+            for(int j = 0; j < board.getHEIGHT(); j++){
+                Position pos = new Position(i, j);
+                MoveResult moveRes = board.isLegalMove(this, pos);
+                if(moveRes == MoveResult.LegalMove){
+                    nextStep.add(pos);
+                }
+            }
+        }
+
+        return nextStep;
+    }
 }
