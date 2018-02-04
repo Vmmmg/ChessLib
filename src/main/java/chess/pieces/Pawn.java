@@ -41,7 +41,6 @@ public class Pawn extends ChessPiece {
             if (this.isForward(pos)) {
                 int distance = this.getPosition().distance(pos);
                 if (isFirstStep) {
-                    isFirstStep = false;
                     if (distance == 1 || distance == 2) {
                         return MoveResult.LegalMove;
                     }
@@ -80,5 +79,14 @@ public class Pawn extends ChessPiece {
     @Override
     public String toString() {
         return "P";
+    }
+
+    @Override
+    public void move(Position pos){
+        if(isFirstStep){
+            isFirstStep = false;
+        }
+
+        this.setPosition(pos);
     }
 }
