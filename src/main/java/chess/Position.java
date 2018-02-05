@@ -23,6 +23,7 @@ public class Position {
 
     /**
      * Constructor of Position
+     *
      * @param x Horizontal position
      * @param y Vertical position
      */
@@ -33,6 +34,7 @@ public class Position {
 
     /**
      * Get horizontal position
+     *
      * @return Horizontal position
      */
     public int getX() {
@@ -41,6 +43,7 @@ public class Position {
 
     /**
      * Get vertical position
+     *
      * @return Vertical position
      */
     public int getY() {
@@ -49,6 +52,7 @@ public class Position {
 
     /**
      * Check two position is equal
+     *
      * @param pos The other position
      * @return true is that two position is equal
      */
@@ -60,6 +64,7 @@ public class Position {
 
     /**
      * Get the distance to the other position
+     *
      * @param pos The other position
      * @return distance in Integer Number
      */
@@ -77,6 +82,7 @@ public class Position {
 
     /**
      * Check if two positions are horizontal
+     *
      * @param pos the other position
      * @return true is that two positions are horizontal
      */
@@ -86,6 +92,7 @@ public class Position {
 
     /**
      * Check if two positions are vertical
+     *
      * @param pos the other position
      * @return true is that two positions are vertical
      */
@@ -95,6 +102,7 @@ public class Position {
 
     /**
      * Check if two positions are diagonal
+     *
      * @param pos the other position
      * @return true is that two positions are diagonal
      */
@@ -104,6 +112,7 @@ public class Position {
 
     /**
      * Check if two positions are LShape
+     *
      * @param pos the other position
      * @return true is that two positions are LShape
      */
@@ -119,6 +128,7 @@ public class Position {
 
     /**
      * Get around position of this position
+     *
      * @return Around position list
      */
     public List<Position> aroundPos() {

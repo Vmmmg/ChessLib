@@ -25,6 +25,7 @@ public class Pawn extends ChessPiece {
 
     /**
      * Check if the movement is legal
+     *
      * @param pos Destination position
      * @return MoveResult
      */
@@ -63,6 +64,7 @@ public class Pawn extends ChessPiece {
 
     /**
      * Check if the pawn is moving forward
+     *
      * @param pos Destination position
      * @return true is that the pawn is moving forward
      */
@@ -82,8 +84,8 @@ public class Pawn extends ChessPiece {
     }
 
     @Override
-    public void move(Position pos){
-        if(isFirstStep){
+    public void move(Position pos) {
+        if (isFirstStep) {
             isFirstStep = false;
         }
 
