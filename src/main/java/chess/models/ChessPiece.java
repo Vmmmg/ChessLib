@@ -27,6 +27,7 @@ public abstract class ChessPiece {
 
     /**
      * Get current position
+     *
      * @return current position
      */
     public Position getPosition() {
@@ -34,7 +35,17 @@ public abstract class ChessPiece {
     }
 
     /**
+     * Set chess piece position
+     *
+     * @param position specific position
+     */
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    /**
      * Get player this piece belongs to
+     *
      * @return player this piece belongs to
      */
     public Player getPlayer() {
@@ -42,15 +53,8 @@ public abstract class ChessPiece {
     }
 
     /**
-     * Set chess piece position
-     * @param position specific position
-     */
-    public void setPosition(Position position){
-        this.position = position;
-    }
-
-    /**
      * Move to specific position
+     *
      * @param position specific position
      */
     public void move(Position position) {
@@ -59,6 +63,7 @@ public abstract class ChessPiece {
 
     /**
      * Check if the movement is legal
+     *
      * @param pos destination position
      * @return MoveResult
      */
@@ -70,14 +75,14 @@ public abstract class ChessPiece {
      * @param board the chess board
      * @return all possible next steps of the chess
      */
-    public Set<Position> genNextStep(Board board){
-        Set<Position> nextStep = new HashSet<Position>();
+    public Set<Position> genNextStep(Board board) {
+        Set<Position> nextStep = new HashSet<>();
 
-        for(int i = 0; i < board.getWIDTH(); i++){
-            for(int j = 0; j < board.getHEIGHT(); j++){
+        for (int i = 0; i < board.getWIDTH(); i++) {
+            for (int j = 0; j < board.getHEIGHT(); j++) {
                 Position pos = new Position(i, j);
                 MoveResult moveRes = board.isLegalMove(this, pos);
-                if(moveRes == MoveResult.LegalMove){
+                if (moveRes == MoveResult.LegalMove) {
                     nextStep.add(pos);
                 }
             }

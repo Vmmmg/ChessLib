@@ -22,6 +22,7 @@ public class Rook extends ChessPiece {
 
     /**
      * Check if the movement is legal
+     *
      * @param pos Destination position
      * @return MoveResult
      */
