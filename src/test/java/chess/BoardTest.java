@@ -1,7 +1,10 @@
 package chess;
 
-import chess.enums.GameResult;
-import chess.enums.MoveResult;
+import chess.models.Board;
+import chess.models.ChessPiece;
+import chess.models.Position;
+import chess.models.enums.GameResult;
+import chess.models.enums.MoveResult;
 import org.junit.Before;
 import org.junit.Test;
 

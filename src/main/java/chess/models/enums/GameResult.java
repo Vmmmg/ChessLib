@@ -1,4 +1,4 @@
-package chess.enums;
+package chess.models.enums;
 
 public enum GameResult {
     BlackWin, // Black wins the game.

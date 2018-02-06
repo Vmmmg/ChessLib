@@ -1,11 +1,9 @@
-package chess;
+package chess.models;
 
-import chess.enums.MoveResult;
-import chess.enums.Player;
+import chess.models.enums.MoveResult;
+import chess.models.enums.Player;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**

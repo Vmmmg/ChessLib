@@ -1,8 +1,9 @@
 package chess.pieces;
 
-import chess.Position;
-import chess.enums.MoveResult;
-import chess.enums.Player;
+import chess.models.Position;
+import chess.models.enums.MoveResult;
+import chess.models.enums.Player;
+import chess.models.pieces.Knight;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

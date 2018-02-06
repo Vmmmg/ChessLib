@@ -1,4 +1,4 @@
-package chess.enums;
+package chess.models.enums;
 
 public enum MoveResult {
     LegalMove, // Movement is legal.
