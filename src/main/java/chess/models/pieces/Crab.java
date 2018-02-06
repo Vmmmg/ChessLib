@@ -1,28 +1,26 @@
-package chess.pieces;
+package chess.models.pieces;
 
-import chess.ChessPiece;
-import chess.Position;
-import chess.enums.MoveResult;
-import chess.enums.Player;
+import chess.models.ChessPiece;
+import chess.models.Position;
+import chess.models.enums.MoveResult;
+import chess.models.enums.Player;
 
 /**
- * ChessPiece piece: Bishop
+ * Custom chess piece: Crab
  */
-public class Bishop extends ChessPiece {
-
+public class Crab extends ChessPiece {
     /**
-     * Constructor of Bishop
+     * Constructor of ChessPiece
      *
      * @param player   Belongs to which player
      * @param position Initial position
      */
-    public Bishop(Player player, Position position) {
+    public Crab(Player player, Position position) {
         super(player, position);
     }
 
     /**
      * Check if the movement is legal
-     *
      * @param pos Destination position
      * @return MoveResult
      */
@@ -32,17 +30,12 @@ public class Bishop extends ChessPiece {
             return MoveResult.SamePosition;
         }
 
-        // The bishop can move any number of squares diagonally
+        // The bishop can move any number of squares horizontally
         // but may not leap over other pieces.
-        if (this.getPosition().isDiagonal(pos)) {
+        if (this.getPosition().isHorizontal(pos)) {
             return MoveResult.LegalMove;
         }
 
         return MoveResult.IllegalMove;
-    }
-
-    @Override
-    public String toString() {
-        return "B";
     }
 }

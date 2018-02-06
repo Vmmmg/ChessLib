@@ -1,28 +1,26 @@
-package chess.pieces;
+package chess.models.pieces;
 
-import chess.ChessPiece;
-import chess.Position;
-import chess.enums.MoveResult;
-import chess.enums.Player;
+import chess.models.ChessPiece;
+import chess.models.Position;
+import chess.models.enums.MoveResult;
+import chess.models.enums.Player;
 
 /**
- * ChessPiece piece: Rook
+ * Custom chess piece: Straight
  */
-public class Rook extends ChessPiece {
-
+public class Straight extends ChessPiece {
     /**
-     * Constructor of Rook
+     * Constructor of ChessPiece
      *
      * @param player   Belongs to which player
      * @param position Initial position
      */
-    public Rook(Player player, Position position) {
+    public Straight(Player player, Position position) {
         super(player, position);
     }
 
     /**
      * Check if the movement is legal
-     *
      * @param pos Destination position
      * @return MoveResult
      */
@@ -32,19 +30,12 @@ public class Rook extends ChessPiece {
             return MoveResult.SamePosition;
         }
 
-        // The rook can move any number of squares along any rank or file
+        // The bishop can move any number of squares vertically
         // but may not leap over other pieces.
-        if (this.getPosition().isHorizontal(pos)) {
-            return MoveResult.LegalMove;
-        } else if (this.getPosition().isVertical(pos)) {
+        if (this.getPosition().isVertical(pos)) {
             return MoveResult.LegalMove;
         }
 
         return MoveResult.IllegalMove;
-    }
-
-    @Override
-    public String toString() {
-        return "R";
     }
 }
