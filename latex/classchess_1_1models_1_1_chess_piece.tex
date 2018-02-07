@@ -1,0 +1,156 @@
+\hypertarget{classchess_1_1models_1_1_chess_piece}{}\section{chess.\+models.\+Chess\+Piece Class Reference}
+\label{classchess_1_1models_1_1_chess_piece}\index{chess.\+models.\+Chess\+Piece@{chess.\+models.\+Chess\+Piece}}
+Inheritance diagram for chess.\+models.\+Chess\+Piece\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{classchess_1_1models_1_1_chess_piece}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a59beae5e1f384747a201a4c417ca0afb}{Chess\+Piece}} (\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a3bcc8a24667318b5aab8c146adcc3eb7}{player}}, \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}{position}})
+\item 
+\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a4ce783eeb2ec6d5cd83af05c11fe8cdb}{get\+Position}} ()
+\item 
+void \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a2e3c62bde5041ca0aa53e0476cc8b600}{set\+Position}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}{position}})
+\item 
+\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_aaa3cef5d52e4a228dc01f91133a6c437}{get\+Player}} ()
+\item 
+void \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a77865fbd52257338c4e376af525155c7}{move}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}{position}})
+\item 
+abstract \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_move_result}{Move\+Result}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a60088166dd440bf51de4514c3e57841e}{is\+Legal\+Move}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} pos)
+\item 
+Set$<$ \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} $>$ \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_afd359313e83bdef860f9f8236435522f}{gen\+Next\+Step}} (\mbox{\hyperlink{classchess_1_1models_1_1_board}{Board}} board)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a3bcc8a24667318b5aab8c146adcc3eb7}{player}}
+\item 
+\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}{position}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+All kinds of chess pieces 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_a59beae5e1f384747a201a4c417ca0afb}\label{classchess_1_1models_1_1_chess_piece_a59beae5e1f384747a201a4c417ca0afb}} 
+\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!Chess\+Piece@{Chess\+Piece}}
+\index{Chess\+Piece@{Chess\+Piece}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
+\subsubsection{\texorpdfstring{Chess\+Piece()}{ChessPiece()}}
+{\footnotesize\ttfamily chess.\+models.\+Chess\+Piece.\+Chess\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}}}]{player,  }\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{position }\end{DoxyParamCaption})}
+
+Constructor of \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Belongs to which player \\
+\hline
+{\em position} & Initial position \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_afd359313e83bdef860f9f8236435522f}\label{classchess_1_1models_1_1_chess_piece_afd359313e83bdef860f9f8236435522f}} 
+\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!gen\+Next\+Step@{gen\+Next\+Step}}
+\index{gen\+Next\+Step@{gen\+Next\+Step}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
+\subsubsection{\texorpdfstring{gen\+Next\+Step()}{genNextStep()}}
+{\footnotesize\ttfamily Set$<$\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}$>$ chess.\+models.\+Chess\+Piece.\+gen\+Next\+Step (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classchess_1_1models_1_1_board}{Board}}}]{board }\end{DoxyParamCaption})}
+
+Generate all possible next steps of the chess
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & the chess board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+all possible next steps of the chess 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_aaa3cef5d52e4a228dc01f91133a6c437}\label{classchess_1_1models_1_1_chess_piece_aaa3cef5d52e4a228dc01f91133a6c437}} 
+\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!get\+Player@{get\+Player}}
+\index{get\+Player@{get\+Player}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
+\subsubsection{\texorpdfstring{get\+Player()}{getPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} chess.\+models.\+Chess\+Piece.\+get\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get player this piece belongs to
+
+\begin{DoxyReturn}{Returns}
+player this piece belongs to 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_a4ce783eeb2ec6d5cd83af05c11fe8cdb}\label{classchess_1_1models_1_1_chess_piece_a4ce783eeb2ec6d5cd83af05c11fe8cdb}} 
+\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} chess.\+models.\+Chess\+Piece.\+get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get current position
+
+\begin{DoxyReturn}{Returns}
+current position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_a60088166dd440bf51de4514c3e57841e}\label{classchess_1_1models_1_1_chess_piece_a60088166dd440bf51de4514c3e57841e}} 
+\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!is\+Legal\+Move@{is\+Legal\+Move}}
+\index{is\+Legal\+Move@{is\+Legal\+Move}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
+\subsubsection{\texorpdfstring{is\+Legal\+Move()}{isLegalMove()}}
+{\footnotesize\ttfamily abstract \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_move_result}{Move\+Result}} chess.\+models.\+Chess\+Piece.\+is\+Legal\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+Check if the movement is legal
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & destination position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Move\+Result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_a77865fbd52257338c4e376af525155c7}\label{classchess_1_1models_1_1_chess_piece_a77865fbd52257338c4e376af525155c7}} 
+\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!move@{move}}
+\index{move@{move}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void chess.\+models.\+Chess\+Piece.\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{position }\end{DoxyParamCaption})}
+
+Move to specific position
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & specific position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_a2e3c62bde5041ca0aa53e0476cc8b600}\label{classchess_1_1models_1_1_chess_piece_a2e3c62bde5041ca0aa53e0476cc8b600}} 
+\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}}
+{\footnotesize\ttfamily void chess.\+models.\+Chess\+Piece.\+set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{position }\end{DoxyParamCaption})}
+
+Set chess piece position
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & specific position \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_a3bcc8a24667318b5aab8c146adcc3eb7}\label{classchess_1_1models_1_1_chess_piece_a3bcc8a24667318b5aab8c146adcc3eb7}} 
+\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!player@{player}}
+\index{player@{player}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
+\subsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} chess.\+models.\+Chess\+Piece.\+player\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}\label{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}} 
+\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!position@{position}}
+\index{position@{position}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
+\subsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} chess.\+models.\+Chess\+Piece.\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+G\+:/\+Chess/src/main/java/chess/models/\mbox{\hyperlink{_chess_piece_8java}{Chess\+Piece.\+java}}\end{DoxyCompactItemize}
