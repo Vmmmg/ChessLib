@@ -21,8 +21,8 @@ public class Board {
     private Position blackKingPos = new Position("E1");
     private Position whiteKingPos = new Position("E8");
     private Player curPlayer = Player.White;
-    private Set<ChessPiece> blackChessSet = new HashSet<>();
-    private Set<ChessPiece> whiteChessSet = new HashSet<>();
+    private Set<ChessPiece> blackChessSet = new HashSet<>();   //set of black chesspieces on the board.
+    private Set<ChessPiece> whiteChessSet = new HashSet<>();  // set of white chesspieces on the board.
 
     /**
      * Constructor of Board
@@ -180,51 +180,44 @@ public class Board {
                 }
             }
         } else if (chessPos.isDiagonal(pos)) {
-            int startX, endX, checkY;
-
             if (chessPos.getX() < pos.getX()) {
-                startX = chessPos.getX() + 1;
-                endX = pos.getX();
-                if (chessPos.getY() < pos.getY()) {
-                    checkY = chessPos.getY() + 1;
-                    for (int i = startX; i < endX; i++) {
-                        if (board[checkY][i] != null) {
-                            return true;
-                        }
-                        checkY++;
-                    }
-                } else {
-                    checkY = chessPos.getY() - 1;
-                    for (int i = startX; i < endX; i++) {
-                        if (board[checkY][i] != null) {
-                            return true;
-                        }
-                        checkY--;
-                    }
-                }
+                return overPiecesDiagonalChecker(pos, chessPos);
             } else {
-                startX = pos.getX() + 1;
-                endX = chessPos.getX();
-                if (pos.getY() < chessPos.getY()) {
-                    checkY = pos.getY() + 1;
-                    for (int i = startX; i < endX; i++) {
-                        if (board[checkY][i] != null) {
-                            return true;
-                        }
-                        checkY++;
-                    }
-                } else {
-                    checkY = pos.getY() - 1;
-                    for (int i = startX; i < endX; i++) {
-                        if (board[checkY][i] != null) {
-                            return true;
-                        }
-                        checkY--;
-                    }
-                }
+                return overPiecesDiagonalChecker(chessPos, pos);
             }
         }
 
+        return false;
+    }
+
+    /**
+     * helper function to check if the diagonal move isOverPieces.
+     * @param pos The position with greater x-value compared to chessPos.
+     * @param chessPos The position with smaller x-value compared to chessPos.
+     * @return true if the disgonal move is over other pieces, false otherwise.
+     */
+    private boolean overPiecesDiagonalChecker(Position pos, Position chessPos) {
+
+        int startX, endX, checkY;
+        startX = chessPos.getX() + 1;
+        endX = pos.getX();
+        if (chessPos.getY() < pos.getY()) {
+            checkY = chessPos.getY() + 1;
+            for (int i = startX; i < endX; i++) {
+                if (board[checkY][i] != null) {
+                    return true;
+                }
+                checkY++;
+            }
+        } else {
+            checkY = chessPos.getY() - 1;
+            for (int i = startX; i < endX; i++) {
+                if (board[checkY][i] != null) {
+                    return true;
+                }
+                checkY--;
+            }
+        }
         return false;
     }
 
@@ -405,7 +398,7 @@ public class Board {
     }
 
     /**
-     * Check if the king can move to other position
+     * Check if the king can move to other position(i.e. escape under check).
      *
      * @param king selected King
      * @return true is that the king can move to other position
@@ -426,6 +419,7 @@ public class Board {
                 board[kingPos.getY()][kingPos.getX()] = null;
                 board[position.getY()][position.getX()] = king;
 
+                //check if king still can be captured after moving.
                 boolean canOtherChessPieceCaptureKing = false;
                 for (ChessPiece theOtherChess : theOtherChessPieceSet) {
                     if (isLegalMove(theOtherChess, position) == MoveResult.LegalMove) {
@@ -433,7 +427,8 @@ public class Board {
                         break;
                     }
                 }
-                // backup
+
+                // King backup to original position and cleanup for moving.
                 board[kingPos.getY()][kingPos.getX()] = king;
                 if (targetPieceBackup != null) {
                     board[position.getY()][position.getX()] = targetPieceBackup;

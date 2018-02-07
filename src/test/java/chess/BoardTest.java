@@ -87,25 +87,25 @@ public class BoardTest {
 
     @Test
     public void judge2() {
-        ChessPiece blackRook = board.getSpecificPositionChess(new Position("A1"));
-        board.chessMove(blackRook, new Position("A7"));
-        board.chessMove(blackRook, new Position("B7"));
-        board.chessMove(blackRook, new Position("C7"));
-        board.chessMove(blackRook, new Position("D7"));
-        board.chessMove(blackRook, new Position("E7"));
-        board.chessMove(blackRook, new Position("F7"));
-        board.chessMove(blackRook, new Position("G7"));
-        board.chessMove(blackRook, new Position("H7"));
-        board.chessMove(blackRook, new Position("H8"));
-        board.chessMove(blackRook, new Position("G8"));
-        board.chessMove(blackRook, new Position("F8"));
-        board.chessMove(blackRook, new Position("D8"));
-        board.chessMove(blackRook, new Position("C8"));
-        board.chessMove(blackRook, new Position("B8"));
-        board.chessMove(blackRook, new Position("A8"));
-        blackRook = board.getSpecificPositionChess(new Position("H1"));
-        board.chessMove(blackRook, new Position("H7"));
-        board.print();
+        ChessPiece blackRook1 = board.getSpecificPositionChess(new Position("A1"));
+        ChessPiece blackRook2 = board.getSpecificPositionChess(new Position("H1"));
+        board.chessMove(blackRook1, new Position("A7"));
+        board.chessMove(blackRook1, new Position("B7"));
+        board.chessMove(blackRook1, new Position("C7"));
+        board.chessMove(blackRook1, new Position("D7"));
+        board.chessMove(blackRook1, new Position("E7"));
+        board.chessMove(blackRook1, new Position("F7"));
+        board.chessMove(blackRook1, new Position("G7"));
+        board.chessMove(blackRook1, new Position("H7"));
+        board.chessMove(blackRook1, new Position("H8"));
+        board.chessMove(blackRook1, new Position("G8"));
+        board.chessMove(blackRook1, new Position("F8"));
+        board.chessMove(blackRook1, new Position("D8"));
+        board.chessMove(blackRook1, new Position("C8"));
+        board.chessMove(blackRook1, new Position("B8"));
+        board.chessMove(blackRook1, new Position("A8"));
+        board.chessMove(blackRook2, new Position("H7"));
+
         assertEquals(board.judge(), GameResult.BlackWin);
     }
 
