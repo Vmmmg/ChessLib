@@ -1,12 +1,16 @@
 package chess.controllers;
 
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class BoardController extends Application{
+public class BoardController extends Application {
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Board.fxml"));
@@ -16,11 +20,5 @@ public class BoardController extends Application{
         primaryStage.sizeToScene();
         primaryStage.setResizable(false);
         primaryStage.show();
-
-
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

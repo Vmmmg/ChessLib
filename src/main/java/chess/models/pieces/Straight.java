@@ -9,6 +9,7 @@ import chess.models.enums.Player;
  * Custom chess piece: Straight
  */
 public class Straight extends ChessPiece {
+
     /**
      * Constructor of ChessPiece
      *
@@ -21,6 +22,7 @@ public class Straight extends ChessPiece {
 
     /**
      * Check if the movement is legal
+     *
      * @param pos Destination position
      * @return MoveResult
      */

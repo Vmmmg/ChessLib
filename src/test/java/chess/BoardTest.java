@@ -153,7 +153,7 @@ public class BoardTest {
     }
 
     @Test
-    public void judge4(){
+    public void judge4() {
         ChessPiece blackKing = board.getSpecificPositionChess(new Position("E1"));
         ChessPiece blackPawn = board.getSpecificPositionChess(new Position("A2"));
         ChessPiece whitePawn = board.getSpecificPositionChess(new Position("A7"));

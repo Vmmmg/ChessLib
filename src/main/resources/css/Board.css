@@ -1,31 +1,31 @@
-.white_back{
+.white_back {
     -fx-background-color: white;
 }
 
-.black_back{
+.black_back {
     -fx-background-color: black;
 }
 
-.black_btn{
+.black_btn {
     -fx-background-color: black;
     -fx-border-color: grey;
     -fx-text-fill: white;
 }
 
-.white_btn{
+.white_btn {
     -fx-background-color: white;
     -fx-border-color: grey;
     -fx-text-fill: black;
 }
 
-.button{
+.button {
     -fx-background-radius: 50%;
     -fx-border-radius: 50%;
     -fx-pref-width: 85px;
     -fx-pref-height: 85px;
 }
 
-.button:hover{
+.button:hover {
     -fx-cursor: hand;
     -fx-border-color: red;
 }

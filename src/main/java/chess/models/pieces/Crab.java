@@ -9,6 +9,7 @@ import chess.models.enums.Player;
  * Custom chess piece: Crab
  */
 public class Crab extends ChessPiece {
+
     /**
      * Constructor of ChessPiece
      *
@@ -21,6 +22,7 @@ public class Crab extends ChessPiece {
 
     /**
      * Check if the movement is legal
+     *
      * @param pos Destination position
      * @return MoveResult
      */

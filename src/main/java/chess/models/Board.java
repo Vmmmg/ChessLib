@@ -192,7 +192,8 @@ public class Board {
 
     /**
      * helper function to check if the diagonal move isOverPieces.
-     * @param pos The position with greater x-value compared to chessPos.
+     *
+     * @param pos      The position with greater x-value compared to chessPos.
      * @param chessPos The position with smaller x-value compared to chessPos.
      * @return true if the disgonal move is over other pieces, false otherwise.
      */
