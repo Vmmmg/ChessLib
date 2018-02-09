@@ -14,7 +14,7 @@ public class BoardController extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Board.fxml"));
-        Scene scene = new Scene(loader.load(), 680, 712);
+        Scene scene = new Scene(loader.load());
         primaryStage.setTitle("Chess");
         primaryStage.setScene(scene);
         primaryStage.sizeToScene();

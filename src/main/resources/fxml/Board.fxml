@@ -3,27 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" stylesheets="@../css/Board.css" xmlns="http://javafx.com/javafx/8.0.121"
+            minWidth="-Infinity" stylesheets="@../css/Board.css" xmlns="http://javafx.com/javafx/8"
             fx:controller="chess.controllers.BoardController">
-    <top>
-        <GridPane BorderPane.alignment="CENTER">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="641.0" minWidth="10.0" prefWidth="632.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="48.0"/>
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints/>
-            </rowConstraints>
-            <children>
-                <MenuBar>
-                    <menus>
-                        <Menu mnemonicParsing="false" text="File">
-                        </Menu>
-                    </menus>
-                </MenuBar>
-            </children>
-        </GridPane>
-    </top>
     <center>
         <GridPane prefHeight="680.0" prefWidth="680.0" styleClass="white_back" BorderPane.alignment="CENTER">
             <columnConstraints>
@@ -47,226 +28,265 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-                <Pane fx:id="square00" prefHeight="200.0" prefWidth="200.0">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="0"
+                      GridPane.rowIndex="0">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" styleClass="black_btn"
-                                text="Rook"/>
+                        <Button mnemonicParsing="false" styleClass="black_rook"/>
                     </children>
                 </Pane>
-                <Pane fx:id="square01" prefHeight="200.0" prefWidth="200.0" styleClass="black_back"
-                      GridPane.columnIndex="1">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="1"
+                      GridPane.rowIndex="0">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Knight"/>
+                        <Button mnemonicParsing="false" styleClass="black_knight"/>
                     </children>
                 </Pane>
-                <Pane fx:id="square02" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="2"
+                      GridPane.rowIndex="0">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Bishop"/>
+                        <Button mnemonicParsing="false" styleClass="black_bishop"/>
                     </children>
                 </Pane>
-                <Pane fx:id="square03" prefHeight="200.0" prefWidth="200.0" styleClass="black_back"
-                      GridPane.columnIndex="3">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="3"
+                      GridPane.rowIndex="0">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="King"/>
+                        <Button mnemonicParsing="false" styleClass="black_queen"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="4"
+                      GridPane.rowIndex="0">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Queen"/>
+                        <Button mnemonicParsing="false" styleClass="black_king"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="5">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="5"
+                      GridPane.rowIndex="0">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Bishop"/>
+                        <Button mnemonicParsing="false" styleClass="black_bishop"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="6"
+                      GridPane.rowIndex="0">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Knight"/>
+                        <Button mnemonicParsing="false" styleClass="black_knight"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="7">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="7"
+                      GridPane.rowIndex="0">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Rook"/>
+                        <Button mnemonicParsing="false" styleClass="black_rook"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.rowIndex="1">
-                    <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Pawn"/>
-                    </children>
-                </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="2"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="0"
                       GridPane.rowIndex="1">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Pawn"/>
+                        <Button mnemonicParsing="false" styleClass="black_pawn"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                    <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Pawn"/>
-                    </children>
-                </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="4"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="1"
                       GridPane.rowIndex="1">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Pawn"/>
+                        <Button mnemonicParsing="false" styleClass="black_pawn"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                    <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Pawn"/>
-                    </children>
-                </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="6"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="2"
                       GridPane.rowIndex="1">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Pawn"/>
+                        <Button mnemonicParsing="false" styleClass="black_pawn"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="3"
+                      GridPane.rowIndex="1">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Pawn"/>
+                        <Button mnemonicParsing="false" styleClass="black_pawn"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="1"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="4"
+                      GridPane.rowIndex="1">
+                    <children>
+                        <Button mnemonicParsing="false" styleClass="black_pawn"/>
+                    </children>
+                </Pane>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="5"
+                      GridPane.rowIndex="1">
+                    <children>
+                        <Button mnemonicParsing="false" styleClass="black_pawn"/>
+                    </children>
+                </Pane>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="6"
+                      GridPane.rowIndex="1">
+                    <children>
+                        <Button mnemonicParsing="false" styleClass="black_pawn"/>
+                    </children>
+                </Pane>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="7"
+                      GridPane.rowIndex="1">
+                    <children>
+                        <Button mnemonicParsing="false" styleClass="black_pawn"/>
+                    </children>
+                </Pane>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.rowIndex="2"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="1"
                       GridPane.rowIndex="2"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="3"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="2"
                       GridPane.rowIndex="2"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="5"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="3"
                       GridPane.rowIndex="2"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="7"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="4"
                       GridPane.rowIndex="2"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.rowIndex="3"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="2"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="5"
+                      GridPane.rowIndex="2"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="6"
+                      GridPane.rowIndex="2"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="7"
+                      GridPane.rowIndex="2"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.rowIndex="3"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="1"
                       GridPane.rowIndex="3"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="4"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="2"
                       GridPane.rowIndex="3"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="6"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="3"
                       GridPane.rowIndex="3"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="3"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="1"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="4"
+                      GridPane.rowIndex="3"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="5"
+                      GridPane.rowIndex="3"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="6"
+                      GridPane.rowIndex="3"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="7"
+                      GridPane.rowIndex="3"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.rowIndex="4"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="1"
                       GridPane.rowIndex="4"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="3"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="2"
                       GridPane.rowIndex="4"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="5"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="3"
                       GridPane.rowIndex="4"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="4"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="7"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="4"
                       GridPane.rowIndex="4"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.rowIndex="5"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="2"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="5"
+                      GridPane.rowIndex="4"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="6"
+                      GridPane.rowIndex="4"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="7"
+                      GridPane.rowIndex="4"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.rowIndex="5"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="1"
                       GridPane.rowIndex="5"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="4"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="2"
                       GridPane.rowIndex="5"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="5"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="6"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="3"
                       GridPane.rowIndex="5"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="5"/>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="4"
+                      GridPane.rowIndex="5"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="5"
+                      GridPane.rowIndex="5"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="6"
+                      GridPane.rowIndex="5"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="7"
+                      GridPane.rowIndex="5"/>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.rowIndex="6">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Pawn"/>
+                        <Button mnemonicParsing="false" styleClass="white_pawn"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="1"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="1"
                       GridPane.rowIndex="6">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Pawn"/>
+                        <Button mnemonicParsing="false" styleClass="white_pawn"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
-                    <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Pawn"/>
-                    </children>
-                </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="3"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="2"
                       GridPane.rowIndex="6">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Pawn"/>
+                        <Button mnemonicParsing="false" styleClass="white_pawn"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
-                    <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Pawn"/>
-                    </children>
-                </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="5"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="3"
                       GridPane.rowIndex="6">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Pawn"/>
+                        <Button mnemonicParsing="false" styleClass="white_pawn"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="6">
-                    <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Pawn"/>
-                    </children>
-                </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="7"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="4"
                       GridPane.rowIndex="6">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Pawn"/>
+                        <Button mnemonicParsing="false" styleClass="white_pawn"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.rowIndex="7">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="5"
+                      GridPane.rowIndex="6">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Rook"/>
+                        <Button mnemonicParsing="false" styleClass="white_pawn"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="6"
+                      GridPane.rowIndex="6">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Knight"/>
+                        <Button mnemonicParsing="false" styleClass="white_pawn"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="2"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="7"
+                      GridPane.rowIndex="6">
+                    <children>
+                        <Button mnemonicParsing="false" styleClass="white_pawn"/>
+                    </children>
+                </Pane>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.rowIndex="7">
+                    <children>
+                        <Button mnemonicParsing="false" styleClass="white_rook"/>
+                    </children>
+                </Pane>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="1"
                       GridPane.rowIndex="7">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Bishop"/>
+                        <Button mnemonicParsing="false" styleClass="white_knight"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
-                    <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="King"/>
-                    </children>
-                </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="4"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="2"
                       GridPane.rowIndex="7">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Queen"/>
+                        <Button mnemonicParsing="false" styleClass="white_bishop"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="7">
-                    <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Bishop"/>
-                    </children>
-                </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" styleClass="black_back" GridPane.columnIndex="6"
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="3"
                       GridPane.rowIndex="7">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Knight"/>
+                        <Button mnemonicParsing="false" styleClass="white_queen"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="7">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="4"
+                      GridPane.rowIndex="7">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="white_btn" text="Rook"/>
+                        <Button mnemonicParsing="false" styleClass="white_king"/>
                     </children>
                 </Pane>
-                <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="5"
+                      GridPane.rowIndex="7">
                     <children>
-                        <Button mnemonicParsing="false" styleClass="black_btn" text="Pawn"/>
+                        <Button mnemonicParsing="false" styleClass="white_bishop"/>
+                    </children>
+                </Pane>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="6"
+                      GridPane.rowIndex="7">
+                    <children>
+                        <Button mnemonicParsing="false" styleClass="white_knight"/>
+                    </children>
+                </Pane>
+                <Pane prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="7"
+                      GridPane.rowIndex="7">
+                    <children>
+                        <Button mnemonicParsing="false" styleClass="white_rook"/>
                     </children>
                 </Pane>
             </children>
         </GridPane>
     </center>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
 </BorderPane>

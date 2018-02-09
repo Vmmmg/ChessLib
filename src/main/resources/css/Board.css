@@ -6,16 +6,52 @@
     -fx-background-color: black;
 }
 
-.black_btn {
-    -fx-background-color: black;
-    -fx-border-color: grey;
-    -fx-text-fill: white;
+.white_king {
+    -fx-background-image: url("../img/ChessPieces/WhitePieces/WhiteKing.png");
 }
 
-.white_btn {
-    -fx-background-color: white;
-    -fx-border-color: grey;
-    -fx-text-fill: black;
+.white_queen {
+    -fx-background-image: url("../img/ChessPieces/WhitePieces/WhiteQueen.png");
+}
+
+.white_bishop {
+    -fx-background-image: url("../img/ChessPieces/WhitePieces/WhiteBishop.png");
+}
+
+.white_knight {
+    -fx-background-image: url("../img/ChessPieces/WhitePieces/WhiteKnight.png");
+}
+
+.white_rook {
+    -fx-background-image: url("../img/ChessPieces/WhitePieces/WhiteRook.png");
+}
+
+.white_pawn {
+    -fx-background-image: url("../img/ChessPieces/WhitePieces/WhitePawn.png");
+}
+
+.black_king {
+    -fx-background-image: url("../img/ChessPieces/BlackPieces/BlackKing.png");
+}
+
+.black_queen {
+    -fx-background-image: url("../img/ChessPieces/BlackPieces/BlackQueen.png");
+}
+
+.black_bishop {
+    -fx-background-image: url("../img/ChessPieces/BlackPieces/BlackBishop.png");
+}
+
+.black_knight {
+    -fx-background-image: url("../img/ChessPieces/BlackPieces/BlackKnight.png");
+}
+
+.black_rook {
+    -fx-background-image: url("../img/ChessPieces/BlackPieces/BlackRook.png");
+}
+
+.black_pawn {
+    -fx-background-image: url("../img/ChessPieces/BlackPieces/BlackPawn.png");
 }
 
 .button {
@@ -23,9 +59,4 @@
     -fx-border-radius: 50%;
     -fx-pref-width: 85px;
     -fx-pref-height: 85px;
-}
-
-.button:hover {
-    -fx-cursor: hand;
-    -fx-border-color: red;
 }
