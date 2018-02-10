@@ -1,12 +1,8 @@
 package chess.models;
 
-import chess.models.Path;
-import chess.models.Position;
 import org.junit.Test;
 
-import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
@@ -14,10 +10,8 @@ import static org.junit.Assert.assertEquals;
 public class PathTest {
 
     /**
-    *
-    * Method: getPositions()
-    *
-    */
+     * Method: getPositions()
+     */
     @Test
     public void getPositions1() {
         Position posA1 = new Position("A1");
@@ -66,20 +60,20 @@ public class PathTest {
         assertEquals(isFullEqual, true);
     }
 
-    public boolean isSetEquals(Set<Position> expectedPosSet, Set<Position> actualPosSet){
+    private boolean isSetEquals(Set<Position> expectedPosSet, Set<Position> actualPosSet) {
         boolean isEqual = false;
         boolean isFullEqual = true;
 
-        for(Position expectedPos: expectedPosSet){
-            for(Position actualPos: actualPosSet){
+        for (Position expectedPos : expectedPosSet) {
+            for (Position actualPos : actualPosSet) {
                 System.out.println(actualPos.getX() + " " + actualPos.getY());
-                if(actualPos.equals(expectedPos)){
+                if (actualPos.equals(expectedPos)) {
                     isEqual = true;
                     break;
                 }
             }
 
-            if(isEqual == false){
+            if (!isEqual) {
                 isFullEqual = false;
                 break;
             }
@@ -88,6 +82,4 @@ public class PathTest {
 
         return isFullEqual;
     }
-
-
 } 

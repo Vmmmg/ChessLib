@@ -9,8 +9,9 @@ import chess.models.enums.Player;
  * Custom chess piece: Soldier
  */
 public class Soldier extends ChessPiece {
+
     /**
-     * Constructor of ChessPiece
+     * Constructor of Soldier
      *
      * @param player   Belongs to which player
      * @param position Initial position
@@ -35,19 +36,19 @@ public class Soldier extends ChessPiece {
         // It move and capture by advancing one point before it crossed the river(the half of ths board).
         // Once they have crossed the river, they may also move and capture one point horizontally.
         int distance;
-        if(this.getPosition().isVertical(pos)){
-            if(this.isForward(pos)){
+        if (this.getPosition().isVertical(pos)) {
+            if (this.isForward(pos)) {
                 distance = this.getPosition().distance(pos);
-                if(distance == 1){
+                if (distance == 1) {
                     return MoveResult.LegalMove;
                 }
             }
         }
 
-        if(this.isCrossTheRiver()){
-            if(this.getPosition().isHorizontal(pos)){
+        if (this.isCrossTheRiver()) {
+            if (this.getPosition().isHorizontal(pos)) {
                 distance = this.getPosition().distance(pos);
-                if(distance == 1){
+                if (distance == 1) {
                     return MoveResult.LegalMove;
                 }
             }
@@ -76,18 +77,11 @@ public class Soldier extends ChessPiece {
      *
      * @return true is that the soldier have crossed the river
      */
-    public boolean isCrossTheRiver(){
-        if(this.getPlayer() == Player.White){
-            if(this.getPosition().getY() < 4){
-                return true;
-            }
+    public boolean isCrossTheRiver() {
+        if (this.getPlayer() == Player.White) {
+            return this.getPosition().getY() < 4;
+        } else {
+            return this.getPosition().getY() > 3;
         }
-        else{
-            if(this.getPosition().getY() > 3){
-                return true;
-            }
-        }
-
-        return false;
     }
 }

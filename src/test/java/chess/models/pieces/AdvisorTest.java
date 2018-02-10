@@ -4,8 +4,6 @@ import chess.models.Position;
 import chess.models.enums.MoveResult;
 import chess.models.enums.Player;
 import org.junit.Test;
-import org.junit.Before; 
-import org.junit.After;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,12 +13,10 @@ import static org.junit.Assert.assertEquals;
 public class AdvisorTest {
 
     /**
-    *
-    * Method: isLegalMove(Position pos)
-    *
-    */
+     * Method: isLegalMove(Position pos)
+     */
     @Test
-    public void isLegalMove(){
+    public void isLegalMove() {
         Advisor blackAdvisor = new Advisor(Player.Black, new Position("D3"));
         assertEquals(blackAdvisor.isLegalMove(new Position("D3")), MoveResult.SamePosition);
         assertEquals(blackAdvisor.isLegalMove(new Position("C2")), MoveResult.LegalMove);
@@ -46,11 +42,8 @@ public class AdvisorTest {
         assertEquals(blackAdvisor.isLegalMove(new Position("D5")), MoveResult.IllegalMove);
     }
 
-
     /**
-     *
      * Method: getNinePalaces(Position pos)
-     *
      */
     @Test
     public void getNinePalaces1() {
@@ -112,19 +105,19 @@ public class AdvisorTest {
         assertEquals(isFullEquals, true);
     }
 
-    public boolean isSetEquals(Set<Position> expectedPosSet, Set<Position> actualPosSet){
+    private boolean isSetEquals(Set<Position> expectedPosSet, Set<Position> actualPosSet) {
         boolean isEqual = false;
         boolean isFullEqual = true;
 
-        for(Position expectedPos: expectedPosSet){
-            for(Position actualPos: actualPosSet){
-                if(actualPos.equals(expectedPos)){
+        for (Position expectedPos : expectedPosSet) {
+            for (Position actualPos : actualPosSet) {
+                if (actualPos.equals(expectedPos)) {
                     isEqual = true;
                     break;
                 }
             }
 
-            if(isEqual == false){
+            if (!isEqual) {
                 isFullEqual = false;
                 break;
             }

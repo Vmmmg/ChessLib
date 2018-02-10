@@ -1,6 +1,5 @@
 package chess.models.pieces;
 
-import chess.models.Board;
 import chess.models.ChessPiece;
 import chess.models.Position;
 import chess.models.enums.MoveResult;
@@ -13,8 +12,9 @@ import java.util.Set;
  * Custom chess piece: Advisor
  */
 public class Advisor extends ChessPiece {
+
     /**
-     * Constructor of ChessPiece
+     * Constructor of Advisor
      *
      * @param player   Belongs to which player
      * @param position Initial position
@@ -35,17 +35,17 @@ public class Advisor extends ChessPiece {
             return MoveResult.SamePosition;
         }
 
-        // Advisot is Chinese Queen.
+        // Advisor is Chinese Queen.
         // It can move only one point along rank, file, or diagonal,
         // Ferz that can't leave the Nine Palaces (3×3 zone at the center of South and North sides).
-        if (this.getPosition().isHorizontal(pos) || this.getPosition().isVertical(pos) || this.getPosition().isDiagonal(pos)){
+        if (this.getPosition().isHorizontal(pos) || this.getPosition().isVertical(pos) || this.getPosition().isDiagonal(pos)) {
             System.out.println(this.getPosition().isDiagonal(pos));
             int distance = this.getPosition().distance(pos);
             System.out.println(distance);
-            if(distance == 1){
+            if (distance == 1) {
                 Set<Position> ninePalaces = this.getNinePalaces();
-                for(Position ninePalacesPos: ninePalaces){
-                    if(pos.equals(ninePalacesPos)){
+                for (Position ninePalacesPos : ninePalaces) {
+                    if (pos.equals(ninePalacesPos)) {
                         return MoveResult.LegalMove;
                     }
                 }
@@ -55,10 +55,10 @@ public class Advisor extends ChessPiece {
         return MoveResult.IllegalMove;
     }
 
-    public Set<Position> getNinePalaces(){
+    public Set<Position> getNinePalaces() {
         Set<Position> ninePalaces = new HashSet<>();
 
-        if(this.getPlayer() == Player.White) {
+        if (this.getPlayer() == Player.White) {
             Position posC6 = new Position("C6");
             Position posD6 = new Position("D6");
             Position posE6 = new Position("E6");
@@ -78,8 +78,7 @@ public class Advisor extends ChessPiece {
             ninePalaces.add(posC8);
             ninePalaces.add(posD8);
             ninePalaces.add(posE8);
-        }
-        else{
+        } else {
             Position posC1 = new Position("C1");
             Position posD1 = new Position("D1");
             Position posE1 = new Position("E1");
