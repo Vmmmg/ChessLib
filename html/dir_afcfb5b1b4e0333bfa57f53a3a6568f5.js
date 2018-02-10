@@ -1,10 +1,10 @@
 var dir_afcfb5b1b4e0333bfa57f53a3a6568f5 =
 [
+    [ "Advisor.java", "_advisor_8java.html", [
+      [ "Advisor", "classchess_1_1models_1_1pieces_1_1_advisor.html", "classchess_1_1models_1_1pieces_1_1_advisor" ]
+    ] ],
     [ "Bishop.java", "_bishop_8java.html", [
       [ "Bishop", "classchess_1_1models_1_1pieces_1_1_bishop.html", "classchess_1_1models_1_1pieces_1_1_bishop" ]
-    ] ],
-    [ "Crab.java", "_crab_8java.html", [
-      [ "Crab", "classchess_1_1models_1_1pieces_1_1_crab.html", "classchess_1_1models_1_1pieces_1_1_crab" ]
     ] ],
     [ "King.java", "_king_8java.html", [
       [ "King", "classchess_1_1models_1_1pieces_1_1_king.html", "classchess_1_1models_1_1pieces_1_1_king" ]
@@ -21,7 +21,7 @@ var dir_afcfb5b1b4e0333bfa57f53a3a6568f5 =
     [ "Rook.java", "_rook_8java.html", [
       [ "Rook", "classchess_1_1models_1_1pieces_1_1_rook.html", "classchess_1_1models_1_1pieces_1_1_rook" ]
     ] ],
-    [ "Straight.java", "_straight_8java.html", [
-      [ "Straight", "classchess_1_1models_1_1pieces_1_1_straight.html", "classchess_1_1models_1_1pieces_1_1_straight" ]
+    [ "Soldier.java", "_soldier_8java.html", [
+      [ "Soldier", "classchess_1_1models_1_1pieces_1_1_soldier.html", "classchess_1_1models_1_1pieces_1_1_soldier" ]
     ] ]
 ];

@@ -1,0 +1,91 @@
+\hypertarget{classchess_1_1models_1_1pieces_1_1_soldier}{}\section{chess.\+models.\+pieces.\+Soldier Class Reference}
+\label{classchess_1_1models_1_1pieces_1_1_soldier}\index{chess.\+models.\+pieces.\+Soldier@{chess.\+models.\+pieces.\+Soldier}}
+Inheritance diagram for chess.\+models.\+pieces.\+Soldier\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classchess_1_1models_1_1pieces_1_1_soldier}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classchess_1_1models_1_1pieces_1_1_soldier_a3de8743b5a054a97b126297e3e5fea36}{Soldier}} (\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a3bcc8a24667318b5aab8c146adcc3eb7}{player}}, \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}{position}})
+\item 
+\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_move_result}{Move\+Result}} \mbox{\hyperlink{classchess_1_1models_1_1pieces_1_1_soldier_a5a0cc5ebe1f0a4b2b68b9359f5bad0c5}{is\+Legal\+Move}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} pos)
+\item 
+boolean \mbox{\hyperlink{classchess_1_1models_1_1pieces_1_1_soldier_a3be305544d8e788663b6c394d334f596}{is\+Forward}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} pos)
+\item 
+boolean \mbox{\hyperlink{classchess_1_1models_1_1pieces_1_1_soldier_a9ee2ecb79068bd41f01608f23cd8dd01}{is\+Cross\+The\+River}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Custom chess piece\+: \mbox{\hyperlink{classchess_1_1models_1_1pieces_1_1_soldier}{Soldier}} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classchess_1_1models_1_1pieces_1_1_soldier_a3de8743b5a054a97b126297e3e5fea36}\label{classchess_1_1models_1_1pieces_1_1_soldier_a3de8743b5a054a97b126297e3e5fea36}} 
+\index{chess\+::models\+::pieces\+::\+Soldier@{chess\+::models\+::pieces\+::\+Soldier}!Soldier@{Soldier}}
+\index{Soldier@{Soldier}!chess\+::models\+::pieces\+::\+Soldier@{chess\+::models\+::pieces\+::\+Soldier}}
+\subsubsection{\texorpdfstring{Soldier()}{Soldier()}}
+{\footnotesize\ttfamily chess.\+models.\+pieces.\+Soldier.\+Soldier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}}}]{player,  }\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{position }\end{DoxyParamCaption})}
+
+Constructor of \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Belongs to which player \\
+\hline
+{\em position} & Initial position \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classchess_1_1models_1_1pieces_1_1_soldier_a9ee2ecb79068bd41f01608f23cd8dd01}\label{classchess_1_1models_1_1pieces_1_1_soldier_a9ee2ecb79068bd41f01608f23cd8dd01}} 
+\index{chess\+::models\+::pieces\+::\+Soldier@{chess\+::models\+::pieces\+::\+Soldier}!is\+Cross\+The\+River@{is\+Cross\+The\+River}}
+\index{is\+Cross\+The\+River@{is\+Cross\+The\+River}!chess\+::models\+::pieces\+::\+Soldier@{chess\+::models\+::pieces\+::\+Soldier}}
+\subsubsection{\texorpdfstring{is\+Cross\+The\+River()}{isCrossTheRiver()}}
+{\footnotesize\ttfamily boolean chess.\+models.\+pieces.\+Soldier.\+is\+Cross\+The\+River (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Check if the soldier cross the river
+
+\begin{DoxyReturn}{Returns}
+true is that the soldier have crossed the river 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classchess_1_1models_1_1pieces_1_1_soldier_a3be305544d8e788663b6c394d334f596}\label{classchess_1_1models_1_1pieces_1_1_soldier_a3be305544d8e788663b6c394d334f596}} 
+\index{chess\+::models\+::pieces\+::\+Soldier@{chess\+::models\+::pieces\+::\+Soldier}!is\+Forward@{is\+Forward}}
+\index{is\+Forward@{is\+Forward}!chess\+::models\+::pieces\+::\+Soldier@{chess\+::models\+::pieces\+::\+Soldier}}
+\subsubsection{\texorpdfstring{is\+Forward()}{isForward()}}
+{\footnotesize\ttfamily boolean chess.\+models.\+pieces.\+Soldier.\+is\+Forward (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{pos }\end{DoxyParamCaption})}
+
+Check if the soldier is moving forward
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Destination position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true is that the soldier is moving forward 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classchess_1_1models_1_1pieces_1_1_soldier_a5a0cc5ebe1f0a4b2b68b9359f5bad0c5}\label{classchess_1_1models_1_1pieces_1_1_soldier_a5a0cc5ebe1f0a4b2b68b9359f5bad0c5}} 
+\index{chess\+::models\+::pieces\+::\+Soldier@{chess\+::models\+::pieces\+::\+Soldier}!is\+Legal\+Move@{is\+Legal\+Move}}
+\index{is\+Legal\+Move@{is\+Legal\+Move}!chess\+::models\+::pieces\+::\+Soldier@{chess\+::models\+::pieces\+::\+Soldier}}
+\subsubsection{\texorpdfstring{is\+Legal\+Move()}{isLegalMove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_move_result}{Move\+Result}} chess.\+models.\+pieces.\+Soldier.\+is\+Legal\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{pos }\end{DoxyParamCaption})}
+
+Check if the movement is legal
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Destination position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Move\+Result 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+G\+:/\+Chess/src/main/java/chess/models/pieces/\mbox{\hyperlink{_soldier_8java}{Soldier.\+java}}\end{DoxyCompactItemize}

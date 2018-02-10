@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gameresult_2ejava',['GameResult.java',['../_game_result_8java.html',1,'']]]
+  ['chesspiece_2ejava',['ChessPiece.java',['../_chess_piece_8java.html',1,'']]]
 ];

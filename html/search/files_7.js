@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rook_2ejava',['Rook.java',['../_rook_8java.html',1,'']]],
-  ['rooktest_2ejava',['RookTest.java',['../_rook_test_8java.html',1,'']]]
+  ['queen_2ejava',['Queen.java',['../_queen_8java.html',1,'']]],
+  ['queentest_2ejava',['QueenTest.java',['../_queen_test_8java.html',1,'']]]
 ];

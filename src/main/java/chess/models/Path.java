@@ -56,13 +56,13 @@ public class Path {
                 endX = pos2.getX();
                 if (pos1.getY() < pos2.getY()) {
                     checkY = pos1.getY();
-                    for (int i = startX; i < endX; i++) {
+                    for (int i = startX; i <= endX; i++) {
                         positions.add(new Position(i, checkY));
                         checkY++;
                     }
                 } else {
                     checkY = pos1.getY() - 1;
-                    for (int i = startX; i < endX; i++) {
+                    for (int i = startX; i <= endX; i++) {
                         positions.add(new Position(i, checkY));
                         checkY--;
                     }
@@ -72,13 +72,13 @@ public class Path {
                 endX = pos1.getX();
                 if (pos2.getY() < pos1.getY()) {
                     checkY = pos2.getY();
-                    for (int i = startX; i < endX; i++) {
+                    for (int i = startX; i <= endX; i++) {
                         positions.add(new Position(i, checkY));
                         checkY++;
                     }
                 } else {
                     checkY = pos2.getY();
-                    for (int i = startX; i < endX; i++) {
+                    for (int i = startX; i <= endX; i++) {
                         positions.add(new Position(i, checkY));
                         checkY--;
                     }

@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['queen',['Queen',['../classchess_1_1models_1_1pieces_1_1_queen.html',1,'chess::models::pieces']]],
-  ['queentest',['QueenTest',['../classchess_1_1pieces_1_1_queen_test.html',1,'chess::pieces']]]
+  ['path',['Path',['../classchess_1_1models_1_1_path.html',1,'chess::models']]],
+  ['pathtest',['PathTest',['../classchess_1_1models_1_1_path_test.html',1,'chess::models']]],
+  ['pawn',['Pawn',['../classchess_1_1models_1_1pieces_1_1_pawn.html',1,'chess::models::pieces']]],
+  ['pawntest',['PawnTest',['../classchess_1_1models_1_1pieces_1_1_pawn_test.html',1,'chess::models::pieces']]],
+  ['player',['Player',['../enumchess_1_1models_1_1enums_1_1_player.html',1,'chess::models::enums']]],
+  ['position',['Position',['../classchess_1_1models_1_1_position.html',1,'chess::models']]],
+  ['positiontest',['PositionTest',['../classchess_1_1models_1_1_position_test.html',1,'chess::models']]]
 ];

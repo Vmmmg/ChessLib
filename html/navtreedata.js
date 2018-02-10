@@ -45,7 +45,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_bishop_8java.html"
+"_advisor_8java.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
