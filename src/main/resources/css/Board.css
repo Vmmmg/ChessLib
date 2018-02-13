@@ -60,3 +60,10 @@
     -fx-pref-width: 85px;
     -fx-pref-height: 85px;
 }
+
+.func_btn{
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-pref-width: 70px;
+    -fx-pref-height: 10px;
+}

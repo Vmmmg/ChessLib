@@ -1,5 +1,6 @@
 package chess.models;
 
+import chess.models.enums.GameMode;
 import chess.models.enums.GameResult;
 import chess.models.enums.MoveResult;
 import chess.models.enums.Player;
@@ -27,14 +28,21 @@ public class Board {
     /**
      * Constructor of Board
      */
-    public Board() {
-        init();
+    public Board(GameMode gameMode) {
+
+        if(gameMode == GameMode.Classic){
+            initClassicBoard();
+        }
+        else{
+            initNewBoard();
+        }
+
     }
 
     /**
-     * Create Initial state of chess board
+     * Create Initial state of classic chess board
      */
-    private void init() {
+    private void initClassicBoard() {
         board[0][0] = new Rook(Player.Black, new Position("A1"));
         board[0][1] = new Knight(Player.Black, new Position("B1"));
         board[0][2] = new Bishop(Player.Black, new Position("C1"));
@@ -67,6 +75,51 @@ public class Board {
         board[6][5] = new Pawn(Player.White, new Position("F7"));
         board[6][6] = new Pawn(Player.White, new Position("G7"));
         board[6][7] = new Pawn(Player.White, new Position("H7"));
+
+        for (int i = 0; i < 2; i++) {
+            blackChessSet.addAll(Arrays.asList(board[i]).subList(0, WIDTH));
+        }
+        for (int i = 6; i < 8; i++) {
+            whiteChessSet.addAll(Arrays.asList(board[i]).subList(0, WIDTH));
+        }
+    }
+
+    /**
+     * Create Initial state of classic chess board
+     */
+    private void initNewBoard(){
+        board[0][0] = new Rook(Player.Black, new Position("A1"));
+        board[0][1] = new Knight(Player.Black, new Position("B1"));
+        board[0][2] = new Bishop(Player.Black, new Position("C1"));
+        board[0][3] = new Advisor(Player.Black, new Position("D1"));
+        board[0][4] = new King(Player.Black, blackKingPos);
+        board[0][5] = new Bishop(Player.Black, new Position("F1"));
+        board[0][6] = new Knight(Player.Black, new Position("G1"));
+        board[0][7] = new Rook(Player.Black, new Position("H1"));
+        board[1][0] = new Soldier(Player.Black, new Position("A2"));
+        board[1][1] = new Soldier(Player.Black, new Position("B2"));
+        board[1][2] = new Soldier(Player.Black, new Position("C2"));
+        board[1][3] = new Soldier(Player.Black, new Position("D2"));
+        board[1][4] = new Soldier(Player.Black, new Position("E2"));
+        board[1][5] = new Soldier(Player.Black, new Position("F2"));
+        board[1][6] = new Soldier(Player.Black, new Position("G2"));
+        board[1][7] = new Soldier(Player.Black, new Position("H2"));
+        board[7][0] = new Rook(Player.White, new Position("A8"));
+        board[7][1] = new Knight(Player.White, new Position("B8"));
+        board[7][2] = new Bishop(Player.White, new Position("C8"));
+        board[7][3] = new Advisor(Player.White, new Position("D8"));
+        board[7][4] = new King(Player.White, whiteKingPos);
+        board[7][5] = new Bishop(Player.White, new Position("F8"));
+        board[7][6] = new Knight(Player.White, new Position("G8"));
+        board[7][7] = new Rook(Player.White, new Position("H8"));
+        board[6][0] = new Soldier(Player.White, new Position("A7"));
+        board[6][1] = new Soldier(Player.White, new Position("B7"));
+        board[6][2] = new Soldier(Player.White, new Position("C7"));
+        board[6][3] = new Soldier(Player.White, new Position("D7"));
+        board[6][4] = new Soldier(Player.White, new Position("E7"));
+        board[6][5] = new Soldier(Player.White, new Position("F7"));
+        board[6][6] = new Soldier(Player.White, new Position("G7"));
+        board[6][7] = new Soldier(Player.White, new Position("H7"));
 
         for (int i = 0; i < 2; i++) {
             blackChessSet.addAll(Arrays.asList(board[i]).subList(0, WIDTH));
