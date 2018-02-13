@@ -9,14 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -30,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Chess
-   &#160;<span id="projectnumber">Version1.0</span>
+   &#160;<span id="projectnumber">Version 1</span>
    </div>
   </td>
  </tr>
@@ -54,23 +46,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classchess_1_1models_1_1pieces_1_1_soldier.html','');});
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -85,6 +60,11 @@ $(document).ready(function(){initNavTree('classchess_1_1models_1_1pieces_1_1_sol
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacechess.html">chess</a></li><li class="navelem"><a class="el" href="namespacechess_1_1models.html">models</a></li><li class="navelem"><a class="el" href="namespacechess_1_1models_1_1pieces.html">pieces</a></li><li class="navelem"><a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html">Soldier</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -105,7 +85,7 @@ Inheritance diagram for chess.models.pieces.Soldier:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3de8743b5a054a97b126297e3e5fea36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html#a3de8743b5a054a97b126297e3e5fea36">Soldier</a> (<a class="el" href="enumchess_1_1models_1_1enums_1_1_player.html">Player</a> <a class="el" href="classchess_1_1models_1_1_chess_piece.html#a3bcc8a24667318b5aab8c146adcc3eb7">player</a>, <a class="el" href="classchess_1_1models_1_1_position.html">Position</a> <a class="el" href="classchess_1_1models_1_1_chess_piece.html#a0e4f8616b75e548f269d3971846396f3">position</a>)</td></tr>
+<tr class="memitem:a3de8743b5a054a97b126297e3e5fea36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html#a3de8743b5a054a97b126297e3e5fea36">Soldier</a> (<a class="el" href="enumchess_1_1models_1_1enums_1_1_player.html">Player</a> player, <a class="el" href="classchess_1_1models_1_1_position.html">Position</a> position)</td></tr>
 <tr class="separator:a3de8743b5a054a97b126297e3e5fea36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a0cc5ebe1f0a4b2b68b9359f5bad0c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumchess_1_1models_1_1enums_1_1_move_result.html">MoveResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html#a5a0cc5ebe1f0a4b2b68b9359f5bad0c5">isLegalMove</a> (<a class="el" href="classchess_1_1models_1_1_position.html">Position</a> pos)</td></tr>
 <tr class="separator:a5a0cc5ebe1f0a4b2b68b9359f5bad0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,15 +94,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ee2ecb79068bd41f01608f23cd8dd01"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html#a9ee2ecb79068bd41f01608f23cd8dd01">isCrossTheRiver</a> ()</td></tr>
 <tr class="separator:a9ee2ecb79068bd41f01608f23cd8dd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classchess_1_1models_1_1_chess_piece"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classchess_1_1models_1_1_chess_piece')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classchess_1_1models_1_1_chess_piece.html">chess.models.ChessPiece</a></td></tr>
-<tr class="memitem:a59beae5e1f384747a201a4c417ca0afb inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_chess_piece.html#a59beae5e1f384747a201a4c417ca0afb">ChessPiece</a> (<a class="el" href="enumchess_1_1models_1_1enums_1_1_player.html">Player</a> <a class="el" href="classchess_1_1models_1_1_chess_piece.html#a3bcc8a24667318b5aab8c146adcc3eb7">player</a>, <a class="el" href="classchess_1_1models_1_1_position.html">Position</a> <a class="el" href="classchess_1_1models_1_1_chess_piece.html#a0e4f8616b75e548f269d3971846396f3">position</a>)</td></tr>
+<tr class="memitem:a59beae5e1f384747a201a4c417ca0afb inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_chess_piece.html#a59beae5e1f384747a201a4c417ca0afb">ChessPiece</a> (<a class="el" href="enumchess_1_1models_1_1enums_1_1_player.html">Player</a> player, <a class="el" href="classchess_1_1models_1_1_position.html">Position</a> position)</td></tr>
 <tr class="separator:a59beae5e1f384747a201a4c417ca0afb inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ce783eeb2ec6d5cd83af05c11fe8cdb inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classchess_1_1models_1_1_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_chess_piece.html#a4ce783eeb2ec6d5cd83af05c11fe8cdb">getPosition</a> ()</td></tr>
 <tr class="separator:a4ce783eeb2ec6d5cd83af05c11fe8cdb inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e3c62bde5041ca0aa53e0476cc8b600 inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_chess_piece.html#a2e3c62bde5041ca0aa53e0476cc8b600">setPosition</a> (<a class="el" href="classchess_1_1models_1_1_position.html">Position</a> <a class="el" href="classchess_1_1models_1_1_chess_piece.html#a0e4f8616b75e548f269d3971846396f3">position</a>)</td></tr>
+<tr class="memitem:a2e3c62bde5041ca0aa53e0476cc8b600 inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_chess_piece.html#a2e3c62bde5041ca0aa53e0476cc8b600">setPosition</a> (<a class="el" href="classchess_1_1models_1_1_position.html">Position</a> position)</td></tr>
 <tr class="separator:a2e3c62bde5041ca0aa53e0476cc8b600 inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa3cef5d52e4a228dc01f91133a6c437 inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumchess_1_1models_1_1enums_1_1_player.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_chess_piece.html#aaa3cef5d52e4a228dc01f91133a6c437">getPlayer</a> ()</td></tr>
 <tr class="separator:aaa3cef5d52e4a228dc01f91133a6c437 inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77865fbd52257338c4e376af525155c7 inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_chess_piece.html#a77865fbd52257338c4e376af525155c7">move</a> (<a class="el" href="classchess_1_1models_1_1_position.html">Position</a> <a class="el" href="classchess_1_1models_1_1_chess_piece.html#a0e4f8616b75e548f269d3971846396f3">position</a>)</td></tr>
+<tr class="memitem:a77865fbd52257338c4e376af525155c7 inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_chess_piece.html#a77865fbd52257338c4e376af525155c7">move</a> (<a class="el" href="classchess_1_1models_1_1_position.html">Position</a> position)</td></tr>
 <tr class="separator:a77865fbd52257338c4e376af525155c7 inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60088166dd440bf51de4514c3e57841e inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="enumchess_1_1models_1_1enums_1_1_move_result.html">MoveResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_chess_piece.html#a60088166dd440bf51de4514c3e57841e">isLegalMove</a> (<a class="el" href="classchess_1_1models_1_1_position.html">Position</a> pos)</td></tr>
 <tr class="separator:a60088166dd440bf51de4514c3e57841e inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,7 +110,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afd359313e83bdef860f9f8236435522f inherit pub_methods_classchess_1_1models_1_1_chess_piece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Custom chess piece: <a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html">Soldier</a> </p>
+<div class="textblock"><p>Custom chess piece: <a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html">Soldier</a> <a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html">Soldier</a> is Chinese <a class="el" href="classchess_1_1models_1_1pieces_1_1_pawn.html">Pawn</a>. It move and capture by advancing one point before it crossed the river(the half of ths board). Once they have crossed the river, they may also move and capture one point horizontally. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3de8743b5a054a97b126297e3e5fea36"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3de8743b5a054a97b126297e3e5fea36">&#9670;&nbsp;</a></span>Soldier()</h2>
@@ -157,7 +137,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor of <a class="el" href="classchess_1_1models_1_1_chess_piece.html">ChessPiece</a></p>
+<p>Constructor of <a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html">Soldier</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">player</td><td>Belongs to which player </td></tr>
@@ -241,18 +221,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>G:/Chess/src/main/java/chess/models/pieces/<a class="el" href="_soldier_8java.html">Soldier.java</a></li>
+<li>src/main/java/chess/models/pieces/<a class="el" href="_soldier_8java.html">Soldier.java</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespacechess.html">chess</a></li><li class="navelem"><a class="el" href="namespacechess_1_1models.html">models</a></li><li class="navelem"><a class="el" href="namespacechess_1_1models_1_1pieces.html">pieces</a></li><li class="navelem"><a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html">Soldier</a></li>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
 </body>
 </html>

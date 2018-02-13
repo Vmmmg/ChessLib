@@ -1,4 +1,4 @@
-package chess.models;
+package chess;
 
 import chess.models.Board;
 import chess.models.ChessPiece;
@@ -81,12 +81,12 @@ public class BoardTest {
     }
 
     @Test
-    public void judge1() {
+    public void judgeGaming() {
         assertEquals(board.judge(), GameResult.Gaming);
     }
 
     @Test
-    public void judge2() {
+    public void judgeBlackWin() {
         ChessPiece blackRook1 = board.getSpecificPositionChess(new Position("A1"));
         ChessPiece blackRook2 = board.getSpecificPositionChess(new Position("H1"));
         board.chessMove(blackRook1, new Position("A7"));
@@ -110,7 +110,7 @@ public class BoardTest {
     }
 
     @Test
-    public void judge3() {
+    public void judgeWhiteWin() {
         ChessPiece blackRook = board.getSpecificPositionChess(new Position("A1"));
         board.chessMove(blackRook, new Position("A7"));
         board.chessMove(blackRook, new Position("B7"));
@@ -153,7 +153,7 @@ public class BoardTest {
     }
 
     @Test
-    public void judge4() {
+    public void judgeDraw1() {
         ChessPiece blackKing = board.getSpecificPositionChess(new Position("E1"));
         ChessPiece blackPawn = board.getSpecificPositionChess(new Position("A2"));
         ChessPiece whitePawn = board.getSpecificPositionChess(new Position("A7"));
@@ -196,5 +196,57 @@ public class BoardTest {
         board.print();
 
         assertEquals(board.judge(), GameResult.Draw);
+    }
+
+
+    /**
+     * Test for judge the game condition Draw -> StaleMate.
+     */
+    @Test
+    public void judgeDraw2() {
+        ChessPiece blackRook = board.getSpecificPositionChess(new Position("A1"));
+        board.chessMove(blackRook, new Position("C7"));
+        board.chessMove(blackRook, new Position("D7"));
+        board.chessMove(blackRook, new Position("E7"));
+        board.chessMove(blackRook, new Position("F7"));
+        board.chessMove(blackRook, new Position("G7"));
+        board.chessMove(blackRook, new Position("H7"));
+        board.chessMove(blackRook, new Position("A8"));
+        board.chessMove(blackRook, new Position("B8"));
+        board.chessMove(blackRook, new Position("C8"));
+        board.chessMove(blackRook, new Position("F8"));
+        board.chessMove(blackRook, new Position("G8"));
+        board.chessMove(blackRook, new Position("H8"));
+        board.chessMove(blackRook, new Position("A1"));
+        ChessPiece whiteQueen = board.getSpecificPositionChess(new Position("D8"));
+        board.chessMove(whiteQueen, new Position("C2"));
+        board.chessMove(whiteQueen, new Position("D2"));
+        board.chessMove(whiteQueen, new Position("E2"));
+        board.chessMove(whiteQueen, new Position("F2"));
+        board.chessMove(whiteQueen, new Position("G2"));
+        board.chessMove(whiteQueen, new Position("H2"));
+        board.chessMove(whiteQueen, new Position("A1"));
+        board.chessMove(whiteQueen, new Position("B1"));
+        board.chessMove(whiteQueen, new Position("C1"));
+        board.chessMove(whiteQueen, new Position("D1"));
+        board.chessMove(whiteQueen, new Position("F1"));
+        board.chessMove(whiteQueen, new Position("G1"));
+        board.chessMove(whiteQueen, new Position("H1"));
+        board.chessMove(whiteQueen, new Position("F2"));
+        ChessPiece blackKing = board.getSpecificPositionChess(new Position("E1"));
+        ChessPiece whiteKing = board.getSpecificPositionChess(new Position("E8"));
+        ChessPiece whitePawn1 = board.getSpecificPositionChess(new Position("A7"));
+        ChessPiece whitePawn2 = board.getSpecificPositionChess(new Position("B7"));
+        ChessPiece blackPawn1 = board.getSpecificPositionChess(new Position("A2"));
+        ChessPiece blackPawn2 = board.getSpecificPositionChess(new Position("B2"));
+        board.chessMove(blackKing, new Position("H1"));
+        board.chessMove(whitePawn1, new Position("A5"));
+        board.chessMove(whitePawn2, new Position("B4"));
+        board.chessMove(blackPawn1, new Position("A4"));
+        board.chessMove(blackPawn2, new Position("B3"));
+        board.chessMove(whiteKing, new Position("G7"));
+        board.print();
+        assertEquals(board.judge(), GameResult.Draw);
+
     }
 }

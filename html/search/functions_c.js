@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queen',['Queen',['../classchess_1_1models_1_1pieces_1_1_queen.html#acc127213b82632b23448f334512b34b8',1,'chess::models::pieces::Queen']]]
+  ['rook',['Rook',['../classchess_1_1models_1_1pieces_1_1_rook.html#a6a09ddec79bb71f7b497e0faf8b02152',1,'chess::models::pieces::Rook']]]
 ];

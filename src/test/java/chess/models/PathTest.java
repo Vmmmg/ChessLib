@@ -60,6 +60,56 @@ public class PathTest {
         assertEquals(isFullEqual, true);
     }
 
+    @Test
+    public void getPositions4() {
+        Position posA3 = new Position("A3");
+        Position posB2 = new Position("B2");
+        Position posC1 = new Position("C1");
+        Set<Position> expectedPosSet = new HashSet<>();
+        expectedPosSet.add(posA3);
+        expectedPosSet.add(posB2);
+        expectedPosSet.add(posC1);
+        Path path = new Path(posA3, posC1);
+        Set<Position> actualPosSet = path.getPositions();
+        boolean isFullEqual = isSetEquals(expectedPosSet, actualPosSet);
+
+        assertEquals(isFullEqual, false);
+    }
+
+
+    @Test
+    public void getPositions5() {
+        Position posC3 = new Position("C3");
+        Position posB2 = new Position("B2");
+        Position posA1 = new Position("A1");
+        Set<Position> expectedPosSet = new HashSet<>();
+        expectedPosSet.add(posC3);
+        expectedPosSet.add(posB2);
+        expectedPosSet.add(posA1);
+        Path path = new Path(posC3, posA1);
+        Set<Position> actualPosSet = path.getPositions();
+        boolean isFullEqual = isSetEquals(expectedPosSet, actualPosSet);
+
+        assertEquals(isFullEqual, true);
+    }
+
+    @Test
+    public void getPositions6() {
+        Position posC1 = new Position("C1");
+        Position posB2 = new Position("B2");
+        Position posA3 = new Position("A3");
+        Set<Position> expectedPosSet = new HashSet<>();
+        expectedPosSet.add(posC1);
+        expectedPosSet.add(posB2);
+        expectedPosSet.add(posA3);
+        Path path = new Path(posC1, posA3);
+        Set<Position> actualPosSet = path.getPositions();
+        boolean isFullEqual = isSetEquals(expectedPosSet, actualPosSet);
+
+        assertEquals(isFullEqual, true);
+    }
+
+
     private boolean isSetEquals(Set<Position> expectedPosSet, Set<Position> actualPosSet) {
         boolean isEqual = false;
         boolean isFullEqual = true;

@@ -10,6 +10,9 @@ import java.util.Set;
 
 /**
  * Custom chess piece: Advisor
+ * Advisor is Chinese Queen.
+ * It can move only one point along rank, file, or diagonal,
+ * Ferz that can't leave the Nine Palaces (3×3 zone at the center of South and North sides).
  */
 public class Advisor extends ChessPiece {
 
@@ -35,9 +38,6 @@ public class Advisor extends ChessPiece {
             return MoveResult.SamePosition;
         }
 
-        // Advisor is Chinese Queen.
-        // It can move only one point along rank, file, or diagonal,
-        // Ferz that can't leave the Nine Palaces (3×3 zone at the center of South and North sides).
         if (this.getPosition().isHorizontal(pos) || this.getPosition().isVertical(pos) || this.getPosition().isDiagonal(pos)) {
             System.out.println(this.getPosition().isDiagonal(pos));
             int distance = this.getPosition().distance(pos);

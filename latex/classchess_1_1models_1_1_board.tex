@@ -33,34 +33,6 @@ int \mbox{\hyperlink{classchess_1_1models_1_1_board_aeab935c6befad60e51084a78458
 \item 
 int \mbox{\hyperlink{classchess_1_1models_1_1_board_a28a3d4b9d0738a26666b7c97394242a9}{get\+H\+E\+I\+G\+HT}} ()
 \end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{classchess_1_1models_1_1_board_a63ff29b16684420475c594d5dc11f24a}{init}} ()
-\item 
-boolean \mbox{\hyperlink{classchess_1_1models_1_1_board_ade8f6def7998bb1bd22923e09a8a8c8b}{over\+Pieces\+Diagonal\+Checker}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} pos, \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} chess\+Pos)
-\item 
-boolean \mbox{\hyperlink{classchess_1_1models_1_1_board_adde204ed1d3ce6bd7841972c322dac9a}{if\+King\+Can\+Not\+Move}} (\mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}} king)
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-int \mbox{\hyperlink{classchess_1_1models_1_1_board_a4abda6f2d6518bacfbfed46214ad9507}{H\+E\+I\+G\+HT}} = 8
-\item 
-int \mbox{\hyperlink{classchess_1_1models_1_1_board_a87cf88fb8e9e53ae787791cbd114cb33}{W\+I\+D\+TH}} = 8
-\item 
-\mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}} \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classchess_1_1models_1_1_board_a3437f7249afab8766357c12a2da2dbab}{board}} = new \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}}\mbox{[}\mbox{\hyperlink{classchess_1_1models_1_1_board_a87cf88fb8e9e53ae787791cbd114cb33}{W\+I\+D\+TH}}\mbox{]}\mbox{[}\mbox{\hyperlink{classchess_1_1models_1_1_board_a4abda6f2d6518bacfbfed46214ad9507}{H\+E\+I\+G\+HT}}\mbox{]}
-\item 
-\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_board_a052908fb3da796dbd328159704d96be7}{black\+King\+Pos}} = new \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}(\char`\"{}E1\char`\"{})
-\item 
-\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_board_a75fc76cc043240759072dc301833a37a}{white\+King\+Pos}} = new \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}(\char`\"{}E8\char`\"{})
-\item 
-\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} \mbox{\hyperlink{classchess_1_1models_1_1_board_ac1b409757f5ecc1de2e00b6b92ca6605}{cur\+Player}} = \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player_a60ced79fc80ec46a6a2a6f031b27b08e}{Player.\+White}}
-\item 
-Set$<$ \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}} $>$ \mbox{\hyperlink{classchess_1_1models_1_1_board_ac9ce24be7c95629a0fce07798e2de02e}{black\+Chess\+Set}} = new Hash\+Set$<$$>$()
-\item 
-Set$<$ \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}} $>$ \mbox{\hyperlink{classchess_1_1models_1_1_board_a994179278987ea6ec0978ed1ea257145}{white\+Chess\+Set}} = new Hash\+Set$<$$>$()
-\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -208,29 +180,7 @@ Check if the checking piece can be captured
 \begin{DoxyReturn}{Returns}
 if the checking piece can be captured 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_adde204ed1d3ce6bd7841972c322dac9a}\label{classchess_1_1models_1_1_board_adde204ed1d3ce6bd7841972c322dac9a}} 
-\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!if\+King\+Can\+Not\+Move@{if\+King\+Can\+Not\+Move}}
-\index{if\+King\+Can\+Not\+Move@{if\+King\+Can\+Not\+Move}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
-\subsubsection{\texorpdfstring{if\+King\+Can\+Not\+Move()}{ifKingCanNotMove()}}
-{\footnotesize\ttfamily boolean chess.\+models.\+Board.\+if\+King\+Can\+Not\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}}}]{king }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-Check if the king can move to other position(i.\+e. escape under check).
-
-
-\begin{DoxyParams}{Parameters}
-{\em king} & selected King \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true is that the king can move to other position 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_a63ff29b16684420475c594d5dc11f24a}\label{classchess_1_1models_1_1_board_a63ff29b16684420475c594d5dc11f24a}} 
-\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!init@{init}}
-\index{init@{init}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
-\subsubsection{\texorpdfstring{init()}{init()}}
-{\footnotesize\ttfamily void chess.\+models.\+Board.\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-Create Initial state of chess board \mbox{\Hypertarget{classchess_1_1models_1_1_board_a2514b6b830efc0aeeb2ba6f64aa033e2}\label{classchess_1_1models_1_1_board_a2514b6b830efc0aeeb2ba6f64aa033e2}} 
+\mbox{\Hypertarget{classchess_1_1models_1_1_board_a2514b6b830efc0aeeb2ba6f64aa033e2}\label{classchess_1_1models_1_1_board_a2514b6b830efc0aeeb2ba6f64aa033e2}} 
 \index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!is\+Legal\+Move@{is\+Legal\+Move}}
 \index{is\+Legal\+Move@{is\+Legal\+Move}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
 \subsubsection{\texorpdfstring{is\+Legal\+Move()}{isLegalMove()}}
@@ -277,24 +227,6 @@ Judge if the game is ended
 \begin{DoxyReturn}{Returns}
 Game\+Result 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_ade8f6def7998bb1bd22923e09a8a8c8b}\label{classchess_1_1models_1_1_board_ade8f6def7998bb1bd22923e09a8a8c8b}} 
-\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!over\+Pieces\+Diagonal\+Checker@{over\+Pieces\+Diagonal\+Checker}}
-\index{over\+Pieces\+Diagonal\+Checker@{over\+Pieces\+Diagonal\+Checker}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
-\subsubsection{\texorpdfstring{over\+Pieces\+Diagonal\+Checker()}{overPiecesDiagonalChecker()}}
-{\footnotesize\ttfamily boolean chess.\+models.\+Board.\+over\+Pieces\+Diagonal\+Checker (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{pos,  }\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{chess\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-helper function to check if the diagonal move is\+Over\+Pieces.
-
-
-\begin{DoxyParams}{Parameters}
-{\em pos} & The position with greater x-\/value compared to chess\+Pos. \\
-\hline
-{\em chess\+Pos} & The position with smaller x-\/value compared to chess\+Pos. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true if the disgonal move is over other pieces, false otherwise. 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classchess_1_1models_1_1_board_af22da20d051a6cc31c6730e5dc80d81e}\label{classchess_1_1models_1_1_board_af22da20d051a6cc31c6730e5dc80d81e}} 
 \index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!print@{print}}
 \index{print@{print}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
@@ -314,57 +246,6 @@ if it is stalemate
 \end{DoxyReturn}
 
 
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_ac9ce24be7c95629a0fce07798e2de02e}\label{classchess_1_1models_1_1_board_ac9ce24be7c95629a0fce07798e2de02e}} 
-\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!black\+Chess\+Set@{black\+Chess\+Set}}
-\index{black\+Chess\+Set@{black\+Chess\+Set}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
-\subsubsection{\texorpdfstring{black\+Chess\+Set}{blackChessSet}}
-{\footnotesize\ttfamily Set$<$\mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}}$>$ chess.\+models.\+Board.\+black\+Chess\+Set = new Hash\+Set$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_a052908fb3da796dbd328159704d96be7}\label{classchess_1_1models_1_1_board_a052908fb3da796dbd328159704d96be7}} 
-\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!black\+King\+Pos@{black\+King\+Pos}}
-\index{black\+King\+Pos@{black\+King\+Pos}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
-\subsubsection{\texorpdfstring{black\+King\+Pos}{blackKingPos}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} chess.\+models.\+Board.\+black\+King\+Pos = new \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}(\char`\"{}E1\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_a3437f7249afab8766357c12a2da2dbab}\label{classchess_1_1models_1_1_board_a3437f7249afab8766357c12a2da2dbab}} 
-\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!board@{board}}
-\index{board@{board}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
-\subsubsection{\texorpdfstring{board}{board}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}} \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} chess.\+models.\+Board.\+board = new \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}}\mbox{[}\mbox{\hyperlink{classchess_1_1models_1_1_board_a87cf88fb8e9e53ae787791cbd114cb33}{W\+I\+D\+TH}}\mbox{]}\mbox{[}\mbox{\hyperlink{classchess_1_1models_1_1_board_a4abda6f2d6518bacfbfed46214ad9507}{H\+E\+I\+G\+HT}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_ac1b409757f5ecc1de2e00b6b92ca6605}\label{classchess_1_1models_1_1_board_ac1b409757f5ecc1de2e00b6b92ca6605}} 
-\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!cur\+Player@{cur\+Player}}
-\index{cur\+Player@{cur\+Player}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
-\subsubsection{\texorpdfstring{cur\+Player}{curPlayer}}
-{\footnotesize\ttfamily \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} chess.\+models.\+Board.\+cur\+Player = \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player_a60ced79fc80ec46a6a2a6f031b27b08e}{Player.\+White}}\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_a4abda6f2d6518bacfbfed46214ad9507}\label{classchess_1_1models_1_1_board_a4abda6f2d6518bacfbfed46214ad9507}} 
-\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}}
-\index{H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
-\subsubsection{\texorpdfstring{H\+E\+I\+G\+HT}{HEIGHT}}
-{\footnotesize\ttfamily int chess.\+models.\+Board.\+H\+E\+I\+G\+HT = 8\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_a994179278987ea6ec0978ed1ea257145}\label{classchess_1_1models_1_1_board_a994179278987ea6ec0978ed1ea257145}} 
-\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!white\+Chess\+Set@{white\+Chess\+Set}}
-\index{white\+Chess\+Set@{white\+Chess\+Set}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
-\subsubsection{\texorpdfstring{white\+Chess\+Set}{whiteChessSet}}
-{\footnotesize\ttfamily Set$<$\mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}}$>$ chess.\+models.\+Board.\+white\+Chess\+Set = new Hash\+Set$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_a75fc76cc043240759072dc301833a37a}\label{classchess_1_1models_1_1_board_a75fc76cc043240759072dc301833a37a}} 
-\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!white\+King\+Pos@{white\+King\+Pos}}
-\index{white\+King\+Pos@{white\+King\+Pos}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
-\subsubsection{\texorpdfstring{white\+King\+Pos}{whiteKingPos}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} chess.\+models.\+Board.\+white\+King\+Pos = new \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}(\char`\"{}E8\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_a87cf88fb8e9e53ae787791cbd114cb33}\label{classchess_1_1models_1_1_board_a87cf88fb8e9e53ae787791cbd114cb33}} 
-\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!W\+I\+D\+TH@{W\+I\+D\+TH}}
-\index{W\+I\+D\+TH@{W\+I\+D\+TH}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
-\subsubsection{\texorpdfstring{W\+I\+D\+TH}{WIDTH}}
-{\footnotesize\ttfamily int chess.\+models.\+Board.\+W\+I\+D\+TH = 8\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-G\+:/\+Chess/src/main/java/chess/models/\mbox{\hyperlink{_board_8java}{Board.\+java}}\end{DoxyCompactItemize}
+src/main/java/chess/models/\mbox{\hyperlink{_board_8java}{Board.\+java}}\end{DoxyCompactItemize}

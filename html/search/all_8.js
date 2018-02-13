@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['judge',['judge',['../classchess_1_1models_1_1_board.html#a7e3f69e82d8337f3cf6109913e5335d3',1,'chess::models::Board']]],
-  ['judge1',['judge1',['../classchess_1_1models_1_1_board_test.html#ac9b34935f4cdf3524798e4c178036fbd',1,'chess::models::BoardTest']]],
-  ['judge2',['judge2',['../classchess_1_1models_1_1_board_test.html#a708f6fe814a3302d04a1cce4b8240888',1,'chess::models::BoardTest']]],
-  ['judge3',['judge3',['../classchess_1_1models_1_1_board_test.html#a6f1053d76b490513d3c7584152633f95',1,'chess::models::BoardTest']]],
-  ['judge4',['judge4',['../classchess_1_1models_1_1_board_test.html#a4074e4e4aa38a30e48d4751f78b9e7ea',1,'chess::models::BoardTest']]]
+  ['king',['King',['../classchess_1_1models_1_1pieces_1_1_king.html',1,'chess.models.pieces.King'],['../classchess_1_1models_1_1pieces_1_1_king.html#abc06c6362a34a9f7289c374c50d3b728',1,'chess.models.pieces.King.King()']]],
+  ['king_2ejava',['King.java',['../_king_8java.html',1,'']]],
+  ['kingtest',['KingTest',['../classchess_1_1models_1_1pieces_1_1_king_test.html',1,'chess::models::pieces']]],
+  ['kingtest_2ejava',['KingTest.java',['../_king_test_8java.html',1,'']]],
+  ['knight',['Knight',['../classchess_1_1models_1_1pieces_1_1_knight.html',1,'chess.models.pieces.Knight'],['../classchess_1_1models_1_1pieces_1_1_knight.html#aa435be794e37d426954f2853a4aac26a',1,'chess.models.pieces.Knight.Knight()']]],
+  ['knight_2ejava',['Knight.java',['../_knight_8java.html',1,'']]],
+  ['knighttest',['KnightTest',['../classchess_1_1models_1_1pieces_1_1_knight_test.html',1,'chess::models::pieces']]],
+  ['knighttest_2ejava',['KnightTest.java',['../_knight_test_8java.html',1,'']]]
 ];

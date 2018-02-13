@@ -7,6 +7,9 @@ import chess.models.enums.Player;
 
 /**
  * Custom chess piece: Soldier
+ * Soldier is Chinese Pawn.
+ * It move and capture by advancing one point before it crossed the river(the half of ths board).
+ * Once they have crossed the river, they may also move and capture one point horizontally.
  */
 public class Soldier extends ChessPiece {
 
@@ -32,9 +35,6 @@ public class Soldier extends ChessPiece {
             return MoveResult.SamePosition;
         }
 
-        // Soldier is Chinese Pawn.
-        // It move and capture by advancing one point before it crossed the river(the half of ths board).
-        // Once they have crossed the river, they may also move and capture one point horizontally.
         int distance;
         if (this.getPosition().isVertical(pos)) {
             if (this.isForward(pos)) {

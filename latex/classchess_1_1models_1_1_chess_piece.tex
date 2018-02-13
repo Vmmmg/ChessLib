@@ -9,26 +9,19 @@ Inheritance diagram for chess.\+models.\+Chess\+Piece\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a59beae5e1f384747a201a4c417ca0afb}{Chess\+Piece}} (\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a3bcc8a24667318b5aab8c146adcc3eb7}{player}}, \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}{position}})
+\mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a59beae5e1f384747a201a4c417ca0afb}{Chess\+Piece}} (\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} player, \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} position)
 \item 
 \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a4ce783eeb2ec6d5cd83af05c11fe8cdb}{get\+Position}} ()
 \item 
-void \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a2e3c62bde5041ca0aa53e0476cc8b600}{set\+Position}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}{position}})
+void \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a2e3c62bde5041ca0aa53e0476cc8b600}{set\+Position}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} position)
 \item 
 \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_aaa3cef5d52e4a228dc01f91133a6c437}{get\+Player}} ()
 \item 
-void \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a77865fbd52257338c4e376af525155c7}{move}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}{position}})
+void \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a77865fbd52257338c4e376af525155c7}{move}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} position)
 \item 
 abstract \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_move_result}{Move\+Result}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a60088166dd440bf51de4514c3e57841e}{is\+Legal\+Move}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} pos)
 \item 
 Set$<$ \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} $>$ \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_afd359313e83bdef860f9f8236435522f}{gen\+Next\+Step}} (\mbox{\hyperlink{classchess_1_1models_1_1_board}{Board}} board)
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a3bcc8a24667318b5aab8c146adcc3eb7}{player}}
-\item 
-\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}{position}}
 \end{DoxyCompactItemize}
 
 
@@ -136,21 +129,6 @@ Set chess piece position
 \end{DoxyParams}
 
 
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_a3bcc8a24667318b5aab8c146adcc3eb7}\label{classchess_1_1models_1_1_chess_piece_a3bcc8a24667318b5aab8c146adcc3eb7}} 
-\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!player@{player}}
-\index{player@{player}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
-\subsubsection{\texorpdfstring{player}{player}}
-{\footnotesize\ttfamily \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} chess.\+models.\+Chess\+Piece.\+player\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}\label{classchess_1_1models_1_1_chess_piece_a0e4f8616b75e548f269d3971846396f3}} 
-\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!position@{position}}
-\index{position@{position}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
-\subsubsection{\texorpdfstring{position}{position}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} chess.\+models.\+Chess\+Piece.\+position\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-G\+:/\+Chess/src/main/java/chess/models/\mbox{\hyperlink{_chess_piece_8java}{Chess\+Piece.\+java}}\end{DoxyCompactItemize}
+src/main/java/chess/models/\mbox{\hyperlink{_chess_piece_8java}{Chess\+Piece.\+java}}\end{DoxyCompactItemize}

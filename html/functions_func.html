@@ -9,14 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(initResizable);
-/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -30,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Chess
-   &#160;<span id="projectnumber">Version1.0</span>
+   &#160;<span id="projectnumber">Version 1</span>
    </div>
   </td>
  </tr>
@@ -55,22 +47,6 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('functions_func.html','');});
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -113,8 +89,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classchess_1_1models_1_1_board.html#a7268e3609f458bc8acd92b43727ca63d">chess.models.Board</a>
 </li>
 <li>chessMove()
-: <a class="el" href="classchess_1_1models_1_1_board.html#a013a001cb8edfdd61272275d210609fd">chess.models.Board</a>
-, <a class="el" href="classchess_1_1models_1_1_board_test.html#a3d0c25a13f7bffb5fcdc2baa95140282">chess.models.BoardTest</a>
+: <a class="el" href="classchess_1_1_board_test.html#ad2614964ffa53b71ba2cccc28e103132">chess.BoardTest</a>
+, <a class="el" href="classchess_1_1models_1_1_board.html#a013a001cb8edfdd61272275d210609fd">chess.models.Board</a>
 </li>
 <li>ChessPiece()
 : <a class="el" href="classchess_1_1models_1_1_chess_piece.html#a59beae5e1f384747a201a4c417ca0afb">chess.models.ChessPiece</a>
@@ -174,6 +150,15 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>getPositions3()
 : <a class="el" href="classchess_1_1models_1_1_path_test.html#a42e6278bdbd086dbb1394c8bf873a0af">chess.models.PathTest</a>
 </li>
+<li>getPositions4()
+: <a class="el" href="classchess_1_1models_1_1_path_test.html#aaf6c6d5aa808f5053969af5aab3a445e">chess.models.PathTest</a>
+</li>
+<li>getPositions5()
+: <a class="el" href="classchess_1_1models_1_1_path_test.html#aa34d58c5b3a3227dc5149a288c804703">chess.models.PathTest</a>
+</li>
+<li>getPositions6()
+: <a class="el" href="classchess_1_1models_1_1_path_test.html#a3dd398e0f0b6122db0ab49e67e1182b0">chess.models.PathTest</a>
+</li>
 <li>getSpecificPositionChess()
 : <a class="el" href="classchess_1_1models_1_1_board.html#a3e21ecd167f3c80dfd260e9acde208c6">chess.models.Board</a>
 </li>
@@ -199,12 +184,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>ifCheckmatePieceCanBeCaptured()
 : <a class="el" href="classchess_1_1models_1_1_board.html#a235a8cac7cd2b48fb81165fbedb386e8">chess.models.Board</a>
 </li>
-<li>ifKingCanNotMove()
-: <a class="el" href="classchess_1_1models_1_1_board.html#adde204ed1d3ce6bd7841972c322dac9a">chess.models.Board</a>
-</li>
 <li>init()
-: <a class="el" href="classchess_1_1models_1_1_board.html#a63ff29b16684420475c594d5dc11f24a">chess.models.Board</a>
-, <a class="el" href="classchess_1_1models_1_1_board_test.html#a10af4ad3bb2f8e37a64dcce7a8b7dfc2">chess.models.BoardTest</a>
+: <a class="el" href="classchess_1_1_board_test.html#a74abc15f67e30a9464758c1bf5dccbff">chess.BoardTest</a>
 </li>
 <li>isCrossTheRiver()
 : <a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html#a9ee2ecb79068bd41f01608f23cd8dd01">chess.models.pieces.Soldier</a>
@@ -225,8 +206,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="classchess_1_1models_1_1_position_test.html#ace63643a56fd83257a1a8158008deca1">chess.models.PositionTest</a>
 </li>
 <li>isLegalMove()
-: <a class="el" href="classchess_1_1models_1_1_board.html#a2514b6b830efc0aeeb2ba6f64aa033e2">chess.models.Board</a>
-, <a class="el" href="classchess_1_1models_1_1_board_test.html#aa036eb171b9c74201487bc2a28b4b144">chess.models.BoardTest</a>
+: <a class="el" href="classchess_1_1_board_test.html#abd189ec57b7236f5482df6d2121898e6">chess.BoardTest</a>
+, <a class="el" href="classchess_1_1models_1_1_board.html#a2514b6b830efc0aeeb2ba6f64aa033e2">chess.models.Board</a>
 , <a class="el" href="classchess_1_1models_1_1_chess_piece.html#a60088166dd440bf51de4514c3e57841e">chess.models.ChessPiece</a>
 , <a class="el" href="classchess_1_1models_1_1pieces_1_1_advisor.html#afd4015213fb9b97240f4235a9776f972">chess.models.pieces.Advisor</a>
 , <a class="el" href="classchess_1_1models_1_1pieces_1_1_advisor_test.html#a865ff283ac107e64d2d27044ff25d02e">chess.models.pieces.AdvisorTest</a>
@@ -250,12 +231,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="classchess_1_1models_1_1_position_test.html#a282101019a4c2533fb93d04d6e0b4a30">chess.models.PositionTest</a>
 </li>
 <li>isOverPiece()
-: <a class="el" href="classchess_1_1models_1_1_board.html#a8ffee6403d98b5e5e68c0a2b73440100">chess.models.Board</a>
-, <a class="el" href="classchess_1_1models_1_1_board_test.html#a1773084965e42a6c3b2e6ff3f44d72e9">chess.models.BoardTest</a>
-</li>
-<li>isSetEquals()
-: <a class="el" href="classchess_1_1models_1_1_path_test.html#a6c2cec1f3d389067e84ff5fe93a6b6a8">chess.models.PathTest</a>
-, <a class="el" href="classchess_1_1models_1_1pieces_1_1_advisor_test.html#a620e5937f1e6bbe806b60f364e103d19">chess.models.pieces.AdvisorTest</a>
+: <a class="el" href="classchess_1_1_board_test.html#a844fc9d2b643df169a9b74a1983ce9ba">chess.BoardTest</a>
+, <a class="el" href="classchess_1_1models_1_1_board.html#a8ffee6403d98b5e5e68c0a2b73440100">chess.models.Board</a>
 </li>
 <li>isVertical()
 : <a class="el" href="classchess_1_1models_1_1_position.html#a50da6933e82356a80b6f012251189d25">chess.models.Position</a>
@@ -268,17 +245,20 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>judge()
 : <a class="el" href="classchess_1_1models_1_1_board.html#a7e3f69e82d8337f3cf6109913e5335d3">chess.models.Board</a>
 </li>
-<li>judge1()
-: <a class="el" href="classchess_1_1models_1_1_board_test.html#ac9b34935f4cdf3524798e4c178036fbd">chess.models.BoardTest</a>
+<li>judgeBlackWin()
+: <a class="el" href="classchess_1_1_board_test.html#ad40ac3593566417a81427839b45a0386">chess.BoardTest</a>
 </li>
-<li>judge2()
-: <a class="el" href="classchess_1_1models_1_1_board_test.html#a708f6fe814a3302d04a1cce4b8240888">chess.models.BoardTest</a>
+<li>judgeDraw1()
+: <a class="el" href="classchess_1_1_board_test.html#a8fc68b54ebdf9823e0422ecdaf4522e1">chess.BoardTest</a>
 </li>
-<li>judge3()
-: <a class="el" href="classchess_1_1models_1_1_board_test.html#a6f1053d76b490513d3c7584152633f95">chess.models.BoardTest</a>
+<li>judgeDraw2()
+: <a class="el" href="classchess_1_1_board_test.html#ad4523d7eaf28497a4eae4d1cc6aff53d">chess.BoardTest</a>
 </li>
-<li>judge4()
-: <a class="el" href="classchess_1_1models_1_1_board_test.html#a4074e4e4aa38a30e48d4751f78b9e7ea">chess.models.BoardTest</a>
+<li>judgeGaming()
+: <a class="el" href="classchess_1_1_board_test.html#ab027906c63e88c5024784d8f61f6c632">chess.BoardTest</a>
+</li>
+<li>judgeWhiteWin()
+: <a class="el" href="classchess_1_1_board_test.html#a9eba77bc50638d378f650d30ea79f44b">chess.BoardTest</a>
 </li>
 </ul>
 
@@ -304,13 +284,6 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </ul>
 
 
-<h3><a id="index_o"></a>- o -</h3><ul>
-<li>overPiecesDiagonalChecker()
-: <a class="el" href="classchess_1_1models_1_1_board.html#ade8f6def7998bb1bd22923e09a8a8c8b">chess.models.Board</a>
-</li>
-</ul>
-
-
 <h3><a id="index_p"></a>- p -</h3><ul>
 <li>Path()
 : <a class="el" href="classchess_1_1models_1_1_path.html#a5ddc0a03cb1c2b1dd93f77dbecfcdc27">chess.models.Path</a>
@@ -319,7 +292,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classchess_1_1models_1_1pieces_1_1_pawn.html#aa62632674360fd0518f583bf1477b8c1">chess.models.pieces.Pawn</a>
 </li>
 <li>Position()
-: <a class="el" href="classchess_1_1models_1_1_position.html#af2ca0e2b74a18503f08e8492a52501c1">chess.models.Position</a>
+: <a class="el" href="classchess_1_1models_1_1_position.html#aa5e15407a249f22ba683d43083c3f16b">chess.models.Position</a>
 </li>
 <li>print()
 : <a class="el" href="classchess_1_1models_1_1_board.html#af22da20d051a6cc31c6730e5dc80d81e">chess.models.Board</a>
@@ -346,7 +319,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classchess_1_1models_1_1_chess_piece.html#a2e3c62bde5041ca0aa53e0476cc8b600">chess.models.ChessPiece</a>
 </li>
 <li>setUp()
-: <a class="el" href="classchess_1_1models_1_1_board_test.html#ada0da65b84521c5c95d305119b39b969">chess.models.BoardTest</a>
+: <a class="el" href="classchess_1_1_board_test.html#acd0ea30fd3e9742c6b71a5ee60b65707">chess.BoardTest</a>
 </li>
 <li>Soldier()
 : <a class="el" href="classchess_1_1models_1_1pieces_1_1_soldier.html#a3de8743b5a054a97b126297e3e5fea36">chess.models.pieces.Soldier</a>
@@ -371,14 +344,11 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
 </body>
 </html>
