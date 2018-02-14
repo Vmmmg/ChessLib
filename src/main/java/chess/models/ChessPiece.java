@@ -13,6 +13,7 @@ public abstract class ChessPiece {
 
     private Player player;
     private Position position;
+    int id;
 
     /**
      * Constructor of ChessPiece
@@ -23,6 +24,12 @@ public abstract class ChessPiece {
     public ChessPiece(Player player, Position position) {
         this.player = player;
         this.position = position;
+    }
+
+    public ChessPiece(Player player, Position position, int id){
+        this.player = player;
+        this.position = position;
+        this.id = id;
     }
 
     /**
@@ -52,6 +59,14 @@ public abstract class ChessPiece {
         return player;
     }
 
+    /**
+     * Get the piece's id
+     *
+     * @return the piece's id
+     */
+    public int getId(){
+        return id;
+    }
     /**
      * Move to specific position
      *

@@ -593,4 +593,21 @@ public class Board {
         return HEIGHT;
     }
 
+    /**
+     * Get the borad's current player
+     *
+     * @return the board's current player
+     */
+    public Player getCurPlayer() {
+        return curPlayer;
+    }
+
+    public void nextPlayer(){
+        if(curPlayer == Player.Black){
+            curPlayer = Player.White;
+        }
+        else{
+            curPlayer = Player.Black;
+        }
+    }
 }

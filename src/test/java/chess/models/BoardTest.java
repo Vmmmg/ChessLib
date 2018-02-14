@@ -3,6 +3,7 @@ package chess;
 import chess.models.Board;
 import chess.models.ChessPiece;
 import chess.models.Position;
+import chess.models.enums.GameMode;
 import chess.models.enums.GameResult;
 import chess.models.enums.MoveResult;
 import org.junit.Before;
@@ -16,7 +17,7 @@ public class BoardTest {
 
     @Before
     public void setUp() {
-        board = new Board();
+        board = new Board(GameMode.Classic);
     }
 
     @Test
