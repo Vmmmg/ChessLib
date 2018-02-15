@@ -11,24 +11,22 @@ import chess.models.enums.GameMode;
 import chess.models.enums.GameResult;
 import chess.models.enums.MoveResult;
 import chess.models.enums.Player;
-import chess.models.pieces.King;
-import chess.models.pieces.Queen;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The controller component of MVC
+ *
+ */
 public class BoardController {
 
     //top
@@ -117,6 +115,11 @@ public class BoardController {
     Command moveCommand;
     private RequestChessMove chessMoveInvoker;
 
+    /**
+     * Click the "start" button to first start the game
+     *
+     * @param event
+     */
     @FXML
     public void firstStartGame(ActionEvent event){
         blackName = bNameField.getText();
@@ -144,6 +147,11 @@ public class BoardController {
         setChessDisable();
     }
 
+    /**
+     * Click the "start" menu item to start the game
+     *
+     * @param event
+     */
     @FXML
     public void startGame(ActionEvent event){
         resultLabel.setText("");
@@ -163,6 +171,9 @@ public class BoardController {
         startItem.setDisable(true);
     }
 
+    /**
+     * Set the Invoker of the Command Pattern
+     */
     public void setCommandInvoker(){
         chessMoveReceiver = new ChessMove();
         moveCommand = new ChessMoveCommand(chessMoveReceiver);
@@ -170,6 +181,9 @@ public class BoardController {
         chessMoveInvoker.setMoveCommand(moveCommand);
     }
 
+    /**
+     * Set the "undo" buttons' disable states when the turn is changed
+     */
     public void setUndoDisable(){
         if(board.getCurPlayer() == Player.White){
             bUndoBtn.setDisable(false);
@@ -181,6 +195,11 @@ public class BoardController {
         }
     }
 
+    /**
+     * Set the "restart", and "forfeit" buttons' disable states
+     *
+     * @param disable
+     */
     public void setPlayerBtnDisable(boolean disable){
         bRestartBtn.setDisable(disable);
         bForfeitBtn.setDisable(disable);
@@ -188,6 +207,9 @@ public class BoardController {
         wForfeitBtn.setDisable(disable);
     }
 
+    /**
+     * Add buttons to the corresponding panes when a new game starts
+     */
     public void addBtnToPane(){
         pane00.getChildren().addAll(bRookBtn1);
         pane10.getChildren().addAll(bKnightBtn1);
@@ -224,6 +246,11 @@ public class BoardController {
         pane76.getChildren().addAll(wPawnBtn8);
     }
 
+    /**
+     * Click "restart" button to request the opponent's agreement on restarting the game
+     *
+     * @param event
+     */
     @FXML
     public void restartConfirm(ActionEvent event){
         if((Button) event.getSource() == bRestartBtn){
@@ -242,6 +269,11 @@ public class BoardController {
         }
     }
 
+    /**
+     * Restart the game
+     *
+     * @param event
+     */
     @FXML
     public void restartGame(ActionEvent event){
         if((RadioButton) event.getSource() == wRestartYesBtn){
@@ -267,6 +299,11 @@ public class BoardController {
         startGame(event);
     }
 
+    /**
+     * Don't restart the game
+     *
+     * @param event
+     */
     @FXML
     public void notRestartGame(ActionEvent event){
         if((RadioButton) event.getSource() == wRestartNoBtn){
@@ -288,6 +325,11 @@ public class BoardController {
         }
     }
 
+    /**
+     * Click "forfeit" button to forfeit
+     *
+     * @param event
+     */
     @FXML
     public void forfeit(ActionEvent event){
         if((Button) event.getSource() == wForfeitBtn){
@@ -298,6 +340,11 @@ public class BoardController {
         }
     }
 
+    /**
+     * Click "undo" button to undo
+     *
+     * @param event
+     */
     @FXML
     public void undo(ActionEvent event){
         List<Position> poses = chessMoveInvoker.undoMoveCommand(board);
@@ -308,6 +355,9 @@ public class BoardController {
         setUndoDisable();
     }
 
+    /**
+     * Add buttons to the corresponding sets
+     */
     public void addBtnToSet(){
         blackBtnSet = new HashSet<>();
         whiteBtnSet = new HashSet<>();
@@ -347,6 +397,9 @@ public class BoardController {
         whiteBtnSet.add(wPawnBtn8);
     }
 
+    /**
+     * Add panes to the pane array
+     */
     public void addPaneToArray(){
         paneArray = new Pane[board.getHEIGHT()][board.getWIDTH()];
         paneArray[0][0] = pane00; paneArray[1][0] = pane10;
@@ -383,6 +436,9 @@ public class BoardController {
         paneArray[6][7] = pane67; paneArray[7][7] = pane77;
     }
 
+    /**
+     * Game loop
+     */
     public void gameLoop(){
         int movingBtnPosX = Integer.parseInt(movingBtnPos.getId().substring(4, 5));
         int movingBtnPosY = Integer.parseInt(movingBtnPos.getId().substring(5, 6));
@@ -423,6 +479,9 @@ public class BoardController {
         }
     }
 
+    /**
+     * Set the chess's disable states when the turn is changed
+     */
     public void setChessDisable(){
         if(board.getCurPlayer() == Player.White){
             for(Button whiteBtn: whiteBtnSet){
@@ -442,6 +501,11 @@ public class BoardController {
         }
     }
 
+    /**
+     * The game is finished
+     *
+     * @param gameResult The game's result
+     */
     public void finish(GameResult gameResult){
         if(gameResult == GameResult.BlackWin){
             resultLabel.setText(blackName + " Win!");
@@ -466,6 +530,11 @@ public class BoardController {
         setPlayerBtnDisable(true);
     }
 
+    /**
+     * Click a chess button to select the chess
+     *
+     * @param event
+     */
     @FXML
     public void clickChess(ActionEvent event){
         resultLabel.setText("");
@@ -473,6 +542,11 @@ public class BoardController {
         movingBtnPos = (Pane) movingBtn.getParent();
     }
 
+    /**
+     * Click a grid to move the selected chess to the selected grid
+     *
+     * @param event
+     */
     @FXML
     public void clickDestination(MouseEvent event){
         resultLabel.setText("");

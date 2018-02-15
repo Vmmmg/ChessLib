@@ -16,12 +16,24 @@ public class ChessMoveCommand implements Command {
     private ArrayList<Position> posList;
     private ChessMove chessMove;
 
+    /**
+     * Contructor of ChessMoveCommand
+     *
+     * @param chessMove Receiver of the Command Pattern
+     */
     public ChessMoveCommand(ChessMove chessMove){
         chessList = new ArrayList<>();
         posList = new ArrayList<>();
         this.chessMove = chessMove;
     }
 
+    /**
+     * Execute command
+     *
+     * @param board
+     * @param chess  Piece that needs to move
+     * @param destination  Destination position
+     */
     @Override
     public void execute(Board board, ChessPiece chess, Position destination) {
         chessList.add(chess);
@@ -29,6 +41,12 @@ public class ChessMoveCommand implements Command {
         chessMove.move(board, chess, destination);
     }
 
+    /**
+     * Undo command
+     *
+     * @param board
+     * @return The chess's positions before undo and after undo
+     */
     @Override
     public List<Position> undo(Board board) {
         ChessPiece chess = chessList.get(chessList.size() - 1);
