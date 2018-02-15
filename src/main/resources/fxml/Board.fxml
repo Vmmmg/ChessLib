@@ -7,7 +7,6 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
@@ -45,82 +44,82 @@
             <children>
                 <Pane fx:id="pane00" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="0" GridPane.rowIndex="0">
                     <children>
-                        <Button fx:id="bRookBtn1" mnemonicParsing="false" onAction="#clickChess" styleClass="black_rook" />
+                        <Button fx:id="bRookBtn1" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_rook" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane10" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="1" GridPane.rowIndex="0">
                     <children>
-                        <Button fx:id="bKnightBtn1" mnemonicParsing="false" onAction="#clickChess" styleClass="black_knight" />
+                        <Button fx:id="bKnightBtn1" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_knight" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane20" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="2" GridPane.rowIndex="0">
                     <children>
-                        <Button fx:id="bBishopBtn1" mnemonicParsing="false" onAction="#clickChess" styleClass="black_bishop" />
+                        <Button fx:id="bBishopBtn1" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_bishop" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane30" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="3" GridPane.rowIndex="0">
                     <children>
-                        <Button fx:id="bQueenBtn" mnemonicParsing="false" onAction="#clickChess" styleClass="black_queen" />
+                        <Button fx:id="bQueenBtn" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_queen" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane40" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="4" GridPane.rowIndex="0">
                     <children>
-                        <Button fx:id="bKingBtn" mnemonicParsing="false" onAction="#clickChess" styleClass="black_king" />
+                        <Button fx:id="bKingBtn" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_king" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane50" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="5" GridPane.rowIndex="0">
                     <children>
-                        <Button fx:id="bBishopBtn2" mnemonicParsing="false" onAction="#clickChess" styleClass="black_bishop" />
+                        <Button fx:id="bBishopBtn2" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_bishop" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane60" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="6" GridPane.rowIndex="0">
                     <children>
-                        <Button fx:id="bKnightBtn2" mnemonicParsing="false" onAction="#clickChess" styleClass="black_knight" />
+                        <Button fx:id="bKnightBtn2" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_knight" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane70" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="7" GridPane.rowIndex="0">
                     <children>
-                        <Button fx:id="bRookBtn2" mnemonicParsing="false" onAction="#clickChess" styleClass="black_rook" />
+                        <Button fx:id="bRookBtn2" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_rook" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane01" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="0" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="bPawnBtn1" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
+                        <Button fx:id="bPawnBtn1" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane11" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="bPawnBtn2" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
+                        <Button fx:id="bPawnBtn2" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane21" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="2" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="bPawnBtn3" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
+                        <Button fx:id="bPawnBtn3" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane31" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="bPawnBtn4" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
+                        <Button fx:id="bPawnBtn4" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane41" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="4" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="bPawnBtn5" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
+                        <Button fx:id="bPawnBtn5" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane51" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="5" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="bPawnBtn6" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
+                        <Button fx:id="bPawnBtn6" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane61" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="6" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="bPawnBtn7" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
+                        <Button fx:id="bPawnBtn7" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane71" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="7" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="bPawnBtn8" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
+                        <Button fx:id="bPawnBtn8" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="black_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane02" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.rowIndex="2" />
@@ -157,82 +156,82 @@
                 <Pane fx:id="pane75" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="7" GridPane.rowIndex="5" />
                 <Pane fx:id="pane06" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.rowIndex="6">
                     <children>
-                        <Button fx:id="wPawnBtn1" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
+                        <Button fx:id="wPawnBtn1" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane16" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="1" GridPane.rowIndex="6">
                     <children>
-                        <Button fx:id="wPawnBtn2" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
+                        <Button fx:id="wPawnBtn2" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane26" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="2" GridPane.rowIndex="6">
                     <children>
-                        <Button fx:id="wPawnBtn3" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
+                        <Button fx:id="wPawnBtn3" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane36" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="3" GridPane.rowIndex="6">
                     <children>
-                        <Button fx:id="wPawnBtn4" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
+                        <Button fx:id="wPawnBtn4" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane46" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="4" GridPane.rowIndex="6">
                     <children>
-                        <Button fx:id="wPawnBtn5" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
+                        <Button fx:id="wPawnBtn5" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane56" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="5" GridPane.rowIndex="6">
                     <children>
-                        <Button fx:id="wPawnBtn6" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
+                        <Button fx:id="wPawnBtn6" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane66" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="6" GridPane.rowIndex="6">
                     <children>
-                        <Button fx:id="wPawnBtn7" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
+                        <Button fx:id="wPawnBtn7" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane76" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="7" GridPane.rowIndex="6">
                     <children>
-                        <Button fx:id="wPawnBtn8" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
+                        <Button fx:id="wPawnBtn8" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_pawn" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane07" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.rowIndex="7">
                     <children>
-                        <Button fx:id="wRookBtn1" mnemonicParsing="false" onAction="#clickChess" styleClass="white_rook" />
+                        <Button fx:id="wRookBtn1" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_rook" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane17" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="1" GridPane.rowIndex="7">
                     <children>
-                        <Button fx:id="wKnightBtn1" mnemonicParsing="false" onAction="#clickChess" styleClass="white_knight" />
+                        <Button fx:id="wKnightBtn1" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_knight" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane27" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="2" GridPane.rowIndex="7">
                     <children>
-                        <Button fx:id="wBishopBtn1" mnemonicParsing="false" onAction="#clickChess" styleClass="white_bishop" />
+                        <Button fx:id="wBishopBtn1" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_bishop" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane37" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="3" GridPane.rowIndex="7">
                     <children>
-                        <Button fx:id="wQueenBtn" mnemonicParsing="false" onAction="#clickChess" styleClass="white_queen" />
+                        <Button fx:id="wQueenBtn" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_queen" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane47" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="4" GridPane.rowIndex="7">
                     <children>
-                        <Button fx:id="wKingBtn" mnemonicParsing="false" onAction="#clickChess" styleClass="white_king" />
+                        <Button fx:id="wKingBtn" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_king" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane57" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="5" GridPane.rowIndex="7">
                     <children>
-                        <Button fx:id="wBishopBtn2" mnemonicParsing="false" onAction="#clickChess" styleClass="white_bishop" />
+                        <Button fx:id="wBishopBtn2" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_bishop" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane67" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="black_back" GridPane.columnIndex="6" GridPane.rowIndex="7">
                     <children>
-                        <Button fx:id="wKnightBtn2" mnemonicParsing="false" onAction="#clickChess" styleClass="white_knight" />
+                        <Button fx:id="wKnightBtn2" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_knight" />
                     </children>
                 </Pane>
                 <Pane fx:id="pane77" onMouseClicked="#clickDestination" prefHeight="85.0" prefWidth="85.0" styleClass="white_back" GridPane.columnIndex="7" GridPane.rowIndex="7">
                     <children>
-                        <Button fx:id="wRookBtn2" mnemonicParsing="false" onAction="#clickChess" styleClass="white_rook" />
+                        <Button fx:id="wRookBtn2" disable="true" mnemonicParsing="false" onAction="#clickChess" styleClass="white_rook" />
                     </children>
                 </Pane>
             </children>
@@ -243,7 +242,7 @@
             <menus>
                 <Menu mnemonicParsing="false" text="Game">
                <items>
-                  <MenuItem fx:id="startItem" disable="true" mnemonicParsing="false" text="Start" />
+                  <MenuItem fx:id="startItem" disable="true" mnemonicParsing="false" onAction="#startGame" text="Start" />
                </items></Menu>
             </menus>
         </MenuBar>
@@ -263,25 +262,25 @@
                   </Label>
                   <Pane prefHeight="45.0" prefWidth="150.0">
                      <children>
-                        <Button fx:id="bUndoBtn" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="63.0" styleClass="func_btn" text="undo" />
+                        <Button fx:id="bUndoBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="63.0" styleClass="func_btn" text="undo" />
                      </children>
                   </Pane>
                   <Pane prefHeight="45.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="bRestartBtn" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" styleClass="func_btn" text="restart" />
+                        <Button fx:id="bRestartBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" onAction="#restartConfirm" styleClass="func_btn" text="restart" />
                      </children>
                   </Pane>
                   <Pane prefHeight="45.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="bForfeitBtn" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" styleClass="func_btn" text="forfeit" />
+                        <Button fx:id="bForfeitBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" styleClass="func_btn" text="forfeit" />
                      </children>
                   </Pane>
                   <Label fx:id="bRestartLabel" prefHeight="55.0" prefWidth="150.0" text="Do you agree to restart?" visible="false" wrapText="true" />
-                  <RadioButton fx:id="bRestartYesBtn" disable="true" mnemonicParsing="false" text="Yes" visible="false">
+                  <RadioButton fx:id="bRestartYesBtn" disable="true" mnemonicParsing="false" onAction="#restartGame" text="Yes" visible="false">
                      <toggleGroup>
                         <ToggleGroup fx:id="bRestart" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="bRestartNoBtn" disable="true" mnemonicParsing="false" text="No" toggleGroup="$bRestart" visible="false" />
+                  <RadioButton fx:id="bRestartNoBtn" disable="true" mnemonicParsing="false" onAction="#notRestartGame" text="No" toggleGroup="$bRestart" visible="false" />
                </children>
             </VBox>
             <Label fx:id="resultLabel" alignment="CENTER" prefHeight="80.0" prefWidth="159.0" textFill="#c31212" wrapText="true">
@@ -297,21 +296,21 @@
                   </Label>
                   <Pane prefHeight="45.0" prefWidth="150.0">
                      <children>
-                        <Button fx:id="wUndoBtn" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="63.0" styleClass="func_btn" text="undo" />
+                        <Button fx:id="wUndoBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="63.0" styleClass="func_btn" text="undo" />
                      </children>
                   </Pane>
                   <Pane prefHeight="45.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="wRestartBtn" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" styleClass="func_btn" text="restart" />
+                        <Button fx:id="wRestartBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" onAction="#restartConfirm" styleClass="func_btn" text="restart" />
                      </children>
                   </Pane>
                   <Pane prefHeight="45.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="wForfeitBtn" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" styleClass="func_btn" text="forfeit" />
+                        <Button fx:id="wForfeitBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" styleClass="func_btn" text="forfeit" />
                      </children>
                   </Pane>
                   <Label fx:id="wRestartLabel" prefHeight="55.0" prefWidth="150.0" text="Do you agree to restart?" visible="false" wrapText="true" />
-                  <RadioButton fx:id="wRestartYesBtn" disable="true" mnemonicParsing="false" text="Yes" visible="false">
+                  <RadioButton fx:id="wRestartYesBtn" disable="true" mnemonicParsing="false" onAction="#restartGame" text="Yes" visible="false">
                      <toggleGroup>
                         <ToggleGroup fx:id="wRestart" />
                      </toggleGroup></RadioButton>
@@ -324,7 +323,10 @@
    <right>
       <VBox prefHeight="200.0" prefWidth="150.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <TextArea editable="false" prefHeight="172.0" prefWidth="150.0" text="&#10;Please input two players' names and choose the game template before you start the game.&#10;" wrapText="true" />
+            <Label prefHeight="172.0" prefWidth="151.0" text="Please input two players' names and choose the game template before you start the game." wrapText="true">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding></Label>
             <Label alignment="CENTER" prefHeight="20.0" prefWidth="153.0" text="Black's name:" />
             <TextField fx:id="bNameField" />
             <Label alignment="CENTER" prefHeight="20.0" prefWidth="153.0" text="White's name:" />
@@ -345,7 +347,7 @@
       </VBox>
    </right>
    <bottom>
-      <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <FlowPane fx:id="resultFlowPane" hgap="10.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" vgap="10.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="Result:" />
          </children>

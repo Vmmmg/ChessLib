@@ -122,75 +122,145 @@ public class BoardController {
 
         bNameLabel.setText(blackName);
         wNameLabel.setText(whiteName);
-        bNameField.setEditable(false);
-        wNameField.setEditable(false);
-        classicModeBtn.setDisable(false);
-        newModeBtn.setDisable(false);
-        startBtn.setDisable(false);
+        bNameField.setDisable(true);
+        wNameField.setDisable(true);
+        classicModeBtn.setDisable(true);
+        newModeBtn.setDisable(true);
+        startBtn.setDisable(true);
 
         board = new Board(selectedMode);
         addPaneToArray();
+        setPlayerBtnDisable(false);
         addBtnToSet();
         setChessDisable();
     }
 
     @FXML
     public void startGame(ActionEvent event){
+        resultLabel.setText("");
         board = new Board(selectedMode);
 
-        boardGridPane.setConstraints(wRookBtn1, 1, 8);
-        boardGridPane.setConstraints(wKnightBtn1, 2, 8);
-        boardGridPane.setConstraints(wBishopBtn1, 3, 8);
-        boardGridPane.setConstraints(wQueenBtn, 4, 8);
-        boardGridPane.setConstraints(wKingBtn, 5, 8);
-        boardGridPane.setConstraints(wBishopBtn2, 6, 8);
-        boardGridPane.setConstraints(wKnightBtn2, 7, 8);
-        boardGridPane.setConstraints(wRookBtn2, 8, 8);
-        boardGridPane.setConstraints(wPawnBtn1, 1, 7);
-        boardGridPane.setConstraints(wPawnBtn2, 2, 7);
-        boardGridPane.setConstraints(wPawnBtn3, 3, 7);
-        boardGridPane.setConstraints(wPawnBtn4, 4, 7);
-        boardGridPane.setConstraints(wPawnBtn5, 5, 7);
-        boardGridPane.setConstraints(wPawnBtn6, 6, 7);
-        boardGridPane.setConstraints(wPawnBtn7, 7, 7);
-        boardGridPane.setConstraints(wPawnBtn8, 8, 7);
+        for(int i = 0; i < board.getHEIGHT(); i++){
+            for(int j = 0; j < board.getWIDTH(); j++){
+                paneArray[i][j].getChildren().clear();
+            }
+        }
 
-        boardGridPane.setConstraints(bRookBtn1, 1, 1);
-        boardGridPane.setConstraints(bKnightBtn1, 2, 1);
-        boardGridPane.setConstraints(bBishopBtn1, 3, 1);
-        boardGridPane.setConstraints(bQueenBtn, 4, 1);
-        boardGridPane.setConstraints(bKingBtn, 5, 1);
-        boardGridPane.setConstraints(bBishopBtn2, 6, 1);
-        boardGridPane.setConstraints(bKnightBtn2, 7, 1);
-        boardGridPane.setConstraints(bRookBtn2, 8, 1);
-        boardGridPane.setConstraints(bPawnBtn1, 1, 2);
-        boardGridPane.setConstraints(bPawnBtn2, 2, 2);
-        boardGridPane.setConstraints(bPawnBtn3, 3, 2);
-        boardGridPane.setConstraints(bPawnBtn4, 4, 2);
-        boardGridPane.setConstraints(bPawnBtn5, 5, 2);
-        boardGridPane.setConstraints(bPawnBtn6, 6, 2);
-        boardGridPane.setConstraints(bPawnBtn7, 7, 2);
-        boardGridPane.setConstraints(bPawnBtn8, 8, 2);
-
-        boardGridPane.getChildren().addAll(bRookBtn1, bKnightBtn1, bBishopBtn1, bQueenBtn, bKingBtn, bBishopBtn2, bKnightBtn2, bRookBtn2,
-                bPawnBtn1, bPawnBtn2, bPawnBtn3, bPawnBtn4, bPawnBtn5, bPawnBtn6, bPawnBtn7, bPawnBtn8,
-                wRookBtn1, wKnightBtn1, wBishopBtn1, wQueenBtn, wKingBtn, wBishopBtn2, wKnightBtn2, wRookBtn2,
-                wPawnBtn1, wPawnBtn2, wPawnBtn3, wPawnBtn4, wPawnBtn5, wPawnBtn6,wPawnBtn7, wPawnBtn8);
-
+        setPlayerBtnDisable(false);
         addBtnToSet();
+        addBtnToPane();
         setChessDisable();
         startItem.setDisable(true);
     }
 
+    public void setPlayerBtnDisable(boolean disable){
+        bUndoBtn.setDisable(disable);
+        bRestartBtn.setDisable(disable);
+        bForfeitBtn.setDisable(disable);
+        wUndoBtn.setDisable(disable);
+        wRestartBtn.setDisable(disable);
+        wForfeitBtn.setDisable(disable);
+    }
+
+    public void addBtnToPane(){
+        pane00.getChildren().addAll(bRookBtn1);
+        pane10.getChildren().addAll(bKnightBtn1);
+        pane20.getChildren().addAll(bBishopBtn1);
+        pane30.getChildren().addAll(bQueenBtn);
+        pane40.getChildren().addAll(bKingBtn);
+        pane50.getChildren().addAll(bBishopBtn2);
+        pane60.getChildren().addAll(bKnightBtn2);
+        pane70.getChildren().addAll(bRookBtn2);
+        pane01.getChildren().addAll(bPawnBtn1);
+        pane11.getChildren().addAll(bPawnBtn2);
+        pane21.getChildren().addAll(bPawnBtn3);
+        pane31.getChildren().addAll(bPawnBtn4);
+        pane41.getChildren().addAll(bPawnBtn5);
+        pane51.getChildren().addAll(bPawnBtn6);
+        pane61.getChildren().addAll(bPawnBtn7);
+        pane71.getChildren().addAll(bPawnBtn8);
+
+        pane07.getChildren().addAll(wRookBtn1);
+        pane17.getChildren().addAll(wKnightBtn1);
+        pane27.getChildren().addAll(wBishopBtn1);
+        pane37.getChildren().addAll(wQueenBtn);
+        pane47.getChildren().addAll(wKingBtn);
+        pane57.getChildren().addAll(wBishopBtn2);
+        pane67.getChildren().addAll(wKnightBtn2);
+        pane77.getChildren().addAll(wRookBtn2);
+        pane06.getChildren().addAll(wPawnBtn1);
+        pane16.getChildren().addAll(wPawnBtn2);
+        pane26.getChildren().addAll(wPawnBtn3);
+        pane36.getChildren().addAll(wPawnBtn4);
+        pane46.getChildren().addAll(wPawnBtn5);
+        pane56.getChildren().addAll(wPawnBtn6);
+        pane66.getChildren().addAll(wPawnBtn7);
+        pane76.getChildren().addAll(wPawnBtn8);
+    }
+
+    @FXML
+    public void restartConfirm(ActionEvent event){
+        if((Button) event.getSource() == bRestartBtn){
+            wRestartLabel.setVisible(true);
+            wRestartYesBtn.setDisable(false);
+            wRestartYesBtn.setVisible(true);
+            wRestartNoBtn.setDisable(false);
+            wRestartNoBtn.setVisible(true);
+        }
+        else{
+            bRestartLabel.setVisible(true);
+            bRestartYesBtn.setDisable(false);
+            bRestartYesBtn.setVisible(true);
+            bRestartNoBtn.setDisable(false);
+            bRestartNoBtn.setVisible(true);
+        }
+    }
+
     @FXML
     public void restartGame(ActionEvent event){
+        if((RadioButton) event.getSource() == wRestartYesBtn){
+            wRestartLabel.setVisible(false);
+            wRestartYesBtn.setVisible(false);
+            wRestartYesBtn.setDisable(true);
+            wRestartNoBtn.setVisible(false);
+            wRestartNoBtn.setDisable(true);
+
+        }
+        else{
+            bRestartLabel.setVisible(false);
+            bRestartYesBtn.setVisible(false);
+            bRestartYesBtn.setDisable(true);
+            bRestartNoBtn.setVisible(false);
+            bRestartNoBtn.setDisable(true);
+        }
+
         finish(GameResult.Draw);
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         startGame(event);
+    }
+
+    @FXML
+    public void notRestartGame(ActionEvent event){
+        if((RadioButton) event.getSource() == wRestartNoBtn){
+            wRestartLabel.setVisible(false);
+            wRestartYesBtn.setVisible(false);
+            wRestartYesBtn.setDisable(true);
+            wRestartNoBtn.setVisible(false);
+            wRestartNoBtn.setDisable(true);
+
+        }
+        else{
+            bRestartLabel.setVisible(false);
+            bRestartYesBtn.setVisible(false);
+            bRestartYesBtn.setDisable(true);
+            bRestartNoBtn.setVisible(false);
+            bRestartNoBtn.setDisable(true);
+        }
     }
 
     public void addBtnToSet(){
@@ -287,16 +357,16 @@ public class BoardController {
                 else{
                     whiteBtnSet.remove(paneArray[destinationX][destinationY].getChildren().get(0));
                 }
-                paneArray[destinationX][destinationY].getChildren().removeAll();
+                paneArray[destinationX][destinationY].getChildren().clear();
             }
             paneArray[destinationX][destinationY].getChildren().addAll(movingBtn);
 
             GameResult gameResult = board.judge();
+            movingBtn = null;
+            movingBtnPos = null;
             if(gameResult == GameResult.Gaming){
                 board.nextPlayer();
                 setChessDisable();
-                movingBtn = null;
-                movingBtnPos = null;
             }
             else{
                 finish(gameResult);
@@ -328,19 +398,26 @@ public class BoardController {
 
     public void finish(GameResult gameResult){
         if(gameResult == GameResult.BlackWin){
-            resultLabel.setText(blackName + "Win!");
-            resultFlowPane.getChildren().addAll(new Label(blackName + "Win!"));
+            resultLabel.setText(blackName + " Win!");
+            resultFlowPane.getChildren().addAll(new Label(blackName + " Win!"));
         }
         else if(gameResult == GameResult.WhiteWin){
-            resultLabel.setText(whiteName + "Win!");
-            resultFlowPane.getChildren().addAll(new Label(whiteName + "Win!"));
+            resultLabel.setText(whiteName + " Win!");
+            resultFlowPane.getChildren().addAll(new Label(whiteName + " Win!"));
         }
         else{
             resultLabel.setText("Draw!");
             resultFlowPane.getChildren().addAll(new Label("Draw!"));
         }
 
+        for(Button whiteBtn: whiteBtnSet){
+            whiteBtn.setDisable(true);
+        }
+        for(Button blackBtn: blackBtnSet){
+            blackBtn.setDisable(true);
+        }
         startItem.setDisable(false);
+        setPlayerBtnDisable(true);
     }
 
     @FXML

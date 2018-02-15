@@ -327,6 +327,13 @@ public class Board {
      * @return GameResult
      */
     public GameResult judge() {
+        if(whiteKingPos == null){
+            return GameResult.BlackWin;
+        }
+        else if(blackKingPos == null){
+            return GameResult.WhiteWin;
+        }
+
         // check if in checkmate
         ChessPiece capturedKing;
         if (curPlayer == Player.White) {
