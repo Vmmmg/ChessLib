@@ -1,5 +1,9 @@
 package chess.controllers;
 
+import chess.command.ChessMove;
+import chess.command.ChessMoveCommand;
+import chess.command.Command;
+import chess.command.RequestChessMove;
 import chess.models.Board;
 import chess.models.ChessPiece;
 import chess.models.Position;
@@ -22,6 +26,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class BoardController {
@@ -108,6 +113,9 @@ public class BoardController {
     private Button movingBtn;
     private Pane movingBtnPos;
     private Pane destination;
+    ChessMove chessMoveReceiver;
+    Command moveCommand;
+    private RequestChessMove chessMoveInvoker;
 
     @FXML
     public void firstStartGame(ActionEvent event){
@@ -130,6 +138,7 @@ public class BoardController {
 
         board = new Board(selectedMode);
         addPaneToArray();
+        setCommandInvoker();
         setPlayerBtnDisable(false);
         addBtnToSet();
         setChessDisable();
@@ -146,6 +155,7 @@ public class BoardController {
             }
         }
 
+        setCommandInvoker();
         setPlayerBtnDisable(false);
         addBtnToSet();
         addBtnToPane();
@@ -153,11 +163,27 @@ public class BoardController {
         startItem.setDisable(true);
     }
 
+    public void setCommandInvoker(){
+        chessMoveReceiver = new ChessMove();
+        moveCommand = new ChessMoveCommand(chessMoveReceiver);
+        chessMoveInvoker = new RequestChessMove();
+        chessMoveInvoker.setMoveCommand(moveCommand);
+    }
+
+    public void setUndoDisable(){
+        if(board.getCurPlayer() == Player.White){
+            bUndoBtn.setDisable(false);
+            wUndoBtn.setDisable(true);
+        }
+        else{
+            wUndoBtn.setDisable(false);
+            bUndoBtn.setDisable(true);
+        }
+    }
+
     public void setPlayerBtnDisable(boolean disable){
-        bUndoBtn.setDisable(disable);
         bRestartBtn.setDisable(disable);
         bForfeitBtn.setDisable(disable);
-        wUndoBtn.setDisable(disable);
         wRestartBtn.setDisable(disable);
         wForfeitBtn.setDisable(disable);
     }
@@ -272,6 +298,16 @@ public class BoardController {
         }
     }
 
+    @FXML
+    public void undo(ActionEvent event){
+        List<Position> poses = chessMoveInvoker.undoMoveCommand(board);
+        Position prePos = poses.get(0);
+        Position curPos = poses.get(1);
+        paneArray[prePos.getX()][prePos.getY()].getChildren().addAll(paneArray[curPos.getX()][curPos.getY()].getChildren().get(0));
+        setChessDisable();
+        setUndoDisable();
+    }
+
     public void addBtnToSet(){
         blackBtnSet = new HashSet<>();
         whiteBtnSet = new HashSet<>();
@@ -357,7 +393,7 @@ public class BoardController {
         MoveResult moveResult = board.isLegalMove(selectedChess, destinationPos);
 
         if(moveResult == MoveResult.LegalMove){
-            moveResult = board.chessMove(selectedChess, destinationPos);
+            chessMoveInvoker.executeMoveCommand(board, selectedChess, destinationPos);
 
             if(moveResult == MoveResult.Capture){
                 if(board.getCurPlayer() == Player.White){
@@ -376,6 +412,7 @@ public class BoardController {
             if(gameResult == GameResult.Gaming){
                 board.nextPlayer();
                 setChessDisable();
+                setUndoDisable();
             }
             else{
                 finish(gameResult);

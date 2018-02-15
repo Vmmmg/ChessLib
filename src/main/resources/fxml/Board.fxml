@@ -262,7 +262,7 @@
                   </Label>
                   <Pane prefHeight="45.0" prefWidth="150.0">
                      <children>
-                        <Button fx:id="bUndoBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="63.0" styleClass="func_btn" text="undo" />
+                        <Button fx:id="bUndoBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" onAction="#undo" prefHeight="70.0" prefWidth="63.0" styleClass="func_btn" text="undo" />
                      </children>
                   </Pane>
                   <Pane prefHeight="45.0" prefWidth="200.0">
@@ -296,7 +296,7 @@
                   </Label>
                   <Pane prefHeight="45.0" prefWidth="150.0">
                      <children>
-                        <Button fx:id="wUndoBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="63.0" styleClass="func_btn" text="undo" />
+                        <Button fx:id="wUndoBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" onAction="#undo" prefHeight="70.0" prefWidth="63.0" styleClass="func_btn" text="undo" />
                      </children>
                   </Pane>
                   <Pane prefHeight="45.0" prefWidth="200.0">
