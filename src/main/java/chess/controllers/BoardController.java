@@ -262,6 +262,16 @@ public class BoardController {
         }
     }
 
+    @FXML
+    public void forfeit(ActionEvent event){
+        if((Button) event.getSource() == wForfeitBtn){
+            finish(GameResult.BlackWin);
+        }
+        else{
+            finish(GameResult.WhiteWin);
+        }
+    }
+
     public void addBtnToSet(){
         blackBtnSet = new HashSet<>();
         whiteBtnSet = new HashSet<>();

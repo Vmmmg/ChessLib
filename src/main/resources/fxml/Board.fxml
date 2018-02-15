@@ -272,7 +272,7 @@
                   </Pane>
                   <Pane prefHeight="45.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="bForfeitBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" styleClass="func_btn" text="forfeit" />
+                        <Button fx:id="bForfeitBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" onAction="#forfeit" styleClass="func_btn" text="forfeit" />
                      </children>
                   </Pane>
                   <Label fx:id="bRestartLabel" prefHeight="55.0" prefWidth="150.0" text="Do you agree to restart?" visible="false" wrapText="true" />
@@ -306,7 +306,7 @@
                   </Pane>
                   <Pane prefHeight="45.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="wForfeitBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" styleClass="func_btn" text="forfeit" />
+                        <Button fx:id="wForfeitBtn" disable="true" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" onAction="#forfeit" styleClass="func_btn" text="forfeit" />
                      </children>
                   </Pane>
                   <Label fx:id="wRestartLabel" prefHeight="55.0" prefWidth="150.0" text="Do you agree to restart?" visible="false" wrapText="true" />
@@ -323,7 +323,7 @@
    <right>
       <VBox prefHeight="200.0" prefWidth="150.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="172.0" prefWidth="151.0" text="Please input two players' names and choose the game template before you start the game." wrapText="true">
+            <Label prefHeight="150.0" prefWidth="150.0" text="Please input two players' names and choose the game template before you start the game." wrapText="true">
                <padding>
                   <Insets left="15.0" right="15.0" />
                </padding></Label>
