@@ -314,7 +314,7 @@
                      <toggleGroup>
                         <ToggleGroup fx:id="wRestart" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="wRestartNoBtn" disable="true" mnemonicParsing="false" text="No" toggleGroup="$wRestart" visible="false" />
+                  <RadioButton fx:id="wRestartNoBtn" disable="true" mnemonicParsing="false" onAction="#notRestartGame" text="No" toggleGroup="$wRestart" visible="false" />
                </children>
             </VBox>
          </children>

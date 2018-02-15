@@ -224,6 +224,7 @@ public class BoardController {
             wRestartYesBtn.setDisable(true);
             wRestartNoBtn.setVisible(false);
             wRestartNoBtn.setDisable(true);
+            wRestartYesBtn.setSelected(false);
 
         }
         else{
@@ -232,14 +233,10 @@ public class BoardController {
             bRestartYesBtn.setDisable(true);
             bRestartNoBtn.setVisible(false);
             bRestartNoBtn.setDisable(true);
+            bRestartYesBtn.setSelected(false);
         }
 
         finish(GameResult.Draw);
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         startGame(event);
     }
@@ -252,6 +249,7 @@ public class BoardController {
             wRestartYesBtn.setDisable(true);
             wRestartNoBtn.setVisible(false);
             wRestartNoBtn.setDisable(true);
+            wRestartNoBtn.setSelected(false);
 
         }
         else{
@@ -260,6 +258,7 @@ public class BoardController {
             bRestartYesBtn.setDisable(true);
             bRestartNoBtn.setVisible(false);
             bRestartNoBtn.setDisable(true);
+            bRestartNoBtn.setSelected(false);
         }
     }
 
