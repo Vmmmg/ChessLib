@@ -3,6 +3,7 @@ package chess.command;
 import chess.models.Board;
 import chess.models.ChessPiece;
 import chess.models.Position;
+import chess.models.enums.MoveResult;
 
 /**
  * Receiver of the Command Pattern
@@ -16,8 +17,8 @@ public class ChessMove {
      * @param chess  Piece that needs to move
      * @param destination  Destination position
      */
-    public void move(Board board, ChessPiece chess, Position destination){
-        board.chessMove(chess ,destination);
+    public MoveResult move(Board board, ChessPiece chess, Position destination){
+        return board.chessMove(chess ,destination);
     }
 
 }

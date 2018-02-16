@@ -3,6 +3,7 @@ package chess.command;
 import chess.models.Board;
 import chess.models.ChessPiece;
 import chess.models.Position;
+import chess.models.enums.MoveResult;
 
 import java.util.List;
 
@@ -29,8 +30,8 @@ public class RequestChessMove {
      * @param chess Piece that needs to move
      * @param destination Destination position
      */
-    public void executeMoveCommand(Board board, ChessPiece chess, Position destination){
-        moveCommand.execute(board, chess, destination);
+    public MoveResult executeMoveCommand(Board board, ChessPiece chess, Position destination){
+        return moveCommand.execute(board, chess, destination);
     }
 
     /**

@@ -3,6 +3,7 @@ package chess.command;
 import chess.models.Board;
 import chess.models.ChessPiece;
 import chess.models.Position;
+import chess.models.enums.MoveResult;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,10 +36,10 @@ public class ChessMoveCommand implements Command {
      * @param destination  Destination position
      */
     @Override
-    public void execute(Board board, ChessPiece chess, Position destination) {
+    public MoveResult execute(Board board, ChessPiece chess, Position destination) {
         chessList.add(chess);
         posList.add(chess.getPosition());
-        chessMove.move(board, chess, destination);
+        return chessMove.move(board, chess, destination);
     }
 
     /**

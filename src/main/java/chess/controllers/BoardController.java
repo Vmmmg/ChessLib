@@ -449,7 +449,7 @@ public class BoardController {
         MoveResult moveResult = board.isLegalMove(selectedChess, destinationPos);
 
         if(moveResult == MoveResult.LegalMove){
-            chessMoveInvoker.executeMoveCommand(board, selectedChess, destinationPos);
+            moveResult = chessMoveInvoker.executeMoveCommand(board, selectedChess, destinationPos);
 
             if(moveResult == MoveResult.Capture){
                 if(board.getCurPlayer() == Player.White){
@@ -508,12 +508,12 @@ public class BoardController {
      */
     public void finish(GameResult gameResult){
         if(gameResult == GameResult.BlackWin){
-            resultLabel.setText(blackName + " Win!");
-            resultFlowPane.getChildren().addAll(new Label(blackName + " Win!"));
+            resultLabel.setText(blackName + "(Black) Win!");
+            resultFlowPane.getChildren().addAll(new Label(blackName + "(Black) Win!"));
         }
         else if(gameResult == GameResult.WhiteWin){
-            resultLabel.setText(whiteName + " Win!");
-            resultFlowPane.getChildren().addAll(new Label(whiteName + " Win!"));
+            resultLabel.setText(whiteName + "(White) Win!");
+            resultFlowPane.getChildren().addAll(new Label(whiteName + "(White) Win!"));
         }
         else{
             resultLabel.setText("Draw!");
