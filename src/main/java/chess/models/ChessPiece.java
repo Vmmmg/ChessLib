@@ -11,9 +11,9 @@ import java.util.Set;
  */
 public abstract class ChessPiece {
 
+    int id;
     private Player player;
     private Position position;
-    int id;
 
     /**
      * Constructor of ChessPiece
@@ -26,7 +26,7 @@ public abstract class ChessPiece {
         this.position = position;
     }
 
-    public ChessPiece(Player player, Position position, int id){
+    public ChessPiece(Player player, Position position, int id) {
         this.player = player;
         this.position = position;
         this.id = id;
@@ -64,9 +64,10 @@ public abstract class ChessPiece {
      *
      * @return the piece's id
      */
-    public int getId(){
+    public int getId() {
         return id;
     }
+
     /**
      * Move to specific position
      *

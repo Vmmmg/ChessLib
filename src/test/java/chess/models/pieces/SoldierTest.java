@@ -1,21 +1,17 @@
-package chess.models.pieces; 
+package chess.models.pieces;
 
 import chess.models.Position;
 import chess.models.enums.MoveResult;
 import chess.models.enums.Player;
 import org.junit.Test;
-import org.junit.Before; 
-import org.junit.After;
 
 import static org.junit.Assert.assertEquals;
 
 public class SoldierTest {
 
     /**
-    *
-    * Method: isLegalMove(Position pos)
-    *
-    */
+     * Method: isLegalMove(Position pos)
+     */
     @Test
     public void isLegalMove() {
         Soldier blackSoldier1 = new Soldier(Player.Black, new Position("B4"));
@@ -52,10 +48,8 @@ public class SoldierTest {
     }
 
     /**
-    *
-    * Method: isForward(Position pos)
-    *
-    */
+     * Method: isForward(Position pos)
+     */
     @Test
     public void isForward() {
         Soldier blackSoldier = new Soldier(Player.Black, new Position("B2"));
@@ -69,10 +63,8 @@ public class SoldierTest {
     }
 
     /**
-    *
-    * Method: isCrossTheRiver()
-    *
-    */
+     * Method: isCrossTheRiver()
+     */
     @Test
     public void isCrossTheRiver() {
         Soldier blackSoldier1 = new Soldier(Player.Black, new Position("B4"));

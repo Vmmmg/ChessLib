@@ -22,7 +22,7 @@ public class ChessMoveCommand implements Command {
      *
      * @param chessMove Receiver of the Command Pattern
      */
-    public ChessMoveCommand(ChessMove chessMove){
+    public ChessMoveCommand(ChessMove chessMove) {
         chessList = new ArrayList<>();
         posList = new ArrayList<>();
         this.chessMove = chessMove;
@@ -31,9 +31,9 @@ public class ChessMoveCommand implements Command {
     /**
      * Execute command
      *
-     * @param board
-     * @param chess  Piece that needs to move
-     * @param destination  Destination position
+     * @param board       Chess board
+     * @param chess       Piece that needs to move
+     * @param destination Destination position
      */
     @Override
     public MoveResult execute(Board board, ChessPiece chess, Position destination) {
@@ -45,7 +45,7 @@ public class ChessMoveCommand implements Command {
     /**
      * Undo command
      *
-     * @param board
+     * @param board Chess board
      * @return The chess's positions before undo and after undo
      */
     @Override

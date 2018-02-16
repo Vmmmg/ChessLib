@@ -1,36 +1,235 @@
 \hypertarget{classchess_1_1controllers_1_1_board_controller}{}\section{chess.\+controllers.\+Board\+Controller Class Reference}
 \label{classchess_1_1controllers_1_1_board_controller}\index{chess.\+controllers.\+Board\+Controller@{chess.\+controllers.\+Board\+Controller}}
-Inheritance diagram for chess.\+controllers.\+Board\+Controller\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{classchess_1_1controllers_1_1_board_controller}
-\end{center}
-\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_abd589cb5a8d0808c83932ffba970c747}{start}} (Stage primary\+Stage)  throws Exception 
-\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a655a4185aa49e122521d08dc5b658844}{first\+Start\+Game}} (Action\+Event event)
 \item 
-static void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a0a3fb5fc97d4e1536bd0111b96f835a6}{main}} (String\mbox{[}$\,$\mbox{]} args)
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a99cc48c279febe873defd5c1e03686ad}{start\+Game}} (Action\+Event event)
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a4e6051a9cb52b74376bc36ce2e43951d}{set\+Command\+Invoker}} ()
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_aa792ea9ac6c34a71651010ffd907ca43}{set\+Undo\+Disable}} ()
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a9d5d98fb3dcb39922e715a1182a4bd7c}{set\+Player\+Btn\+Disable}} (boolean disable)
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_ab576456eca49c7f7e65c1aaaa5317b39}{add\+Btn\+To\+Pane}} ()
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a0f5c79b2c05dd9ff037844f6877e301d}{restart\+Confirm}} (Action\+Event event)
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a72b59496c1c41ab9219f24ef95643fef}{restart\+Game}} (Action\+Event event)
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a834efae1222a50d010cd4a61b7cdeddf}{not\+Restart\+Game}} (Action\+Event event)
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a7d0d4bce0ebb4a04cc36efa8ec32ef69}{forfeit}} (Action\+Event event)
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a5ba6c93ec1dbe97eb07a5fefe7cd39c5}{undo}} (Action\+Event event)
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_ab0a4ca512dc7bdcdbe7805e5f47dcc6d}{add\+Btn\+To\+Set}} ()
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a8182ba3079233a2e1761678fdd8832b0}{add\+Pane\+To\+Array}} ()
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a6c22f6646f001c3ac2e255e1ad042179}{game\+Loop}} ()
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a6b6dfa8a50a88faa082014c01b0b49cf}{set\+Chess\+Disable}} ()
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_abb3a608cfc953e6f0e11a274bfb7f1f8}{finish}} (\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_game_result}{Game\+Result}} game\+Result)
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a5eefc99457d38fb2c091eeb674d337e5}{click\+Chess}} (Action\+Event event)
+\item 
+void \mbox{\hyperlink{classchess_1_1controllers_1_1_board_controller_a0cfbeef7ff00ff604806817044c2051f}{click\+Destination}} (Mouse\+Event event)
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The controller component of M\+VC 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a0a3fb5fc97d4e1536bd0111b96f835a6}\label{classchess_1_1controllers_1_1_board_controller_a0a3fb5fc97d4e1536bd0111b96f835a6}} 
-\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!main@{main}}
-\index{main@{main}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
-\subsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily static void chess.\+controllers.\+Board\+Controller.\+main (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_ab576456eca49c7f7e65c1aaaa5317b39}\label{classchess_1_1controllers_1_1_board_controller_ab576456eca49c7f7e65c1aaaa5317b39}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!add\+Btn\+To\+Pane@{add\+Btn\+To\+Pane}}
+\index{add\+Btn\+To\+Pane@{add\+Btn\+To\+Pane}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{add\+Btn\+To\+Pane()}{addBtnToPane()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+add\+Btn\+To\+Pane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_abd589cb5a8d0808c83932ffba970c747}\label{classchess_1_1controllers_1_1_board_controller_abd589cb5a8d0808c83932ffba970c747}} 
-\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!start@{start}}
-\index{start@{start}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
-\subsubsection{\texorpdfstring{start()}{start()}}
-{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+start (\begin{DoxyParamCaption}\item[{Stage}]{primary\+Stage }\end{DoxyParamCaption}) throws Exception}
+Add buttons to the corresponding panes when a new game starts \mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_ab0a4ca512dc7bdcdbe7805e5f47dcc6d}\label{classchess_1_1controllers_1_1_board_controller_ab0a4ca512dc7bdcdbe7805e5f47dcc6d}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!add\+Btn\+To\+Set@{add\+Btn\+To\+Set}}
+\index{add\+Btn\+To\+Set@{add\+Btn\+To\+Set}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{add\+Btn\+To\+Set()}{addBtnToSet()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+add\+Btn\+To\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Add buttons to the corresponding sets \mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a8182ba3079233a2e1761678fdd8832b0}\label{classchess_1_1controllers_1_1_board_controller_a8182ba3079233a2e1761678fdd8832b0}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!add\+Pane\+To\+Array@{add\+Pane\+To\+Array}}
+\index{add\+Pane\+To\+Array@{add\+Pane\+To\+Array}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{add\+Pane\+To\+Array()}{addPaneToArray()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+add\+Pane\+To\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Add panes to the pane array \mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a5eefc99457d38fb2c091eeb674d337e5}\label{classchess_1_1controllers_1_1_board_controller_a5eefc99457d38fb2c091eeb674d337e5}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!click\+Chess@{click\+Chess}}
+\index{click\+Chess@{click\+Chess}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{click\+Chess()}{clickChess()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+click\+Chess (\begin{DoxyParamCaption}\item[{Action\+Event}]{event }\end{DoxyParamCaption})}
+
+Click a chess button to select the chess
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Action\+Event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a0cfbeef7ff00ff604806817044c2051f}\label{classchess_1_1controllers_1_1_board_controller_a0cfbeef7ff00ff604806817044c2051f}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!click\+Destination@{click\+Destination}}
+\index{click\+Destination@{click\+Destination}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{click\+Destination()}{clickDestination()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+click\+Destination (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{event }\end{DoxyParamCaption})}
+
+Click a grid to move the selected chess to the selected grid
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Action\+Event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_abb3a608cfc953e6f0e11a274bfb7f1f8}\label{classchess_1_1controllers_1_1_board_controller_abb3a608cfc953e6f0e11a274bfb7f1f8}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!finish@{finish}}
+\index{finish@{finish}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+finish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_game_result}{Game\+Result}}}]{game\+Result }\end{DoxyParamCaption})}
+
+The game is finished
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Result} & The game\textquotesingle{}s result \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a655a4185aa49e122521d08dc5b658844}\label{classchess_1_1controllers_1_1_board_controller_a655a4185aa49e122521d08dc5b658844}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!first\+Start\+Game@{first\+Start\+Game}}
+\index{first\+Start\+Game@{first\+Start\+Game}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{first\+Start\+Game()}{firstStartGame()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+first\+Start\+Game (\begin{DoxyParamCaption}\item[{Action\+Event}]{event }\end{DoxyParamCaption})}
+
+Click the \char`\"{}start\char`\"{} button to first start the game
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Action\+Event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a7d0d4bce0ebb4a04cc36efa8ec32ef69}\label{classchess_1_1controllers_1_1_board_controller_a7d0d4bce0ebb4a04cc36efa8ec32ef69}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!forfeit@{forfeit}}
+\index{forfeit@{forfeit}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{forfeit()}{forfeit()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+forfeit (\begin{DoxyParamCaption}\item[{Action\+Event}]{event }\end{DoxyParamCaption})}
+
+Click \char`\"{}forfeit\char`\"{} button to forfeit
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Action\+Event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a6c22f6646f001c3ac2e255e1ad042179}\label{classchess_1_1controllers_1_1_board_controller_a6c22f6646f001c3ac2e255e1ad042179}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!game\+Loop@{game\+Loop}}
+\index{game\+Loop@{game\+Loop}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{game\+Loop()}{gameLoop()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+game\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Game loop \mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a834efae1222a50d010cd4a61b7cdeddf}\label{classchess_1_1controllers_1_1_board_controller_a834efae1222a50d010cd4a61b7cdeddf}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!not\+Restart\+Game@{not\+Restart\+Game}}
+\index{not\+Restart\+Game@{not\+Restart\+Game}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{not\+Restart\+Game()}{notRestartGame()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+not\+Restart\+Game (\begin{DoxyParamCaption}\item[{Action\+Event}]{event }\end{DoxyParamCaption})}
+
+Don\textquotesingle{}t restart the game
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Action\+Event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a0f5c79b2c05dd9ff037844f6877e301d}\label{classchess_1_1controllers_1_1_board_controller_a0f5c79b2c05dd9ff037844f6877e301d}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!restart\+Confirm@{restart\+Confirm}}
+\index{restart\+Confirm@{restart\+Confirm}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{restart\+Confirm()}{restartConfirm()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+restart\+Confirm (\begin{DoxyParamCaption}\item[{Action\+Event}]{event }\end{DoxyParamCaption})}
+
+Click \char`\"{}restart\char`\"{} button to request the opponent\textquotesingle{}s agreement on restarting the game
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Action\+Event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a72b59496c1c41ab9219f24ef95643fef}\label{classchess_1_1controllers_1_1_board_controller_a72b59496c1c41ab9219f24ef95643fef}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!restart\+Game@{restart\+Game}}
+\index{restart\+Game@{restart\+Game}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{restart\+Game()}{restartGame()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+restart\+Game (\begin{DoxyParamCaption}\item[{Action\+Event}]{event }\end{DoxyParamCaption})}
+
+Restart the game
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Action\+Event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a6b6dfa8a50a88faa082014c01b0b49cf}\label{classchess_1_1controllers_1_1_board_controller_a6b6dfa8a50a88faa082014c01b0b49cf}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!set\+Chess\+Disable@{set\+Chess\+Disable}}
+\index{set\+Chess\+Disable@{set\+Chess\+Disable}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{set\+Chess\+Disable()}{setChessDisable()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+set\+Chess\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Set the chess\textquotesingle{}s disable states when the turn is changed \mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a4e6051a9cb52b74376bc36ce2e43951d}\label{classchess_1_1controllers_1_1_board_controller_a4e6051a9cb52b74376bc36ce2e43951d}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!set\+Command\+Invoker@{set\+Command\+Invoker}}
+\index{set\+Command\+Invoker@{set\+Command\+Invoker}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{set\+Command\+Invoker()}{setCommandInvoker()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+set\+Command\+Invoker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Set the Invoker of the Command Pattern \mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a9d5d98fb3dcb39922e715a1182a4bd7c}\label{classchess_1_1controllers_1_1_board_controller_a9d5d98fb3dcb39922e715a1182a4bd7c}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!set\+Player\+Btn\+Disable@{set\+Player\+Btn\+Disable}}
+\index{set\+Player\+Btn\+Disable@{set\+Player\+Btn\+Disable}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{set\+Player\+Btn\+Disable()}{setPlayerBtnDisable()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+set\+Player\+Btn\+Disable (\begin{DoxyParamCaption}\item[{boolean}]{disable }\end{DoxyParamCaption})}
+
+Set the \char`\"{}restart\char`\"{}, and \char`\"{}forfeit\char`\"{} buttons\textquotesingle{} disable states
+
+
+\begin{DoxyParams}{Parameters}
+{\em disable} & disable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_aa792ea9ac6c34a71651010ffd907ca43}\label{classchess_1_1controllers_1_1_board_controller_aa792ea9ac6c34a71651010ffd907ca43}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!set\+Undo\+Disable@{set\+Undo\+Disable}}
+\index{set\+Undo\+Disable@{set\+Undo\+Disable}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{set\+Undo\+Disable()}{setUndoDisable()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+set\+Undo\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Set the \char`\"{}undo\char`\"{} buttons\textquotesingle{} disable states when the turn is changed \mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a99cc48c279febe873defd5c1e03686ad}\label{classchess_1_1controllers_1_1_board_controller_a99cc48c279febe873defd5c1e03686ad}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!start\+Game@{start\+Game}}
+\index{start\+Game@{start\+Game}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{start\+Game()}{startGame()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+start\+Game (\begin{DoxyParamCaption}\item[{Action\+Event}]{event }\end{DoxyParamCaption})}
+
+Click the \char`\"{}start\char`\"{} menu item to start the game
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Action\+Event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1controllers_1_1_board_controller_a5ba6c93ec1dbe97eb07a5fefe7cd39c5}\label{classchess_1_1controllers_1_1_board_controller_a5ba6c93ec1dbe97eb07a5fefe7cd39c5}} 
+\index{chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}!undo@{undo}}
+\index{undo@{undo}!chess\+::controllers\+::\+Board\+Controller@{chess\+::controllers\+::\+Board\+Controller}}
+\subsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void chess.\+controllers.\+Board\+Controller.\+undo (\begin{DoxyParamCaption}\item[{Action\+Event}]{event }\end{DoxyParamCaption})}
+
+Click \char`\"{}undo\char`\"{} button to undo
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Action\+Event \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

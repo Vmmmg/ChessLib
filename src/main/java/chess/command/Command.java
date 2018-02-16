@@ -11,6 +11,8 @@ import java.util.List;
  * The command interface of the Command Pattern
  */
 public interface Command {
-    public MoveResult execute(Board board, ChessPiece chess, Position destination);
-    public List<Position> undo(Board board);
+
+    MoveResult execute(Board board, ChessPiece chess, Position destination);
+
+    List<Position> undo(Board board);
 }

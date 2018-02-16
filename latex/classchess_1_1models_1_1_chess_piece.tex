@@ -11,11 +11,15 @@ Inheritance diagram for chess.\+models.\+Chess\+Piece\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a59beae5e1f384747a201a4c417ca0afb}{Chess\+Piece}} (\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} player, \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} position)
 \item 
+\mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_aeea9d0c376842325301238b95cabe85c}{Chess\+Piece}} (\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} player, \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} position, int id)
+\item 
 \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a4ce783eeb2ec6d5cd83af05c11fe8cdb}{get\+Position}} ()
 \item 
 void \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a2e3c62bde5041ca0aa53e0476cc8b600}{set\+Position}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} position)
 \item 
 \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_aaa3cef5d52e4a228dc01f91133a6c437}{get\+Player}} ()
+\item 
+int \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_aaa0ccd6a8327325fa05f7654669516ae}{get\+Id}} ()
 \item 
 void \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece_a77865fbd52257338c4e376af525155c7}{move}} (\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} position)
 \item 
@@ -32,7 +36,7 @@ All kinds of chess pieces
 \mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_a59beae5e1f384747a201a4c417ca0afb}\label{classchess_1_1models_1_1_chess_piece_a59beae5e1f384747a201a4c417ca0afb}} 
 \index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!Chess\+Piece@{Chess\+Piece}}
 \index{Chess\+Piece@{Chess\+Piece}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
-\subsubsection{\texorpdfstring{Chess\+Piece()}{ChessPiece()}}
+\subsubsection{\texorpdfstring{Chess\+Piece()}{ChessPiece()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily chess.\+models.\+Chess\+Piece.\+Chess\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}}}]{player,  }\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{position }\end{DoxyParamCaption})}
 
 Constructor of \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}}
@@ -44,6 +48,12 @@ Constructor of \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Pie
 {\em position} & Initial position \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_aeea9d0c376842325301238b95cabe85c}\label{classchess_1_1models_1_1_chess_piece_aeea9d0c376842325301238b95cabe85c}} 
+\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!Chess\+Piece@{Chess\+Piece}}
+\index{Chess\+Piece@{Chess\+Piece}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
+\subsubsection{\texorpdfstring{Chess\+Piece()}{ChessPiece()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily chess.\+models.\+Chess\+Piece.\+Chess\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}}}]{player,  }\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{position,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
 
 
 \subsection{Member Function Documentation}
@@ -62,6 +72,17 @@ Generate all possible next steps of the chess
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 all possible next steps of the chess 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_aaa0ccd6a8327325fa05f7654669516ae}\label{classchess_1_1models_1_1_chess_piece_aaa0ccd6a8327325fa05f7654669516ae}} 
+\index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
+{\footnotesize\ttfamily int chess.\+models.\+Chess\+Piece.\+get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the piece\textquotesingle{}s id
+
+\begin{DoxyReturn}{Returns}
+the piece\textquotesingle{}s id 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classchess_1_1models_1_1_chess_piece_aaa3cef5d52e4a228dc01f91133a6c437}\label{classchess_1_1models_1_1_chess_piece_aaa3cef5d52e4a228dc01f91133a6c437}} 
 \index{chess\+::models\+::\+Chess\+Piece@{chess\+::models\+::\+Chess\+Piece}!get\+Player@{get\+Player}}

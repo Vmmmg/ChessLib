@@ -1,0 +1,85 @@
+\hypertarget{classchess_1_1command_1_1_chess_move_command}{}\section{chess.\+command.\+Chess\+Move\+Command Class Reference}
+\label{classchess_1_1command_1_1_chess_move_command}\index{chess.\+command.\+Chess\+Move\+Command@{chess.\+command.\+Chess\+Move\+Command}}
+Inheritance diagram for chess.\+command.\+Chess\+Move\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classchess_1_1command_1_1_chess_move_command}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classchess_1_1command_1_1_chess_move_command_a015eb289219c05fd0ee4009d939b25bc}{Chess\+Move\+Command}} (\mbox{\hyperlink{classchess_1_1command_1_1_chess_move}{Chess\+Move}} chess\+Move)
+\item 
+\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_move_result}{Move\+Result}} \mbox{\hyperlink{classchess_1_1command_1_1_chess_move_command_a7a74fa700b53038f06de08a11699d37e}{execute}} (\mbox{\hyperlink{classchess_1_1models_1_1_board}{Board}} board, \mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}} chess, \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} destination)
+\item 
+List$<$ \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} $>$ \mbox{\hyperlink{classchess_1_1command_1_1_chess_move_command_a31a0cc0d4b19d5441f9420e0d4c1a795}{undo}} (\mbox{\hyperlink{classchess_1_1models_1_1_board}{Board}} board)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implement of the command interface 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classchess_1_1command_1_1_chess_move_command_a015eb289219c05fd0ee4009d939b25bc}\label{classchess_1_1command_1_1_chess_move_command_a015eb289219c05fd0ee4009d939b25bc}} 
+\index{chess\+::command\+::\+Chess\+Move\+Command@{chess\+::command\+::\+Chess\+Move\+Command}!Chess\+Move\+Command@{Chess\+Move\+Command}}
+\index{Chess\+Move\+Command@{Chess\+Move\+Command}!chess\+::command\+::\+Chess\+Move\+Command@{chess\+::command\+::\+Chess\+Move\+Command}}
+\subsubsection{\texorpdfstring{Chess\+Move\+Command()}{ChessMoveCommand()}}
+{\footnotesize\ttfamily chess.\+command.\+Chess\+Move\+Command.\+Chess\+Move\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classchess_1_1command_1_1_chess_move}{Chess\+Move}}}]{chess\+Move }\end{DoxyParamCaption})}
+
+Contructor of \mbox{\hyperlink{classchess_1_1command_1_1_chess_move_command}{Chess\+Move\+Command}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em chess\+Move} & Receiver of the \mbox{\hyperlink{interfacechess_1_1command_1_1_command}{Command}} Pattern \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classchess_1_1command_1_1_chess_move_command_a7a74fa700b53038f06de08a11699d37e}\label{classchess_1_1command_1_1_chess_move_command_a7a74fa700b53038f06de08a11699d37e}} 
+\index{chess\+::command\+::\+Chess\+Move\+Command@{chess\+::command\+::\+Chess\+Move\+Command}!execute@{execute}}
+\index{execute@{execute}!chess\+::command\+::\+Chess\+Move\+Command@{chess\+::command\+::\+Chess\+Move\+Command}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_move_result}{Move\+Result}} chess.\+command.\+Chess\+Move\+Command.\+execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classchess_1_1models_1_1_board}{Board}}}]{board,  }\item[{\mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}}}]{chess,  }\item[{\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}}]{destination }\end{DoxyParamCaption})}
+
+Execute command
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Chess board \\
+\hline
+{\em chess} & Piece that needs to move \\
+\hline
+{\em destination} & Destination position \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfacechess_1_1command_1_1_command_a93071fc9ddc45d04e7c8e42cc78b5d6c}{chess.\+command.\+Command}}.
+
+\mbox{\Hypertarget{classchess_1_1command_1_1_chess_move_command_a31a0cc0d4b19d5441f9420e0d4c1a795}\label{classchess_1_1command_1_1_chess_move_command_a31a0cc0d4b19d5441f9420e0d4c1a795}} 
+\index{chess\+::command\+::\+Chess\+Move\+Command@{chess\+::command\+::\+Chess\+Move\+Command}!undo@{undo}}
+\index{undo@{undo}!chess\+::command\+::\+Chess\+Move\+Command@{chess\+::command\+::\+Chess\+Move\+Command}}
+\subsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}}$>$ chess.\+command.\+Chess\+Move\+Command.\+undo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classchess_1_1models_1_1_board}{Board}}}]{board }\end{DoxyParamCaption})}
+
+Undo command
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Chess board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The chess\textquotesingle{}s positions before undo and after undo 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfacechess_1_1command_1_1_command_a7e407e4a40124384e8262aa573fbeaac}{chess.\+command.\+Command}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/chess/command/\mbox{\hyperlink{_chess_move_command_8java}{Chess\+Move\+Command.\+java}}\end{DoxyCompactItemize}

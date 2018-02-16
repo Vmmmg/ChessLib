@@ -1,23 +1,6 @@
 var searchData=
 [
-  ['gennextstep',['genNextStep',['../classchess_1_1models_1_1_chess_piece.html#afd359313e83bdef860f9f8236435522f',1,'chess::models::ChessPiece']]],
-  ['getblackchessset',['getBlackChessSet',['../classchess_1_1models_1_1_board.html#a4dcc35426fd6ebe9725b2edaa4752310',1,'chess::models::Board']]],
-  ['getheight',['getHEIGHT',['../classchess_1_1models_1_1_board.html#a28a3d4b9d0738a26666b7c97394242a9',1,'chess::models::Board']]],
-  ['getninepalaces',['getNinePalaces',['../classchess_1_1models_1_1pieces_1_1_advisor.html#aec70114aea45fb0b4c102a81df30f60c',1,'chess::models::pieces::Advisor']]],
-  ['getninepalaces1',['getNinePalaces1',['../classchess_1_1models_1_1pieces_1_1_advisor_test.html#a2ad02e014939d5e49e8cead14fd2eed5',1,'chess::models::pieces::AdvisorTest']]],
-  ['getninepalaces2',['getNinePalaces2',['../classchess_1_1models_1_1pieces_1_1_advisor_test.html#aaa1de333725dbd1fb065c71272d9d555',1,'chess::models::pieces::AdvisorTest']]],
-  ['getplayer',['getPlayer',['../classchess_1_1models_1_1_chess_piece.html#aaa3cef5d52e4a228dc01f91133a6c437',1,'chess::models::ChessPiece']]],
-  ['getposition',['getPosition',['../classchess_1_1models_1_1_chess_piece.html#a4ce783eeb2ec6d5cd83af05c11fe8cdb',1,'chess::models::ChessPiece']]],
-  ['getpositions',['getPositions',['../classchess_1_1models_1_1_path.html#adce43d0b62fd3ba9d7ac261fcf4cf7b1',1,'chess::models::Path']]],
-  ['getpositions1',['getPositions1',['../classchess_1_1models_1_1_path_test.html#af8658336e6ffed8c20de620ad12a37e3',1,'chess::models::PathTest']]],
-  ['getpositions2',['getPositions2',['../classchess_1_1models_1_1_path_test.html#a572cc15adf7eb579533b04040f14fc41',1,'chess::models::PathTest']]],
-  ['getpositions3',['getPositions3',['../classchess_1_1models_1_1_path_test.html#a42e6278bdbd086dbb1394c8bf873a0af',1,'chess::models::PathTest']]],
-  ['getpositions4',['getPositions4',['../classchess_1_1models_1_1_path_test.html#aaf6c6d5aa808f5053969af5aab3a445e',1,'chess::models::PathTest']]],
-  ['getpositions5',['getPositions5',['../classchess_1_1models_1_1_path_test.html#aa34d58c5b3a3227dc5149a288c804703',1,'chess::models::PathTest']]],
-  ['getpositions6',['getPositions6',['../classchess_1_1models_1_1_path_test.html#a3dd398e0f0b6122db0ab49e67e1182b0',1,'chess::models::PathTest']]],
-  ['getspecificpositionchess',['getSpecificPositionChess',['../classchess_1_1models_1_1_board.html#a3e21ecd167f3c80dfd260e9acde208c6',1,'chess::models::Board']]],
-  ['getwhitechessset',['getWhiteChessSet',['../classchess_1_1models_1_1_board.html#a0fab147b0205caf586306a03e758e7bb',1,'chess::models::Board']]],
-  ['getwidth',['getWIDTH',['../classchess_1_1models_1_1_board.html#aeab935c6befad60e51084a78458ebf39',1,'chess::models::Board']]],
-  ['getx',['getX',['../classchess_1_1models_1_1_position.html#a1de14ed4ac5e2376caf3ecbf4f415e38',1,'chess::models::Position']]],
-  ['gety',['getY',['../classchess_1_1models_1_1_position.html#aa4cdabf057a4a9fac849b04dc687a8ed',1,'chess::models::Position']]]
+    ['finish', ['finish', ['../classchess_1_1controllers_1_1_board_controller.html#abb3a608cfc953e6f0e11a274bfb7f1f8', 1, 'chess::controllers::BoardController']]],
+    ['firststartgame', ['firstStartGame', ['../classchess_1_1controllers_1_1_board_controller.html#a655a4185aa49e122521d08dc5b658844', 1, 'chess::controllers::BoardController']]],
+    ['forfeit', ['forfeit', ['../classchess_1_1controllers_1_1_board_controller.html#a7d0d4bce0ebb4a04cc36efa8ec32ef69', 1, 'chess::controllers::BoardController']]]
 ];

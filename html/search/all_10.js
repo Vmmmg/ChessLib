@@ -1,4 +1,11 @@
 var searchData=
 [
-  ['tostring',['toString',['../classchess_1_1models_1_1pieces_1_1_bishop.html#abbdf19ca47acb189eeaa49931eb2f30c',1,'chess.models.pieces.Bishop.toString()'],['../classchess_1_1models_1_1pieces_1_1_king.html#ae287258d6c093ce7d7c3196f7dde6d99',1,'chess.models.pieces.King.toString()'],['../classchess_1_1models_1_1pieces_1_1_knight.html#a18c83fa9040a0035d86c3354f3ada4ea',1,'chess.models.pieces.Knight.toString()'],['../classchess_1_1models_1_1pieces_1_1_pawn.html#a97538699aaa1cb69482ad9c218562450',1,'chess.models.pieces.Pawn.toString()'],['../classchess_1_1models_1_1pieces_1_1_queen.html#a723a09d8252bb14578d33c099242e37d',1,'chess.models.pieces.Queen.toString()'],['../classchess_1_1models_1_1pieces_1_1_rook.html#a73f28ce35486a866fabe250ad4490993',1,'chess.models.pieces.Rook.toString()']]]
+    ['requestchessmove', ['RequestChessMove', ['../classchess_1_1command_1_1_request_chess_move.html', 1, 'chess::command']]],
+    ['requestchessmove_2ejava', ['RequestChessMove.java', ['../_request_chess_move_8java.html', 1, '']]],
+    ['restartconfirm', ['restartConfirm', ['../classchess_1_1controllers_1_1_board_controller.html#a0f5c79b2c05dd9ff037844f6877e301d', 1, 'chess::controllers::BoardController']]],
+    ['restartgame', ['restartGame', ['../classchess_1_1controllers_1_1_board_controller.html#a72b59496c1c41ab9219f24ef95643fef', 1, 'chess::controllers::BoardController']]],
+    ['rook', ['Rook', ['../classchess_1_1models_1_1pieces_1_1_rook.html', 1, 'chess.models.pieces.Rook'], ['../classchess_1_1models_1_1pieces_1_1_rook.html#a6a09ddec79bb71f7b497e0faf8b02152', 1, 'chess.models.pieces.Rook.Rook()']]],
+    ['rook_2ejava', ['Rook.java', ['../_rook_8java.html', 1, '']]],
+    ['rooktest', ['RookTest', ['../classchess_1_1models_1_1pieces_1_1_rook_test.html', 1, 'chess::models::pieces']]],
+    ['rooktest_2ejava', ['RookTest.java', ['../_rook_test_8java.html', 1, '']]]
 ];

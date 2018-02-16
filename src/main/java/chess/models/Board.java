@@ -30,10 +30,9 @@ public class Board {
      */
     public Board(GameMode gameMode) {
 
-        if(gameMode == GameMode.Classic){
+        if (gameMode == GameMode.Classic) {
             initClassicBoard();
-        }
-        else{
+        } else {
             initNewBoard();
         }
 
@@ -87,7 +86,7 @@ public class Board {
     /**
      * Create Initial state of classic chess board
      */
-    private void initNewBoard(){
+    private void initNewBoard() {
         board[0][0] = new Rook(Player.Black, new Position("A1"));
         board[0][1] = new Knight(Player.Black, new Position("B1"));
         board[0][2] = new Bishop(Player.Black, new Position("C1"));
@@ -327,10 +326,9 @@ public class Board {
      * @return GameResult
      */
     public GameResult judge() {
-        if(whiteKingPos == null){
+        if (whiteKingPos == null) {
             return GameResult.BlackWin;
-        }
-        else if(blackKingPos == null){
+        } else if (blackKingPos == null) {
             return GameResult.WhiteWin;
         }
 
@@ -609,11 +607,10 @@ public class Board {
         return curPlayer;
     }
 
-    public void nextPlayer(){
-        if(curPlayer == Player.Black){
+    public void nextPlayer() {
+        if (curPlayer == Player.Black) {
             curPlayer = Player.White;
-        }
-        else{
+        } else {
             curPlayer = Player.Black;
         }
     }

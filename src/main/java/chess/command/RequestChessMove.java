@@ -17,32 +17,31 @@ public class RequestChessMove {
     /**
      * Set command
      *
-     * @param command
+     * @param command Chess move command
      */
-    public void setMoveCommand(Command command){
+    public void setMoveCommand(Command command) {
         moveCommand = command;
     }
 
     /**
      * Execute command
      *
-     * @param board
-     * @param chess Piece that needs to move
+     * @param board       Chess board
+     * @param chess       Piece that needs to move
      * @param destination Destination position
      */
-    public MoveResult executeMoveCommand(Board board, ChessPiece chess, Position destination){
+    public MoveResult executeMoveCommand(Board board, ChessPiece chess, Position destination) {
         return moveCommand.execute(board, chess, destination);
     }
 
     /**
      * Undo command
      *
-     * @param board
+     * @param board Chess board
      * @return The chess's positions before undo and after undo
      */
-    public List<Position> undoMoveCommand(Board board){
-        List<Position> poses = moveCommand.undo(board);
-        return poses;
+    public List<Position> undoMoveCommand(Board board) {
+        return moveCommand.undo(board);
     }
 
 }

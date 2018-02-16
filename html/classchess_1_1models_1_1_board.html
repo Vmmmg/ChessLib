@@ -76,8 +76,16 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a742cb1aaa3ec12625098a4ddf24fee19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_board.html#a742cb1aaa3ec12625098a4ddf24fee19">Board</a> ()</td></tr>
-<tr class="separator:a742cb1aaa3ec12625098a4ddf24fee19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+    <tr class="memitem:aa18d91c193768584a714d739a0dc80af">
+        <td class="memItemLeft" align="right" valign="top">&#160;</td>
+        <td class="memItemRight" valign="bottom"><a class="el"
+                                                    href="classchess_1_1models_1_1_board.html#aa18d91c193768584a714d739a0dc80af">Board</a>
+            (<a class="el" href="enumchess_1_1models_1_1enums_1_1_game_mode.html">GameMode</a> gameMode)
+        </td>
+    </tr>
+    <tr class="separator:aa18d91c193768584a714d739a0dc80af">
+        <td class="memSeparator" colspan="2">&#160;</td>
+    </tr>
 <tr class="memitem:a2514b6b830efc0aeeb2ba6f64aa033e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumchess_1_1models_1_1enums_1_1_move_result.html">MoveResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_board.html#a2514b6b830efc0aeeb2ba6f64aa033e2">isLegalMove</a> (<a class="el" href="classchess_1_1models_1_1_chess_piece.html">ChessPiece</a> chessPiece, <a class="el" href="classchess_1_1models_1_1_position.html">Position</a> pos)</td></tr>
 <tr class="separator:a2514b6b830efc0aeeb2ba6f64aa033e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ffee6403d98b5e5e68c0a2b73440100"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_board.html#a8ffee6403d98b5e5e68c0a2b73440100">isOverPiece</a> (<a class="el" href="classchess_1_1models_1_1_chess_piece.html">ChessPiece</a> chessPiece, <a class="el" href="classchess_1_1models_1_1_position.html">Position</a> pos)</td></tr>
@@ -106,12 +114,35 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeab935c6befad60e51084a78458ebf39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28a3d4b9d0738a26666b7c97394242a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classchess_1_1models_1_1_board.html#a28a3d4b9d0738a26666b7c97394242a9">getHEIGHT</a> ()</td></tr>
 <tr class="separator:a28a3d4b9d0738a26666b7c97394242a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+    <tr class="memitem:aa4ce59757096d83c1f8ffe3d97b84190">
+        <td class="memItemLeft" align="right" valign="top"><a class="el"
+                                                              href="enumchess_1_1models_1_1enums_1_1_player.html">Player</a>&#160;
+        </td>
+        <td class="memItemRight" valign="bottom"><a class="el"
+                                                    href="classchess_1_1models_1_1_board.html#aa4ce59757096d83c1f8ffe3d97b84190">getCurPlayer</a>
+            ()
+        </td>
+    </tr>
+    <tr class="separator:aa4ce59757096d83c1f8ffe3d97b84190">
+        <td class="memSeparator" colspan="2">&#160;</td>
+    </tr>
+    <tr class="memitem:a1ec14777a87bc322201a01609e4d6d2f">
+        <td class="memItemLeft" align="right" valign="top">void&#160;</td>
+        <td class="memItemRight" valign="bottom"><a class="el"
+                                                    href="classchess_1_1models_1_1_board.html#a1ec14777a87bc322201a01609e4d6d2f">nextPlayer</a>
+            ()
+        </td>
+    </tr>
+    <tr class="separator:a1ec14777a87bc322201a01609e4d6d2f">
+        <td class="memSeparator" colspan="2">&#160;</td>
+    </tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classchess_1_1models_1_1_board.html">Board</a>, contains the shape and size of chess board, all chess pieces and the judgement of game ending </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a742cb1aaa3ec12625098a4ddf24fee19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a742cb1aaa3ec12625098a4ddf24fee19">&#9670;&nbsp;</a></span>Board()</h2>
+    <a id="aa18d91c193768584a714d739a0dc80af"></a>
+    <h2 class="memtitle"><span class="permalink"><a href="#aa18d91c193768584a714d739a0dc80af">&#9670;&nbsp;</a></span>Board()
+    </h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -119,7 +150,10 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">chess.models.Board.Board </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+            <td class="paramtype"><a class="el" href="enumchess_1_1models_1_1enums_1_1_game_mode.html">GameMode</a>&#160;
+            </td>
+            <td class="paramname"><em>gameMode</em></td>
+            <td>)</td>
           <td></td>
         </tr>
       </table>
@@ -211,6 +245,33 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+    <a id="aa4ce59757096d83c1f8ffe3d97b84190"></a>
+    <h2 class="memtitle"><span class="permalink"><a href="#aa4ce59757096d83c1f8ffe3d97b84190">&#9670;&nbsp;</a></span>getCurPlayer()
+    </h2>
+
+    <div class="memitem">
+        <div class="memproto">
+            <table class="memname">
+                <tr>
+                    <td class="memname"><a class="el" href="enumchess_1_1models_1_1enums_1_1_player.html">Player</a>
+                        chess.models.Board.getCurPlayer
+                    </td>
+                    <td>(</td>
+                    <td class="paramname"></td>
+                    <td>)</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="memdoc">
+            <p>Get the borad's current player</p>
+            <dl class="section return">
+                <dt>Returns</dt>
+                <dd>the board's current player</dd>
+            </dl>
+
+        </div>
+    </div>
 <a id="a28a3d4b9d0738a26666b7c97394242a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28a3d4b9d0738a26666b7c97394242a9">&#9670;&nbsp;</a></span>getHEIGHT()</h2>
 
@@ -468,6 +529,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+    <a id="a1ec14777a87bc322201a01609e4d6d2f"></a>
+    <h2 class="memtitle"><span class="permalink"><a href="#a1ec14777a87bc322201a01609e4d6d2f">&#9670;&nbsp;</a></span>nextPlayer()
+    </h2>
+
+    <div class="memitem">
+        <div class="memproto">
+            <table class="memname">
+                <tr>
+                    <td class="memname">void chess.models.Board.nextPlayer</td>
+                    <td>(</td>
+                    <td class="paramname"></td>
+                    <td>)</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="memdoc">
+
+        </div>
+    </div>
 <a id="af22da20d051a6cc31c6730e5dc80d81e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af22da20d051a6cc31c6730e5dc80d81e">&#9670;&nbsp;</a></span>print()</h2>
 

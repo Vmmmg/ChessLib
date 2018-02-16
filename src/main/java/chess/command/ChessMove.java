@@ -13,12 +13,12 @@ public class ChessMove {
     /**
      * Move a piece to specific position on the board
      *
-     * @param board
-     * @param chess  Piece that needs to move
-     * @param destination  Destination position
+     * @param board       Chess board
+     * @param chess       Piece that needs to move
+     * @param destination Destination position
      */
-    public MoveResult move(Board board, ChessPiece chess, Position destination){
-        return board.chessMove(chess ,destination);
+    public MoveResult move(Board board, ChessPiece chess, Position destination) {
+        return board.chessMove(chess, destination);
     }
 
 }

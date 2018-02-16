@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['sameposition',['SamePosition',['../enumchess_1_1models_1_1enums_1_1_move_result.html#ae2f055341a4c6c1c1f3af4437bd0f2d2',1,'chess::models::enums::MoveResult']]]
+    ['pawndiagonally', ['PawnDiagonally', ['../enumchess_1_1models_1_1enums_1_1_move_result.html#af4f997ded0a66f0482e263ce6870eba2', 1, 'chess::models::enums::MoveResult']]],
+    ['pawnforward', ['PawnForward', ['../enumchess_1_1models_1_1enums_1_1_move_result.html#a4f2ef96f4dc4898048a590c502850a54', 1, 'chess::models::enums::MoveResult']]]
 ];

@@ -3,7 +3,7 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classchess_1_1models_1_1_board_a742cb1aaa3ec12625098a4ddf24fee19}{Board}} ()
+\mbox{\hyperlink{classchess_1_1models_1_1_board_aa18d91c193768584a714d739a0dc80af}{Board}} (\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_game_mode}{Game\+Mode}} game\+Mode)
 \item 
 \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_move_result}{Move\+Result}} \mbox{\hyperlink{classchess_1_1models_1_1_board_a2514b6b830efc0aeeb2ba6f64aa033e2}{is\+Legal\+Move}} (\mbox{\hyperlink{classchess_1_1models_1_1_chess_piece}{Chess\+Piece}} chess\+Piece, \mbox{\hyperlink{classchess_1_1models_1_1_position}{Position}} pos)
 \item 
@@ -32,6 +32,10 @@ void \mbox{\hyperlink{classchess_1_1models_1_1_board_af22da20d051a6cc31c6730e5dc
 int \mbox{\hyperlink{classchess_1_1models_1_1_board_aeab935c6befad60e51084a78458ebf39}{get\+W\+I\+D\+TH}} ()
 \item 
 int \mbox{\hyperlink{classchess_1_1models_1_1_board_a28a3d4b9d0738a26666b7c97394242a9}{get\+H\+E\+I\+G\+HT}} ()
+\item 
+\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} \mbox{\hyperlink{classchess_1_1models_1_1_board_aa4ce59757096d83c1f8ffe3d97b84190}{get\+Cur\+Player}} ()
+\item 
+void \mbox{\hyperlink{classchess_1_1models_1_1_board_a1ec14777a87bc322201a01609e4d6d2f}{next\+Player}} ()
 \end{DoxyCompactItemize}
 
 
@@ -39,11 +43,11 @@ int \mbox{\hyperlink{classchess_1_1models_1_1_board_a28a3d4b9d0738a26666b7c97394
 \mbox{\hyperlink{classchess_1_1models_1_1_board}{Board}}, contains the shape and size of chess board, all chess pieces and the judgement of game ending 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classchess_1_1models_1_1_board_a742cb1aaa3ec12625098a4ddf24fee19}\label{classchess_1_1models_1_1_board_a742cb1aaa3ec12625098a4ddf24fee19}} 
+\mbox{\Hypertarget{classchess_1_1models_1_1_board_aa18d91c193768584a714d739a0dc80af}\label{classchess_1_1models_1_1_board_aa18d91c193768584a714d739a0dc80af}} 
 \index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!Board@{Board}}
 \index{Board@{Board}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
 \subsubsection{\texorpdfstring{Board()}{Board()}}
-{\footnotesize\ttfamily chess.\+models.\+Board.\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily chess.\+models.\+Board.\+Board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_game_mode}{Game\+Mode}}}]{game\+Mode }\end{DoxyParamCaption})}
 
 Constructor of \mbox{\hyperlink{classchess_1_1models_1_1_board}{Board}} 
 
@@ -92,6 +96,17 @@ Get the set of black chess
 
 \begin{DoxyReturn}{Returns}
 The set of black chess 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classchess_1_1models_1_1_board_aa4ce59757096d83c1f8ffe3d97b84190}\label{classchess_1_1models_1_1_board_aa4ce59757096d83c1f8ffe3d97b84190}} 
+\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!get\+Cur\+Player@{get\+Cur\+Player}}
+\index{get\+Cur\+Player@{get\+Cur\+Player}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
+\subsubsection{\texorpdfstring{get\+Cur\+Player()}{getCurPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enumchess_1_1models_1_1enums_1_1_player}{Player}} chess.\+models.\+Board.\+get\+Cur\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the borad\textquotesingle{}s current player
+
+\begin{DoxyReturn}{Returns}
+the board\textquotesingle{}s current player 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classchess_1_1models_1_1_board_a28a3d4b9d0738a26666b7c97394242a9}\label{classchess_1_1models_1_1_board_a28a3d4b9d0738a26666b7c97394242a9}} 
 \index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!get\+H\+E\+I\+G\+HT@{get\+H\+E\+I\+G\+HT}}
@@ -227,6 +242,12 @@ Judge if the game is ended
 \begin{DoxyReturn}{Returns}
 Game\+Result 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classchess_1_1models_1_1_board_a1ec14777a87bc322201a01609e4d6d2f}\label{classchess_1_1models_1_1_board_a1ec14777a87bc322201a01609e4d6d2f}} 
+\index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!next\+Player@{next\+Player}}
+\index{next\+Player@{next\+Player}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}
+\subsubsection{\texorpdfstring{next\+Player()}{nextPlayer()}}
+{\footnotesize\ttfamily void chess.\+models.\+Board.\+next\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classchess_1_1models_1_1_board_af22da20d051a6cc31c6730e5dc80d81e}\label{classchess_1_1models_1_1_board_af22da20d051a6cc31c6730e5dc80d81e}} 
 \index{chess\+::models\+::\+Board@{chess\+::models\+::\+Board}!print@{print}}
 \index{print@{print}!chess\+::models\+::\+Board@{chess\+::models\+::\+Board}}

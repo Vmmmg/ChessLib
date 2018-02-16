@@ -25,82 +25,139 @@ import java.util.Set;
 
 /**
  * The controller component of MVC
- *
  */
 public class BoardController {
 
     //top
-    @FXML MenuItem startItem;
+    @FXML
+    MenuItem startItem;
 
     //left
-    @FXML Label bNameLabel;
-    @FXML Button bUndoBtn;
-    @FXML Button bRestartBtn;
-    @FXML Button bForfeitBtn;
-    @FXML Label bRestartLabel;
-    @FXML RadioButton bRestartYesBtn;
-    @FXML RadioButton bRestartNoBtn;
-    @FXML Label resultLabel;
-    @FXML Label wNameLabel;
-    @FXML Button wUndoBtn;
-    @FXML Button wRestartBtn;
-    @FXML Button wForfeitBtn;
-    @FXML Label wRestartLabel;
-    @FXML RadioButton wRestartYesBtn;
-    @FXML RadioButton wRestartNoBtn;
+    @FXML
+    Label bNameLabel;
+    @FXML
+    Button bUndoBtn;
+    @FXML
+    Button bRestartBtn;
+    @FXML
+    Button bForfeitBtn;
+    @FXML
+    Label bRestartLabel;
+    @FXML
+    RadioButton bRestartYesBtn;
+    @FXML
+    RadioButton bRestartNoBtn;
+    @FXML
+    Label resultLabel;
+    @FXML
+    Label wNameLabel;
+    @FXML
+    Button wUndoBtn;
+    @FXML
+    Button wRestartBtn;
+    @FXML
+    Button wForfeitBtn;
+    @FXML
+    Label wRestartLabel;
+    @FXML
+    RadioButton wRestartYesBtn;
+    @FXML
+    RadioButton wRestartNoBtn;
 
     //right
-    @FXML TextField bNameField;
-    @FXML TextField wNameField;
-    @FXML RadioButton classicModeBtn;
-    @FXML RadioButton newModeBtn;
-    @FXML Button startBtn;
+    @FXML
+    TextField bNameField;
+    @FXML
+    TextField wNameField;
+    @FXML
+    RadioButton classicModeBtn;
+    @FXML
+    RadioButton newModeBtn;
+    @FXML
+    Button startBtn;
 
     //bottom
-    @FXML FlowPane resultFlowPane;
+    @FXML
+    FlowPane resultFlowPane;
 
     //center
-    @FXML GridPane boardGridPane;
+    @FXML
+    GridPane boardGridPane;
 
-    @FXML Pane pane00, pane10, pane20, pane30, pane40, pane50, pane60, pane70, pane01, pane11, pane21, pane31, pane41, pane51, pane61, pane71,
+    @FXML
+    Pane pane00, pane10, pane20, pane30, pane40, pane50, pane60, pane70, pane01, pane11, pane21, pane31, pane41, pane51, pane61, pane71,
             pane02, pane12, pane22, pane32, pane42, pane52, pane62, pane72, pane03, pane13, pane23, pane33, pane43, pane53, pane63, pane73,
             pane04, pane14, pane24, pane34, pane44, pane54, pane64, pane74, pane05, pane15, pane25, pane35, pane45, pane55, pane65, pane75,
             pane06, pane16, pane26, pane36, pane46, pane56, pane66, pane76, pane07, pane17, pane27, pane37, pane47, pane57, pane67, pane77;
 
-    @FXML Button bRookBtn1;
-    @FXML Button bRookBtn2;
-    @FXML Button bKnightBtn1;
-    @FXML Button bKnightBtn2;
-    @FXML Button bBishopBtn1;
-    @FXML Button bBishopBtn2;
-    @FXML Button bQueenBtn;
-    @FXML Button bKingBtn;
-    @FXML Button bPawnBtn1;
-    @FXML Button bPawnBtn2;
-    @FXML Button bPawnBtn3;
-    @FXML Button bPawnBtn4;
-    @FXML Button bPawnBtn5;
-    @FXML Button bPawnBtn6;
-    @FXML Button bPawnBtn7;
-    @FXML Button bPawnBtn8;
+    @FXML
+    Button bRookBtn1;
+    @FXML
+    Button bRookBtn2;
+    @FXML
+    Button bKnightBtn1;
+    @FXML
+    Button bKnightBtn2;
+    @FXML
+    Button bBishopBtn1;
+    @FXML
+    Button bBishopBtn2;
+    @FXML
+    Button bQueenBtn;
+    @FXML
+    Button bKingBtn;
+    @FXML
+    Button bPawnBtn1;
+    @FXML
+    Button bPawnBtn2;
+    @FXML
+    Button bPawnBtn3;
+    @FXML
+    Button bPawnBtn4;
+    @FXML
+    Button bPawnBtn5;
+    @FXML
+    Button bPawnBtn6;
+    @FXML
+    Button bPawnBtn7;
+    @FXML
+    Button bPawnBtn8;
 
-    @FXML Button wRookBtn1;
-    @FXML Button wRookBtn2;
-    @FXML Button wKnightBtn1;
-    @FXML Button wKnightBtn2;
-    @FXML Button wBishopBtn1;
-    @FXML Button wBishopBtn2;
-    @FXML Button wQueenBtn;
-    @FXML Button wKingBtn;
-    @FXML Button wPawnBtn1;
-    @FXML Button wPawnBtn2;
-    @FXML Button wPawnBtn3;
-    @FXML Button wPawnBtn4;
-    @FXML Button wPawnBtn5;
-    @FXML Button wPawnBtn6;
-    @FXML Button wPawnBtn7;
-    @FXML Button wPawnBtn8;
+    @FXML
+    Button wRookBtn1;
+    @FXML
+    Button wRookBtn2;
+    @FXML
+    Button wKnightBtn1;
+    @FXML
+    Button wKnightBtn2;
+    @FXML
+    Button wBishopBtn1;
+    @FXML
+    Button wBishopBtn2;
+    @FXML
+    Button wQueenBtn;
+    @FXML
+    Button wKingBtn;
+    @FXML
+    Button wPawnBtn1;
+    @FXML
+    Button wPawnBtn2;
+    @FXML
+    Button wPawnBtn3;
+    @FXML
+    Button wPawnBtn4;
+    @FXML
+    Button wPawnBtn5;
+    @FXML
+    Button wPawnBtn6;
+    @FXML
+    Button wPawnBtn7;
+    @FXML
+    Button wPawnBtn8;
 
+    private ChessMove chessMoveReceiver;
+    private Command moveCommand;
     private Board board;
     private Pane[][] paneArray;
     private GameMode selectedMode;
@@ -111,23 +168,20 @@ public class BoardController {
     private Button movingBtn;
     private Pane movingBtnPos;
     private Pane destination;
-    ChessMove chessMoveReceiver;
-    Command moveCommand;
     private RequestChessMove chessMoveInvoker;
 
     /**
      * Click the "start" button to first start the game
      *
-     * @param event
+     * @param event ActionEvent
      */
     @FXML
-    public void firstStartGame(ActionEvent event){
+    public void firstStartGame(ActionEvent event) {
         blackName = bNameField.getText();
         whiteName = wNameField.getText();
-        if(classicModeBtn.isSelected()){
+        if (classicModeBtn.isSelected()) {
             selectedMode = GameMode.Classic;
-        }
-        else {
+        } else {
             selectedMode = GameMode.New;
         }
 
@@ -150,15 +204,15 @@ public class BoardController {
     /**
      * Click the "start" menu item to start the game
      *
-     * @param event
+     * @param event ActionEvent
      */
     @FXML
-    public void startGame(ActionEvent event){
+    public void startGame(ActionEvent event) {
         resultLabel.setText("");
         board = new Board(selectedMode);
 
-        for(int i = 0; i < board.getHEIGHT(); i++){
-            for(int j = 0; j < board.getWIDTH(); j++){
+        for (int i = 0; i < board.getHEIGHT(); i++) {
+            for (int j = 0; j < board.getWIDTH(); j++) {
                 paneArray[i][j].getChildren().clear();
             }
         }
@@ -174,7 +228,7 @@ public class BoardController {
     /**
      * Set the Invoker of the Command Pattern
      */
-    public void setCommandInvoker(){
+    public void setCommandInvoker() {
         chessMoveReceiver = new ChessMove();
         moveCommand = new ChessMoveCommand(chessMoveReceiver);
         chessMoveInvoker = new RequestChessMove();
@@ -184,12 +238,11 @@ public class BoardController {
     /**
      * Set the "undo" buttons' disable states when the turn is changed
      */
-    public void setUndoDisable(){
-        if(board.getCurPlayer() == Player.White){
+    public void setUndoDisable() {
+        if (board.getCurPlayer() == Player.White) {
             bUndoBtn.setDisable(false);
             wUndoBtn.setDisable(true);
-        }
-        else{
+        } else {
             wUndoBtn.setDisable(false);
             bUndoBtn.setDisable(true);
         }
@@ -198,9 +251,9 @@ public class BoardController {
     /**
      * Set the "restart", and "forfeit" buttons' disable states
      *
-     * @param disable
+     * @param disable disable
      */
-    public void setPlayerBtnDisable(boolean disable){
+    public void setPlayerBtnDisable(boolean disable) {
         bRestartBtn.setDisable(disable);
         bForfeitBtn.setDisable(disable);
         wRestartBtn.setDisable(disable);
@@ -210,7 +263,7 @@ public class BoardController {
     /**
      * Add buttons to the corresponding panes when a new game starts
      */
-    public void addBtnToPane(){
+    public void addBtnToPane() {
         pane00.getChildren().addAll(bRookBtn1);
         pane10.getChildren().addAll(bKnightBtn1);
         pane20.getChildren().addAll(bBishopBtn1);
@@ -249,18 +302,17 @@ public class BoardController {
     /**
      * Click "restart" button to request the opponent's agreement on restarting the game
      *
-     * @param event
+     * @param event ActionEvent
      */
     @FXML
-    public void restartConfirm(ActionEvent event){
-        if((Button) event.getSource() == bRestartBtn){
+    public void restartConfirm(ActionEvent event) {
+        if (event.getSource() == bRestartBtn) {
             wRestartLabel.setVisible(true);
             wRestartYesBtn.setDisable(false);
             wRestartYesBtn.setVisible(true);
             wRestartNoBtn.setDisable(false);
             wRestartNoBtn.setVisible(true);
-        }
-        else{
+        } else {
             bRestartLabel.setVisible(true);
             bRestartYesBtn.setDisable(false);
             bRestartYesBtn.setVisible(true);
@@ -272,20 +324,18 @@ public class BoardController {
     /**
      * Restart the game
      *
-     * @param event
+     * @param event ActionEvent
      */
     @FXML
-    public void restartGame(ActionEvent event){
-        if((RadioButton) event.getSource() == wRestartYesBtn){
+    public void restartGame(ActionEvent event) {
+        if (event.getSource() == wRestartYesBtn) {
             wRestartLabel.setVisible(false);
             wRestartYesBtn.setVisible(false);
             wRestartYesBtn.setDisable(true);
             wRestartNoBtn.setVisible(false);
             wRestartNoBtn.setDisable(true);
             wRestartYesBtn.setSelected(false);
-
-        }
-        else{
+        } else {
             bRestartLabel.setVisible(false);
             bRestartYesBtn.setVisible(false);
             bRestartYesBtn.setDisable(true);
@@ -295,18 +345,17 @@ public class BoardController {
         }
 
         finish(GameResult.Draw);
-
         startGame(event);
     }
 
     /**
      * Don't restart the game
      *
-     * @param event
+     * @param event ActionEvent
      */
     @FXML
-    public void notRestartGame(ActionEvent event){
-        if((RadioButton) event.getSource() == wRestartNoBtn){
+    public void notRestartGame(ActionEvent event) {
+        if (event.getSource() == wRestartNoBtn) {
             wRestartLabel.setVisible(false);
             wRestartYesBtn.setVisible(false);
             wRestartYesBtn.setDisable(true);
@@ -314,8 +363,7 @@ public class BoardController {
             wRestartNoBtn.setDisable(true);
             wRestartNoBtn.setSelected(false);
 
-        }
-        else{
+        } else {
             bRestartLabel.setVisible(false);
             bRestartYesBtn.setVisible(false);
             bRestartYesBtn.setDisable(true);
@@ -328,14 +376,13 @@ public class BoardController {
     /**
      * Click "forfeit" button to forfeit
      *
-     * @param event
+     * @param event ActionEvent
      */
     @FXML
-    public void forfeit(ActionEvent event){
-        if((Button) event.getSource() == wForfeitBtn){
+    public void forfeit(ActionEvent event) {
+        if (event.getSource() == wForfeitBtn) {
             finish(GameResult.BlackWin);
-        }
-        else{
+        } else {
             finish(GameResult.WhiteWin);
         }
     }
@@ -343,10 +390,10 @@ public class BoardController {
     /**
      * Click "undo" button to undo
      *
-     * @param event
+     * @param event ActionEvent
      */
     @FXML
-    public void undo(ActionEvent event){
+    public void undo(ActionEvent event) {
         List<Position> poses = chessMoveInvoker.undoMoveCommand(board);
         Position prePos = poses.get(0);
         Position curPos = poses.get(1);
@@ -358,7 +405,7 @@ public class BoardController {
     /**
      * Add buttons to the corresponding sets
      */
-    public void addBtnToSet(){
+    public void addBtnToSet() {
         blackBtnSet = new HashSet<>();
         whiteBtnSet = new HashSet<>();
 
@@ -400,46 +447,78 @@ public class BoardController {
     /**
      * Add panes to the pane array
      */
-    public void addPaneToArray(){
+    public void addPaneToArray() {
         paneArray = new Pane[board.getHEIGHT()][board.getWIDTH()];
-        paneArray[0][0] = pane00; paneArray[1][0] = pane10;
-        paneArray[2][0] = pane20; paneArray[3][0] = pane30;
-        paneArray[4][0] = pane40; paneArray[5][0] = pane50;
-        paneArray[6][0] = pane60; paneArray[7][0] = pane70;
-        paneArray[0][1] = pane01; paneArray[1][1] = pane11;
-        paneArray[2][1] = pane21; paneArray[3][1] = pane31;
-        paneArray[4][1] = pane41; paneArray[5][1] = pane51;
-        paneArray[6][1] = pane61; paneArray[7][1] = pane71;
-        paneArray[0][2] = pane02; paneArray[1][2] = pane12;
-        paneArray[2][2] = pane22; paneArray[3][2] = pane32;
-        paneArray[4][2] = pane42; paneArray[5][2] = pane52;
-        paneArray[6][2] = pane62; paneArray[7][2] = pane72;
-        paneArray[0][3] = pane03; paneArray[1][3] = pane13;
-        paneArray[2][3] = pane23; paneArray[3][3] = pane33;
-        paneArray[4][3] = pane43; paneArray[5][3] = pane53;
-        paneArray[6][3] = pane63; paneArray[7][3] = pane73;
-        paneArray[0][4] = pane04; paneArray[1][4] = pane14;
-        paneArray[2][4] = pane24; paneArray[3][4] = pane34;
-        paneArray[4][4] = pane44; paneArray[5][4] = pane54;
-        paneArray[6][4] = pane64; paneArray[7][4] = pane74;
-        paneArray[0][5] = pane05; paneArray[1][5] = pane15;
-        paneArray[2][5] = pane25; paneArray[3][5] = pane35;
-        paneArray[4][5] = pane45; paneArray[5][5] = pane55;
-        paneArray[6][5] = pane65; paneArray[7][5] = pane75;
-        paneArray[0][6] = pane06; paneArray[1][6] = pane16;
-        paneArray[2][6] = pane26; paneArray[3][6] = pane36;
-        paneArray[4][6] = pane46; paneArray[5][6] = pane56;
-        paneArray[6][6] = pane66; paneArray[7][6] = pane76;
-        paneArray[0][7] = pane07; paneArray[1][7] = pane17;
-        paneArray[2][7] = pane27; paneArray[3][7] = pane37;
-        paneArray[4][7] = pane47; paneArray[5][7] = pane57;
-        paneArray[6][7] = pane67; paneArray[7][7] = pane77;
+        paneArray[0][0] = pane00;
+        paneArray[1][0] = pane10;
+        paneArray[2][0] = pane20;
+        paneArray[3][0] = pane30;
+        paneArray[4][0] = pane40;
+        paneArray[5][0] = pane50;
+        paneArray[6][0] = pane60;
+        paneArray[7][0] = pane70;
+        paneArray[0][1] = pane01;
+        paneArray[1][1] = pane11;
+        paneArray[2][1] = pane21;
+        paneArray[3][1] = pane31;
+        paneArray[4][1] = pane41;
+        paneArray[5][1] = pane51;
+        paneArray[6][1] = pane61;
+        paneArray[7][1] = pane71;
+        paneArray[0][2] = pane02;
+        paneArray[1][2] = pane12;
+        paneArray[2][2] = pane22;
+        paneArray[3][2] = pane32;
+        paneArray[4][2] = pane42;
+        paneArray[5][2] = pane52;
+        paneArray[6][2] = pane62;
+        paneArray[7][2] = pane72;
+        paneArray[0][3] = pane03;
+        paneArray[1][3] = pane13;
+        paneArray[2][3] = pane23;
+        paneArray[3][3] = pane33;
+        paneArray[4][3] = pane43;
+        paneArray[5][3] = pane53;
+        paneArray[6][3] = pane63;
+        paneArray[7][3] = pane73;
+        paneArray[0][4] = pane04;
+        paneArray[1][4] = pane14;
+        paneArray[2][4] = pane24;
+        paneArray[3][4] = pane34;
+        paneArray[4][4] = pane44;
+        paneArray[5][4] = pane54;
+        paneArray[6][4] = pane64;
+        paneArray[7][4] = pane74;
+        paneArray[0][5] = pane05;
+        paneArray[1][5] = pane15;
+        paneArray[2][5] = pane25;
+        paneArray[3][5] = pane35;
+        paneArray[4][5] = pane45;
+        paneArray[5][5] = pane55;
+        paneArray[6][5] = pane65;
+        paneArray[7][5] = pane75;
+        paneArray[0][6] = pane06;
+        paneArray[1][6] = pane16;
+        paneArray[2][6] = pane26;
+        paneArray[3][6] = pane36;
+        paneArray[4][6] = pane46;
+        paneArray[5][6] = pane56;
+        paneArray[6][6] = pane66;
+        paneArray[7][6] = pane76;
+        paneArray[0][7] = pane07;
+        paneArray[1][7] = pane17;
+        paneArray[2][7] = pane27;
+        paneArray[3][7] = pane37;
+        paneArray[4][7] = pane47;
+        paneArray[5][7] = pane57;
+        paneArray[6][7] = pane67;
+        paneArray[7][7] = pane77;
     }
 
     /**
      * Game loop
      */
-    public void gameLoop(){
+    public void gameLoop() {
         int movingBtnPosX = Integer.parseInt(movingBtnPos.getId().substring(4, 5));
         int movingBtnPosY = Integer.parseInt(movingBtnPos.getId().substring(5, 6));
         ChessPiece selectedChess = board.getSpecificPositionChess(new Position(movingBtnPosX, movingBtnPosY));
@@ -448,14 +527,13 @@ public class BoardController {
         Position destinationPos = new Position(destinationX, destinationY);
         MoveResult moveResult = board.isLegalMove(selectedChess, destinationPos);
 
-        if(moveResult == MoveResult.LegalMove){
+        if (moveResult == MoveResult.LegalMove) {
             moveResult = chessMoveInvoker.executeMoveCommand(board, selectedChess, destinationPos);
 
-            if(moveResult == MoveResult.Capture){
-                if(board.getCurPlayer() == Player.White){
+            if (moveResult == MoveResult.Capture) {
+                if (board.getCurPlayer() == Player.White) {
                     blackBtnSet.remove(paneArray[destinationX][destinationY].getChildren().get(0));
-                }
-                else{
+                } else {
                     whiteBtnSet.remove(paneArray[destinationX][destinationY].getChildren().get(0));
                 }
                 paneArray[destinationX][destinationY].getChildren().clear();
@@ -465,16 +543,14 @@ public class BoardController {
             GameResult gameResult = board.judge();
             movingBtn = null;
             movingBtnPos = null;
-            if(gameResult == GameResult.Gaming){
+            if (gameResult == GameResult.Gaming) {
                 board.nextPlayer();
                 setChessDisable();
                 setUndoDisable();
-            }
-            else{
+            } else {
                 finish(gameResult);
             }
-        }
-        else{
+        } else {
             resultLabel.setText("Illegal Move!");
         }
     }
@@ -482,20 +558,19 @@ public class BoardController {
     /**
      * Set the chess's disable states when the turn is changed
      */
-    public void setChessDisable(){
-        if(board.getCurPlayer() == Player.White){
-            for(Button whiteBtn: whiteBtnSet){
+    public void setChessDisable() {
+        if (board.getCurPlayer() == Player.White) {
+            for (Button whiteBtn : whiteBtnSet) {
                 whiteBtn.setDisable(false);
             }
-            for(Button blackBtn: blackBtnSet) {
+            for (Button blackBtn : blackBtnSet) {
                 blackBtn.setDisable(true);
             }
-        }
-        else{
-            for(Button whiteBtn: whiteBtnSet){
+        } else {
+            for (Button whiteBtn : whiteBtnSet) {
                 whiteBtn.setDisable(true);
             }
-            for(Button blackBtn: blackBtnSet) {
+            for (Button blackBtn : blackBtnSet) {
                 blackBtn.setDisable(false);
             }
         }
@@ -506,24 +581,22 @@ public class BoardController {
      *
      * @param gameResult The game's result
      */
-    public void finish(GameResult gameResult){
-        if(gameResult == GameResult.BlackWin){
+    public void finish(GameResult gameResult) {
+        if (gameResult == GameResult.BlackWin) {
             resultLabel.setText(blackName + "(Black) Win!");
             resultFlowPane.getChildren().addAll(new Label(blackName + "(Black) Win!"));
-        }
-        else if(gameResult == GameResult.WhiteWin){
+        } else if (gameResult == GameResult.WhiteWin) {
             resultLabel.setText(whiteName + "(White) Win!");
             resultFlowPane.getChildren().addAll(new Label(whiteName + "(White) Win!"));
-        }
-        else{
+        } else {
             resultLabel.setText("Draw!");
             resultFlowPane.getChildren().addAll(new Label("Draw!"));
         }
 
-        for(Button whiteBtn: whiteBtnSet){
+        for (Button whiteBtn : whiteBtnSet) {
             whiteBtn.setDisable(true);
         }
-        for(Button blackBtn: blackBtnSet){
+        for (Button blackBtn : blackBtnSet) {
             blackBtn.setDisable(true);
         }
         startItem.setDisable(false);
@@ -533,10 +606,10 @@ public class BoardController {
     /**
      * Click a chess button to select the chess
      *
-     * @param event
+     * @param event ActionEvent
      */
     @FXML
-    public void clickChess(ActionEvent event){
+    public void clickChess(ActionEvent event) {
         resultLabel.setText("");
         movingBtn = (Button) event.getSource();
         movingBtnPos = (Pane) movingBtn.getParent();
@@ -545,12 +618,12 @@ public class BoardController {
     /**
      * Click a grid to move the selected chess to the selected grid
      *
-     * @param event
+     * @param event ActionEvent
      */
     @FXML
-    public void clickDestination(MouseEvent event){
+    public void clickDestination(MouseEvent event) {
         resultLabel.setText("");
-        if(movingBtn != null) {
+        if (movingBtn != null) {
             destination = (Pane) event.getSource();
             gameLoop();
         }

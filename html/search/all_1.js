@@ -6,7 +6,7 @@ var searchData=
   ['bishoptest_2ejava',['BishopTest.java',['../_bishop_test_8java.html',1,'']]],
   ['black',['Black',['../enumchess_1_1models_1_1enums_1_1_player.html#a37677111d3c5ecaf7109ebe257b7d756',1,'chess::models::enums::Player']]],
   ['blackwin',['BlackWin',['../enumchess_1_1models_1_1enums_1_1_game_result.html#ac45a99e6bed59ba2fa6b229383229195',1,'chess::models::enums::GameResult']]],
-  ['board',['Board',['../classchess_1_1models_1_1_board.html',1,'chess.models.Board'],['../classchess_1_1models_1_1_board.html#a742cb1aaa3ec12625098a4ddf24fee19',1,'chess.models.Board.Board()']]],
+    ['board', ['Board', ['../classchess_1_1models_1_1_board.html', 1, 'chess.models.Board'], ['../classchess_1_1models_1_1_board.html#aa18d91c193768584a714d739a0dc80af', 1, 'chess.models.Board.Board()']]],
   ['board_2ejava',['Board.java',['../_board_8java.html',1,'']]],
   ['boardcontroller',['BoardController',['../classchess_1_1controllers_1_1_board_controller.html',1,'chess::controllers']]],
   ['boardcontroller_2ejava',['BoardController.java',['../_board_controller_8java.html',1,'']]],

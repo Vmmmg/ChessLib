@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['white',['White',['../enumchess_1_1models_1_1enums_1_1_player.html#a60ced79fc80ec46a6a2a6f031b27b08e',1,'chess::models::enums::Player']]],
-  ['whitechessset',['whiteChessSet',['../classchess_1_1models_1_1_board.html#a994179278987ea6ec0978ed1ea257145',1,'chess::models::Board']]],
-  ['whitekingpos',['whiteKingPos',['../classchess_1_1models_1_1_board.html#a75fc76cc043240759072dc301833a37a',1,'chess::models::Board']]],
-  ['whitewin',['WhiteWin',['../enumchess_1_1models_1_1enums_1_1_game_result.html#ab484738f8e1b5994fb669ee8d6d02158',1,'chess::models::enums::GameResult']]],
-  ['width',['WIDTH',['../classchess_1_1models_1_1_board.html#a87cf88fb8e9e53ae787791cbd114cb33',1,'chess::models::Board']]]
+    ['tostring', ['toString', ['../classchess_1_1models_1_1pieces_1_1_bishop.html#abbdf19ca47acb189eeaa49931eb2f30c', 1, 'chess.models.pieces.Bishop.toString()'], ['../classchess_1_1models_1_1pieces_1_1_king.html#ae287258d6c093ce7d7c3196f7dde6d99', 1, 'chess.models.pieces.King.toString()'], ['../classchess_1_1models_1_1pieces_1_1_knight.html#a18c83fa9040a0035d86c3354f3ada4ea', 1, 'chess.models.pieces.Knight.toString()'], ['../classchess_1_1models_1_1pieces_1_1_pawn.html#a97538699aaa1cb69482ad9c218562450', 1, 'chess.models.pieces.Pawn.toString()'], ['../classchess_1_1models_1_1pieces_1_1_queen.html#a723a09d8252bb14578d33c099242e37d', 1, 'chess.models.pieces.Queen.toString()'], ['../classchess_1_1models_1_1pieces_1_1_rook.html#a73f28ce35486a866fabe250ad4490993', 1, 'chess.models.pieces.Rook.toString()']]]
 ];

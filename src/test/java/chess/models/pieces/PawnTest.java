@@ -3,7 +3,6 @@ package chess.models.pieces;
 import chess.models.Position;
 import chess.models.enums.MoveResult;
 import chess.models.enums.Player;
-import chess.models.pieces.Pawn;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
