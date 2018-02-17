@@ -643,6 +643,7 @@ public class Board {
         if(capturedChess != null){
             addChessToSet(capturedChess);
             chessMove(capturedChess, destinationPos);
+            nextPlayer();
         }
         else{
             board[destinationPos.getY()][destinationPos.getX()] = null;

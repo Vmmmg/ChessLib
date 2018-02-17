@@ -1,5 +1,8 @@
 package chess.controllers;
 
+import chess.controllers.command.ButtonMove;
+import chess.controllers.command.ButtonMoveCommand;
+import chess.controllers.command.RequestButtonMove;
 import chess.models.command.ChessMove;
 import chess.models.command.ChessMoveCommand;
 import chess.models.command.Command;
@@ -158,6 +161,8 @@ public class BoardController {
 
     private ChessMove chessMoveReceiver;
     private Command moveCommand;
+    private ButtonMove buttonMoveReceiver;
+    private chess.controllers.command.Command btnMoveCommand;
     private Board board;
     private Pane[][] paneArray;
     private GameMode selectedMode;
@@ -169,6 +174,7 @@ public class BoardController {
     private Pane movingBtnPos;
     private Pane destination;
     private RequestChessMove chessMoveInvoker;
+    private RequestButtonMove btnMoveInvoker;
 
     /**
      * Click the "start" button to first start the game
@@ -197,7 +203,7 @@ public class BoardController {
         addPaneToArray();
         setCommandInvoker();
         setPlayerBtnDisable(false);
-        addBtnToSet();
+        addAllBtnToSet();
         setChessDisable();
     }
 
@@ -219,7 +225,7 @@ public class BoardController {
 
         setCommandInvoker();
         setPlayerBtnDisable(false);
-        addBtnToSet();
+        addAllBtnToSet();
         addBtnToPane();
         setChessDisable();
         startItem.setDisable(true);
@@ -233,6 +239,11 @@ public class BoardController {
         moveCommand = new ChessMoveCommand(chessMoveReceiver);
         chessMoveInvoker = new RequestChessMove();
         chessMoveInvoker.setMoveCommand(moveCommand);
+
+        buttonMoveReceiver = new ButtonMove();
+        btnMoveCommand = new ButtonMoveCommand(buttonMoveReceiver);
+        btnMoveInvoker = new RequestButtonMove();
+        btnMoveInvoker.setMoveCommand(btnMoveCommand);
     }
 
     /**
@@ -394,18 +405,25 @@ public class BoardController {
      */
     @FXML
     public void undo(ActionEvent event) {
-//        List<Position> poses = chessMoveInvoker.undoMoveCommand(board);
-//        Position prePos = poses.get(0);
-//        Position curPos = poses.get(1);
-//        paneArray[prePos.getX()][prePos.getY()].getChildren().addAll(paneArray[curPos.getX()][curPos.getY()].getChildren().get(0));
-//        setChessDisable();
-//        setUndoDisable();
+        chessMoveInvoker.undoMoveCommand(board);
+        btnMoveInvoker.undoMoveCommand(this);
+        setChessDisable();
+        setUndoDisable();
+    }
+
+    public void undoBtnMove(Button movingButton, Position originPos, Button capturedButton, Position destinationPos){
+        btnMove(movingButton, originPos);
+
+        if (capturedButton != null){
+            addBtnToSet(capturedButton);
+            btnMove(capturedButton, destinationPos);
+        }
     }
 
     /**
-     * Add buttons to the corresponding sets
+     * Add all buttons to the corresponding sets
      */
-    public void addBtnToSet() {
+    public void addAllBtnToSet() {
         blackBtnSet = new HashSet<>();
         whiteBtnSet = new HashSet<>();
 
@@ -516,12 +534,27 @@ public class BoardController {
     }
 
     /**
+     * Add button to its set
+     *
+     * @param button
+     */
+    public void addBtnToSet(Button button){
+        if(button.getId().charAt(0) == 'w'){
+            whiteBtnSet.add(button);
+        }
+        else{
+            blackBtnSet.add(button);
+        }
+    }
+
+    /**
      * Game loop
      */
     public void gameLoop() {
         int movingBtnPosX = Integer.parseInt(movingBtnPos.getId().substring(4, 5));
         int movingBtnPosY = Integer.parseInt(movingBtnPos.getId().substring(5, 6));
-        ChessPiece selectedChess = board.getSpecificPositionChess(new Position(movingBtnPosX, movingBtnPosY));
+        Position movingBtnPosition = new Position(movingBtnPosX, movingBtnPosY);
+        ChessPiece selectedChess = board.getSpecificPositionChess(movingBtnPosition);
         int destinationX = Integer.parseInt(destination.getId().substring(4, 5));
         int destinationY = Integer.parseInt(destination.getId().substring(5, 6));
         Position destinationPos = new Position(destinationX, destinationY);
@@ -536,9 +569,13 @@ public class BoardController {
                 } else {
                     whiteBtnSet.remove(paneArray[destinationX][destinationY].getChildren().get(0));
                 }
-                paneArray[destinationX][destinationY].getChildren().clear();
+
+                btnMoveInvoker.executeMoveCommand(this, movingBtn, movingBtnPosition,
+                        (Button) paneArray[destinationX][destinationY].getChildren().get(0), destinationPos);
             }
-            paneArray[destinationX][destinationY].getChildren().addAll(movingBtn);
+            else {
+                btnMoveInvoker.executeMoveCommand(this, movingBtn, movingBtnPosition, null, destinationPos);
+            }
 
             GameResult gameResult = board.judge();
             movingBtn = null;
@@ -553,6 +590,14 @@ public class BoardController {
         } else {
             resultLabel.setText("Illegal Move!");
         }
+    }
+
+    public void btnMove(Button button, Position position){
+        int posX = position.getX();
+        int posY = position.getY();
+
+        paneArray[posX][posY].getChildren().clear();
+        paneArray[posX][posY].getChildren().addAll(button);
     }
 
     /**
