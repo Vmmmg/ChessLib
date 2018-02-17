@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public abstract class ChessPiece {
 
-    int id;
+    //    int id;
     private Player player;
     private Position position;
 
@@ -26,11 +26,11 @@ public abstract class ChessPiece {
         this.position = position;
     }
 
-    public ChessPiece(Player player, Position position, int id) {
-        this.player = player;
-        this.position = position;
-        this.id = id;
-    }
+//    public ChessPiece(Player player, Position position, int id) {
+//        this.player = player;
+//        this.position = position;
+//        this.id = id;
+//    }
 
     /**
      * Get current position
@@ -59,14 +59,14 @@ public abstract class ChessPiece {
         return player;
     }
 
-    /**
-     * Get the piece's id
-     *
-     * @return the piece's id
-     */
-    public int getId() {
-        return id;
-    }
+//    /**
+//     * Get the piece's id
+//     *
+//     * @return the piece's id
+//     */
+//    public int getId() {
+//        return id;
+//    }
 
     /**
      * Move to specific position
