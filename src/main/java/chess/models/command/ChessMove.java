@@ -1,4 +1,4 @@
-package chess.command;
+package chess.models.command;
 
 import chess.models.Board;
 import chess.models.ChessPiece;
@@ -19,6 +19,10 @@ public class ChessMove {
      */
     public MoveResult move(Board board, ChessPiece chess, Position destination) {
         return board.chessMove(chess, destination);
+    }
+
+    public void undo(Board board, ChessPiece movingChess, Position originPos, ChessPiece capturedChess, Position destinationPos){
+        board.undo(movingChess, originPos, capturedChess, destinationPos);
     }
 
 }

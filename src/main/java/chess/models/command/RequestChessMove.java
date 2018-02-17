@@ -1,4 +1,4 @@
-package chess.command;
+package chess.models.command;
 
 import chess.models.Board;
 import chess.models.ChessPiece;
@@ -38,10 +38,9 @@ public class RequestChessMove {
      * Undo command
      *
      * @param board Chess board
-     * @return The chess's positions before undo and after undo
      */
-    public List<Position> undoMoveCommand(Board board) {
-        return moveCommand.undo(board);
+    public void undoMoveCommand(Board board) {
+         moveCommand.undo(board);
     }
 
 }

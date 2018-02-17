@@ -1,9 +1,9 @@
 package chess.controllers;
 
-import chess.command.ChessMove;
-import chess.command.ChessMoveCommand;
-import chess.command.Command;
-import chess.command.RequestChessMove;
+import chess.models.command.ChessMove;
+import chess.models.command.ChessMoveCommand;
+import chess.models.command.Command;
+import chess.models.command.RequestChessMove;
 import chess.models.Board;
 import chess.models.ChessPiece;
 import chess.models.Position;
@@ -394,12 +394,12 @@ public class BoardController {
      */
     @FXML
     public void undo(ActionEvent event) {
-        List<Position> poses = chessMoveInvoker.undoMoveCommand(board);
-        Position prePos = poses.get(0);
-        Position curPos = poses.get(1);
-        paneArray[prePos.getX()][prePos.getY()].getChildren().addAll(paneArray[curPos.getX()][curPos.getY()].getChildren().get(0));
-        setChessDisable();
-        setUndoDisable();
+//        List<Position> poses = chessMoveInvoker.undoMoveCommand(board);
+//        Position prePos = poses.get(0);
+//        Position curPos = poses.get(1);
+//        paneArray[prePos.getX()][prePos.getY()].getChildren().addAll(paneArray[curPos.getX()][curPos.getY()].getChildren().get(0));
+//        setChessDisable();
+//        setUndoDisable();
     }
 
     /**

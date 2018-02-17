@@ -1,4 +1,4 @@
-package chess.command;
+package chess.controllers.command;
 
 import chess.models.Board;
 import chess.models.ChessPiece;
@@ -11,8 +11,6 @@ import java.util.List;
  * The command interface of the Command Pattern
  */
 public interface Command {
-
-    MoveResult execute(Board board, ChessPiece chess, Position destination);
-
-    List<Position> undo(Board board);
+    public void execute();
+    public void undo();
 }

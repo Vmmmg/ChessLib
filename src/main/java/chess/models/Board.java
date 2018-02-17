@@ -544,6 +544,20 @@ public class Board {
     }
 
     /**
+     * Add chess to its set
+     *
+     * @param chess
+     */
+    public void addChessToSet(ChessPiece chess){
+        if(chess.getPlayer() == Player.White){
+            whiteChessSet.add(chess);
+        }
+        else {
+            blackChessSet.add(chess);
+        }
+    }
+
+    /**
      * Get the set of black chess
      *
      * @return The set of black chess
@@ -612,6 +626,26 @@ public class Board {
             curPlayer = Player.White;
         } else {
             curPlayer = Player.Black;
+        }
+    }
+
+    /**
+     * Undo the movement
+     *
+     * @param movingChess
+     * @param originPos
+     * @param capturedChess
+     * @param destinationPos
+     */
+    public void undo(ChessPiece movingChess, Position originPos, ChessPiece capturedChess, Position destinationPos){
+        chessMove(movingChess, originPos);
+
+        if(capturedChess != null){
+            addChessToSet(capturedChess);
+            chessMove(capturedChess, destinationPos);
+        }
+        else{
+            board[destinationPos.getY()][destinationPos.getX()] = null;
         }
     }
 }
